@@ -1451,11 +1451,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo_Software\\Code\\Proyecto_Desarrollo\\Proyecto_Desarrollo\\Proyecto_Desarrollo.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\Code\\Proyecto_Desarrollo\\Proyecto_Desarrollo\\Proyecto_Desarrollo.csproj",
       "projectName": "Proyecto_Desarrollo",
-      "projectPath": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo_Software\\Code\\Proyecto_Desarrollo\\Proyecto_Desarrollo\\Proyecto_Desarrollo.csproj",
+      "projectPath": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\Code\\Proyecto_Desarrollo\\Proyecto_Desarrollo\\Proyecto_Desarrollo.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo_Software\\Code\\Proyecto_Desarrollo\\Proyecto_Desarrollo\\obj\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\Code\\Proyecto_Desarrollo\\Proyecto_Desarrollo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
