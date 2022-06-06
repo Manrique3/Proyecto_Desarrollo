@@ -1,0 +1,7 @@
+CONEXION A LA BASE DE DATOS DE LA CATOLICA
+
+[ucab]
+host = labs-dbservices01.ucab.edu.ve
+port = 5432
+user = grupo4bd1
+password = bases_>*=_pass
