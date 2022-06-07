@@ -23,7 +23,20 @@ namespace Proyecto_Desarrollo.Database
             }
         }
         public virtual DbSet<Usuario> Usuarios { set; get; }
+            
+        public virtual DbSet<Administrador> Administradors { set; get; }
 
+        public virtual DbSet<Taller> Tallers { set; get; }
+
+        public virtual DbSet<Proveedor>Proveedors { set; get; }
+
+        public virtual DbSet<Perito>Peritos { set; get; }
+
+        public virtual DbSet<Poliza>Polizas { set; get; }
+
+        public virtual DbSet<Asegurado> Asegurados { set; get; }
+
+        public virtual DbSet<Vehiculo> Vehiculos { set; get; }
 
     }
 
