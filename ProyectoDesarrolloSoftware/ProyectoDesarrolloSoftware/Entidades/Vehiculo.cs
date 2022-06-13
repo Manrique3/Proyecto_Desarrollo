@@ -12,7 +12,7 @@ namespace ProyectoDesarrolloSoftware.Entidades
         [Required]
         public string Modelo { get; set; }
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy}", ApplyFormatInEditMode = true)]
         [Required]
         public DateTime Año { get; set; }
         public string color { get; set; }

@@ -10,7 +10,7 @@ using ProyectoDesarrolloSoftware.DataBase;
 namespace ProyectoDesarrolloSoftware.Migrations
 {
     [DbContext(typeof(DSDBContext))]
-    [Migration("20220613203000_creando")]
+    [Migration("20220613203932_creando")]
     partial class creando
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
