@@ -15,9 +15,7 @@ namespace ProyectoDesarrolloSoftware.DataBase
         public DbSet<Vehiculo> Vehiculos { get; set; }
         public DbSet<Marca> Marcas { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
-
         public DbSet<Lugar> Lugares { get; set; }
-
 
     }
 }

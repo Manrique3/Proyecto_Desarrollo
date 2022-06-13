@@ -2,7 +2,7 @@
 
 namespace ProyectoDesarrolloSoftware.Migrations
 {
-    public partial class prueba_lugar : Migration
+    public partial class creando2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

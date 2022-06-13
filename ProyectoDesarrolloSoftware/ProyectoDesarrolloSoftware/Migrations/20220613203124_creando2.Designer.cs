@@ -10,8 +10,8 @@ using ProyectoDesarrolloSoftware.DataBase;
 namespace ProyectoDesarrolloSoftware.Migrations
 {
     [DbContext(typeof(DSDBContext))]
-    [Migration("20220613191634_prueba_lugar3")]
-    partial class prueba_lugar3
+    [Migration("20220613203124_creando2")]
+    partial class creando2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -36,6 +36,7 @@ namespace ProyectoDesarrolloSoftware.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("tipo_lugar")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id_lugar");
@@ -53,6 +54,7 @@ namespace ProyectoDesarrolloSoftware.Migrations
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("IDMarca");
@@ -85,19 +87,22 @@ namespace ProyectoDesarrolloSoftware.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<string>("Año")
-                        .HasColumnType("text");
+                    b.Property<DateTime>("Año")
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<int>("IDMarca")
                         .HasColumnType("integer");
 
                     b.Property<string>("Modelo")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Placa")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("SerialMotor")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("color")

@@ -11,8 +11,10 @@ namespace ProyectoDesarrolloSoftware.Entidades
         public int IDVehiculo { get; set; }
         [Required]
         public string Modelo { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         [Required]
-        public string Año { get; set; }
+        public DateTime Año { get; set; }
         public string color { get; set; }
         public int puestos { get; set; }
         [Required]

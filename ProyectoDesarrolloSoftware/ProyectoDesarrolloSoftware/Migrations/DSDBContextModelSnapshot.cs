@@ -34,6 +34,7 @@ namespace ProyectoDesarrolloSoftware.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("tipo_lugar")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id_lugar");
@@ -51,6 +52,7 @@ namespace ProyectoDesarrolloSoftware.Migrations
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("IDMarca");
@@ -83,19 +85,22 @@ namespace ProyectoDesarrolloSoftware.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<string>("Año")
-                        .HasColumnType("text");
+                    b.Property<DateTime>("Año")
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<int>("IDMarca")
                         .HasColumnType("integer");
 
                     b.Property<string>("Modelo")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Placa")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("SerialMotor")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("color")
