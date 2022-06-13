@@ -9,7 +9,9 @@ namespace ProyectoDesarrolloSoftware.Entidades
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IDMarca { get; set; }
+        [Required]
         public string Name { get; set; }
+        
 
         public virtual ICollection<Vehiculo> Vehiculos { get; set; }
     }

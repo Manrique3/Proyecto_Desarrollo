@@ -12,6 +12,7 @@ namespace ProyectoDesarrolloSoftware.Entidades
         public int Id_lugar { get; set; }
         [Required]
         public string nombre_lugar { get; set; }
+        [Required]
         public string tipo_lugar { get; set; }
         public virtual ICollection<Lugar> fk_lugar { get; set; }
 
