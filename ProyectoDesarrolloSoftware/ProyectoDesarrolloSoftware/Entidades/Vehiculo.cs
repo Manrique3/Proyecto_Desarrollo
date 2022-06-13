@@ -21,8 +21,8 @@ namespace ProyectoDesarrolloSoftware.Entidades
         public string Placa { get; set; }
         [Required]
         public string SerialMotor { get; set; }
-        public int IDMarca { get; set; }
-        [ForeignKey("IDMarca")]
+        public int fk_marca { get; set; }
+        [ForeignKey("fk_marca")]
         public virtual Marca Marca { get; set; }
     }
 }

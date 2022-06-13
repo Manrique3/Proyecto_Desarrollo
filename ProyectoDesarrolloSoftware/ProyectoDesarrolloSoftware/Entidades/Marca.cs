@@ -11,8 +11,8 @@ namespace ProyectoDesarrolloSoftware.Entidades
         public int IDMarca { get; set; }
         [Required]
         public string Name { get; set; }
-        
 
+        public virtual ICollection<Proveedor> Proveedores { get; set; }
         public virtual ICollection<Vehiculo> Vehiculos { get; set; }
     }
 }

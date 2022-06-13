@@ -10,12 +10,21 @@ namespace ProyectoDesarrolloSoftware.DataBase
             : base(options)
         {
 
+
         }
 
         public DbSet<Vehiculo> Vehiculos { get; set; }
         public DbSet<Marca> Marcas { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Lugar> Lugares { get; set; }
+        
+        public DbSet<Proveedor> Proveedores { get; set; }
 
+        public DbSet<Proveedor_Marca> ProvMarcas { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Proveedor_Marca>()
+                .HasKey(c => new { c.IDMarca, c.Id_proveedor });
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using ProyectoDesarrolloSoftware.DataBase;
@@ -9,30 +10,16 @@ using ProyectoDesarrolloSoftware.DataBase;
 namespace ProyectoDesarrolloSoftware.Migrations
 {
     [DbContext(typeof(DSDBContext))]
-    partial class DSDBContextModelSnapshot : ModelSnapshot
+    [Migration("20220613205629_prueba_proveedor2")]
+    partial class prueba_proveedor2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 63)
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-            modelBuilder.Entity("MarcaProveedor", b =>
-                {
-                    b.Property<int>("MarcasIDMarca")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("ProveedoresId_proveedor")
-                        .HasColumnType("integer");
-
-                    b.HasKey("MarcasIDMarca", "ProveedoresId_proveedor");
-
-                    b.HasIndex("ProveedoresId_proveedor");
-
-                    b.ToTable("MarcaProveedor");
-                });
 
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Lugar", b =>
                 {
@@ -99,21 +86,6 @@ namespace ProyectoDesarrolloSoftware.Migrations
                     b.ToTable("Proveedores");
                 });
 
-            modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Proveedor_Marca", b =>
-                {
-                    b.Property<int>("IDMarca")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Id_proveedor")
-                        .HasColumnType("integer");
-
-                    b.HasKey("IDMarca", "Id_proveedor");
-
-                    b.HasIndex("Id_proveedor");
-
-                    b.ToTable("ProvMarcas");
-                });
-
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Usuario", b =>
                 {
                     b.Property<int>("IDusuario")
@@ -142,6 +114,9 @@ namespace ProyectoDesarrolloSoftware.Migrations
                     b.Property<DateTime>("Año")
                         .HasColumnType("timestamp without time zone");
 
+                    b.Property<int?>("IDMarca")
+                        .HasColumnType("integer");
+
                     b.Property<string>("Modelo")
                         .IsRequired()
                         .HasColumnType("text");
@@ -165,24 +140,9 @@ namespace ProyectoDesarrolloSoftware.Migrations
 
                     b.HasKey("IDVehiculo");
 
-                    b.HasIndex("fk_marca");
+                    b.HasIndex("IDMarca");
 
                     b.ToTable("Vehiculos");
-                });
-
-            modelBuilder.Entity("MarcaProveedor", b =>
-                {
-                    b.HasOne("ProyectoDesarrolloSoftware.Entidades.Marca", null)
-                        .WithMany()
-                        .HasForeignKey("MarcasIDMarca")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ProyectoDesarrolloSoftware.Entidades.Proveedor", null)
-                        .WithMany()
-                        .HasForeignKey("ProveedoresId_proveedor")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Lugar", b =>
@@ -201,32 +161,11 @@ namespace ProyectoDesarrolloSoftware.Migrations
                     b.Navigation("Lugar");
                 });
 
-            modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Proveedor_Marca", b =>
-                {
-                    b.HasOne("ProyectoDesarrolloSoftware.Entidades.Marca", "Marca")
-                        .WithMany()
-                        .HasForeignKey("IDMarca")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ProyectoDesarrolloSoftware.Entidades.Proveedor", "Proveedor")
-                        .WithMany()
-                        .HasForeignKey("Id_proveedor")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Marca");
-
-                    b.Navigation("Proveedor");
-                });
-
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Vehiculo", b =>
                 {
                     b.HasOne("ProyectoDesarrolloSoftware.Entidades.Marca", "Marca")
                         .WithMany("Vehiculos")
-                        .HasForeignKey("fk_marca")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IDMarca");
 
                     b.Navigation("Marca");
                 });
