@@ -15,5 +15,7 @@ namespace ProyectoDesarrolloSoftware.Entidades
         [ForeignKey("Id_lugar")]
         public virtual Lugar Lugar { get; set; }
         public virtual ICollection<Marca> Marcas { get; set; }
+
+        public virtual ICollection<Pieza> Piezas { get; set; } //Muchos Piezas para la tabla Pieza_Proveedor
     }
 }

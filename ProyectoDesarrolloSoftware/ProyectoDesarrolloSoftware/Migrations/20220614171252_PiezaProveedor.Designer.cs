@@ -10,8 +10,8 @@ using ProyectoDesarrolloSoftware.DataBase;
 namespace ProyectoDesarrolloSoftware.Migrations
 {
     [DbContext(typeof(DSDBContext))]
-    [Migration("20220613211906_prueba_muchos4")]
-    partial class prueba_muchos4
+    [Migration("20220614171252_PiezaProveedor")]
+    partial class PiezaProveedor
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,6 +34,36 @@ namespace ProyectoDesarrolloSoftware.Migrations
                     b.HasIndex("ProveedoresId_proveedor");
 
                     b.ToTable("MarcaProveedor");
+                });
+
+            modelBuilder.Entity("MarcaTaller", b =>
+                {
+                    b.Property<int>("MarcasIDMarca")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("TallersId_Taller")
+                        .HasColumnType("integer");
+
+                    b.HasKey("MarcasIDMarca", "TallersId_Taller");
+
+                    b.HasIndex("TallersId_Taller");
+
+                    b.ToTable("MarcaTaller");
+                });
+
+            modelBuilder.Entity("PiezaProveedor", b =>
+                {
+                    b.Property<int>("PiezasId_Pieza")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("ProveedorsId_proveedor")
+                        .HasColumnType("integer");
+
+                    b.HasKey("PiezasId_Pieza", "ProveedorsId_proveedor");
+
+                    b.HasIndex("ProveedorsId_proveedor");
+
+                    b.ToTable("PiezaProveedor");
                 });
 
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Lugar", b =>
@@ -77,6 +107,42 @@ namespace ProyectoDesarrolloSoftware.Migrations
                     b.ToTable("Marcas");
                 });
 
+            modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Pieza", b =>
+                {
+                    b.Property<int>("Id_Pieza")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<int>("Descripcion")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Nombre")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id_Pieza");
+
+                    b.ToTable("Piezas");
+                });
+
+            modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Pieza_Proveedor", b =>
+                {
+                    b.Property<int>("Id_Pieza")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Id_proveedor")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("Id_Proveedor")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id_Pieza", "Id_proveedor");
+
+                    b.HasIndex("Id_Proveedor");
+
+                    b.ToTable("Pieza_Proveedor");
+                });
+
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Proveedor", b =>
                 {
                     b.Property<int>("Id_proveedor")
@@ -114,6 +180,44 @@ namespace ProyectoDesarrolloSoftware.Migrations
                     b.HasIndex("Id_proveedor");
 
                     b.ToTable("ProvMarcas");
+                });
+
+            modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Taller", b =>
+                {
+                    b.Property<int>("Id_Taller")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<int?>("Id_lugar")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Nombre")
+                        .HasColumnType("text");
+
+                    b.Property<int>("fk_lugar")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id_Taller");
+
+                    b.HasIndex("Id_lugar");
+
+                    b.ToTable("Tallers");
+                });
+
+            modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Taller_Marca", b =>
+                {
+                    b.Property<int>("IDMarca")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Id_Taller")
+                        .HasColumnType("integer");
+
+                    b.HasKey("IDMarca", "Id_Taller");
+
+                    b.HasIndex("Id_Taller");
+
+                    b.ToTable("Taller_Marca");
                 });
 
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Usuario", b =>
@@ -187,11 +291,58 @@ namespace ProyectoDesarrolloSoftware.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("MarcaTaller", b =>
+                {
+                    b.HasOne("ProyectoDesarrolloSoftware.Entidades.Marca", null)
+                        .WithMany()
+                        .HasForeignKey("MarcasIDMarca")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProyectoDesarrolloSoftware.Entidades.Taller", null)
+                        .WithMany()
+                        .HasForeignKey("TallersId_Taller")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("PiezaProveedor", b =>
+                {
+                    b.HasOne("ProyectoDesarrolloSoftware.Entidades.Pieza", null)
+                        .WithMany()
+                        .HasForeignKey("PiezasId_Pieza")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProyectoDesarrolloSoftware.Entidades.Proveedor", null)
+                        .WithMany()
+                        .HasForeignKey("ProveedorsId_proveedor")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Lugar", b =>
                 {
                     b.HasOne("ProyectoDesarrolloSoftware.Entidades.Lugar", null)
                         .WithMany("fk_lugar")
                         .HasForeignKey("LugarId_lugar");
+                });
+
+            modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Pieza_Proveedor", b =>
+                {
+                    b.HasOne("ProyectoDesarrolloSoftware.Entidades.Pieza", "Pieza")
+                        .WithMany()
+                        .HasForeignKey("Id_Pieza")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProyectoDesarrolloSoftware.Entidades.Proveedor", "Proveedor")
+                        .WithMany()
+                        .HasForeignKey("Id_Proveedor");
+
+                    b.Navigation("Pieza");
+
+                    b.Navigation("Proveedor");
                 });
 
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Proveedor", b =>
@@ -220,6 +371,34 @@ namespace ProyectoDesarrolloSoftware.Migrations
                     b.Navigation("Marca");
 
                     b.Navigation("Proveedor");
+                });
+
+            modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Taller", b =>
+                {
+                    b.HasOne("ProyectoDesarrolloSoftware.Entidades.Lugar", "Lugar")
+                        .WithMany()
+                        .HasForeignKey("Id_lugar");
+
+                    b.Navigation("Lugar");
+                });
+
+            modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Taller_Marca", b =>
+                {
+                    b.HasOne("ProyectoDesarrolloSoftware.Entidades.Marca", "Marca")
+                        .WithMany()
+                        .HasForeignKey("IDMarca")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProyectoDesarrolloSoftware.Entidades.Taller", "Taller")
+                        .WithMany()
+                        .HasForeignKey("Id_Taller")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Marca");
+
+                    b.Navigation("Taller");
                 });
 
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Vehiculo", b =>

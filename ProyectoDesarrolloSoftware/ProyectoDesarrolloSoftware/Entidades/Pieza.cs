@@ -1,20 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace ProyectoDesarrolloSoftware.Entidades
 {
-    public class Asegurado
+    public class Pieza
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        [Required]
+        public int Id_Pieza { get; set; }
         public string Nombre { get; set; }
-        [Required]
-        public string Apellido { get; set; }
+        public int Descripcion { get; set; }
+        public virtual ICollection<Proveedor> Proveedors { get; set; } // Muchos Proveedores para la tabla Pieza_Proveedor
     }
 }

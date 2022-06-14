@@ -7,14 +7,18 @@ using System.Threading.Tasks;
 
 namespace ProyectoDesarrolloSoftware.Entidades
 {
-    public class Taller 
+    public class Taller_Marca
     {
-        [Key]
+        [Key, Column(Order = 1)]
+        public int IDMarca { get; set; }
+
+        [Key, Column(Order = 2)]
         public int Id_Taller { get; set; }
-        public string Nombre { get; set; }
-        public int fk_lugar { get; set; }
-        [ForeignKey("Id_lugar")]
-        public virtual Lugar Lugar { get; set; }
-        public virtual ICollection<Marca> Marcas { get; set; }
+
+        [ForeignKey("IDMarca")]
+        public Marca Marca { get; set; }
+
+        [ForeignKey("Id_Taller")]
+        public Taller Taller { get; set; }
     }
 }
