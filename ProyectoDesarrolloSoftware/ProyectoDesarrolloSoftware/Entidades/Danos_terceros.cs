@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoDesarrolloSoftware.Entidades
 {
-    public class Danos_terceros //Hereda de póliza
+    public class Danos_terceros: Poliza
     {
 
     }
