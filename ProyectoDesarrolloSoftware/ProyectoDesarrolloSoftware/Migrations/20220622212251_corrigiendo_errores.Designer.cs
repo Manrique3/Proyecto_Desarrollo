@@ -10,8 +10,8 @@ using ProyectoDesarrolloSoftware.DataBase;
 namespace ProyectoDesarrolloSoftware.Migrations
 {
     [DbContext(typeof(DSDBContext))]
-    [Migration("20220622211628_Correccion_Errores")]
-    partial class Correccion_Errores
+    [Migration("20220622212251_corrigiendo_errores")]
+    partial class corrigiendo_errores
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

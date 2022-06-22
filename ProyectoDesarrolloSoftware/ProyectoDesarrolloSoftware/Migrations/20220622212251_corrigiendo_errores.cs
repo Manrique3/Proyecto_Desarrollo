@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace ProyectoDesarrolloSoftware.Migrations
 {
-    public partial class Correccion_Errores : Migration
+    public partial class corrigiendo_errores : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
