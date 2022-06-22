@@ -6,46 +6,35 @@ namespace ProyectoDesarrolloSoftware.DataBase
 {
     public class DSDBContext : DbContext
     {
-        public DbSet<Poliza> Poliza { get; set; } //Entidad de Polizas
         public DSDBContext(DbContextOptions<DSDBContext> options)
-            : base(options)
+        : base(options)
         {
         }
 
+        public DbSet<Poliza> Poliza { get; set; } //Entidad de Polizas
         public DbSet<Vehiculo> Vehiculos { get; set; }
         public DbSet<Marca> Marcas { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Lugar> Lugares { get; set; }
-        
-        public DbSet<Administrador>Administradors { get; set; } //Entidad Administrador
-
+        public DbSet<Administrador> Administradors { get; set; } //Entidad Administrador
         public DbSet<Proveedor> Proveedores { get; set; }
-
         public DbSet<Taller> Tallers { get; set; }
-
-        public DbSet<Perito> Peritos { get; set;} // Entidad Perito
-
+        public DbSet<Perito> Peritos { get; set; } // Entidad Perito
         public DbSet<Taller_Marca> Taller_Marcas { get; set; }
-
-       // public DbSet<Taller_Marca> TallerMarcas { get; set; } Dos Taller_Marcas?
-
         public DbSet<Proveedor_Marca> ProvMarcas { get; set; }
-        
         public DbSet<Pieza> Piezas { get; set; }
-
         public DbSet<Asegurado> Asegurados { get; set; }
-
-        
-    
-        public DbSet<Incidente>Incidentes { get; set; } //Entidad de Incidentes
-
-        public DbSet<Cotizacion>Cotizacions { get; set; } //Entidad de Cotizacion
-
+        public DbSet<Incidente> Incidentes { get; set; } //Entidad de Incidentes
+        public DbSet<Cotizacion> Cotizacions { get; set; } //Entidad de Cotizacion
         public DbSet<Cobertura_completa> Cobertura_Completas { get; set; }
+        public DbSet<Danos_terceros> Danos_Terceros { get; set; }
+        public DbSet<Pieza_Proveedor> Pieza_Proveedor { get; set; }
+        public DbSet<Administrador_Cotizacion> Administrador_Cotizacion { get; set; }
+        public DbSet<Cotizacion__Pieza> Cotizacion__Pieza { get; set; }
+        public DbSet<Cotizacion_Proveedor> Cotizacion_Proveedor { get; set; }
+        public DbSet<Cotizacion_Taller> Cotizacion_Taller { get; set; }
 
-        public DbSet<Danos_terceros>Danos_Terceros { get; set; }
 
-        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Proveedor_Marca>()

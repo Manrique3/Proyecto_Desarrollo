@@ -21,7 +21,6 @@ namespace ProyectoDesarrolloSoftware.Entidades
         public String Email { get; set; }
 
         public virtual ICollection<Poliza>Polizas { get; set; }
-        public virtual ICollection<Cotizacion> Cotizacions { get; set; }
         //El Administrador genera un incidente
         //public virtual ICollection<Incidente> Incidentes { get; set; }
 

@@ -12,6 +12,5 @@ namespace ProyectoDesarrolloSoftware.Entidades
         public int Id_Pieza { get; set; }
         public string Nombre { get; set; }
         public int Descripcion { get; set; }
-        public virtual ICollection<Proveedor> Proveedors { get; set; } // Muchos Proveedores para la tabla Pieza_Proveedor
     }
 }
