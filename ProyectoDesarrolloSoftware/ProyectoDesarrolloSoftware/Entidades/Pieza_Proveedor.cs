@@ -19,7 +19,7 @@ namespace ProyectoDesarrolloSoftware.Entidades
         [ForeignKey("Id_Pieza")]
         public Pieza Pieza { get; set; }
 
-        [ForeignKey("Id_Proveedor")]
+        [ForeignKey("Id_proveedor")]
         public Proveedor Proveedor { get; set; }
     }
 }

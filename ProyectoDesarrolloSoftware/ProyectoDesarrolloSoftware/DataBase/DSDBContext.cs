@@ -11,12 +11,13 @@ namespace ProyectoDesarrolloSoftware.DataBase
         {
         }
 
-        public DbSet<Poliza> Poliza { get; set; } //Entidad de Polizas
+        
         public DbSet<Vehiculo> Vehiculos { get; set; }
         public DbSet<Marca> Marcas { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Lugar> Lugares { get; set; }
         public DbSet<Administrador> Administradors { get; set; } //Entidad Administrador
+        public DbSet<Poliza> Polizas { get; set; } //Entidad de Polizas
         public DbSet<Proveedor> Proveedores { get; set; }
         public DbSet<Taller> Tallers { get; set; }
         public DbSet<Perito> Peritos { get; set; } // Entidad Perito
@@ -26,8 +27,6 @@ namespace ProyectoDesarrolloSoftware.DataBase
         public DbSet<Asegurado> Asegurados { get; set; }
         public DbSet<Incidente> Incidentes { get; set; } //Entidad de Incidentes
         public DbSet<Cotizacion> Cotizacions { get; set; } //Entidad de Cotizacion
-        public DbSet<Cobertura_completa> Cobertura_Completas { get; set; }
-        public DbSet<Danos_terceros> Danos_Terceros { get; set; }
         public DbSet<Pieza_Proveedor> Pieza_Proveedor { get; set; }
         public DbSet<Administrador_Cotizacion> Administrador_Cotizacion { get; set; }
         public DbSet<Cotizacion__Pieza> Cotizacion__Pieza { get; set; }
@@ -35,8 +34,11 @@ namespace ProyectoDesarrolloSoftware.DataBase
         public DbSet<Cotizacion_Taller> Cotizacion_Taller { get; set; }
 
 
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            
             modelBuilder.Entity<Proveedor_Marca>()
                 .HasKey(c => new { c.IDMarca, c.Id_proveedor });
 
@@ -53,7 +55,7 @@ namespace ProyectoDesarrolloSoftware.DataBase
                 .HasKey(cp => new { cp.Id_Cotizacion, cp.Id_Pieza });
 
             modelBuilder.Entity<Cotizacion_Proveedor>()
-                .HasKey(cpe => new { cpe.Id_Cotizacion, cpe.Id_Proveedor });
+                .HasKey(cpe => new { cpe.Id_Cotizacion, cpe.Id_Proveedor, cpe.Id_Pieza_Pieza_Proveedor, cpe.Id_Proveedor_Pieza_Proveedor });
 
             modelBuilder.Entity<Cotizacion_Taller>()
                 .HasKey(CT => new { CT.Id_Cotizacion, CT.Id_Taller });

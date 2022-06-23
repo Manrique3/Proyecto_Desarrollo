@@ -20,10 +20,6 @@ namespace ProyectoDesarrolloSoftware.Entidades
         public String Nombre { get; set; }        
         public String Email { get; set; }
 
-        public virtual ICollection<Poliza>Polizas { get; set; }
-        //El Administrador genera un incidente
-        //public virtual ICollection<Incidente> Incidentes { get; set; }
-
 
     }
 }

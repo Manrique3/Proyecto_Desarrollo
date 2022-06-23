@@ -10,11 +10,11 @@ namespace ProyectoDesarrolloSoftware.Entidades
     public class Asegurado
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int Cedula { get; set; }
         [Required]
         public string Nombre { get; set; }
         [Required]
         public string Apellido { get; set; }
+        public virtual ICollection<Poliza> Poliza { get; set; }
     }
 }

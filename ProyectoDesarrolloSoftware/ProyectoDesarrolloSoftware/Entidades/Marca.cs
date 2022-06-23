@@ -12,6 +12,5 @@ namespace ProyectoDesarrolloSoftware.Entidades
         [Required]
         public string Name { get; set; }
 
-        public virtual ICollection<Vehiculo> Vehiculos { get; set; }
     }
 }

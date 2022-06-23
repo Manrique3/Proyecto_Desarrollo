@@ -7,15 +7,22 @@ using System.Threading.Tasks;
 
 namespace ProyectoDesarrolloSoftware.Entidades
 {
-    public abstract class Poliza
+    public class Poliza
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id_Poliza { get; set; }
         //La poliza tiene lista de Administradores?
-        public virtual ICollection<Asegurado> Asegurados { get; set; } // No puede ser NULL
-
-        public Vehiculo Vehiculo { get; set; } // No puede ser NULL
+        [Required]
+        [RegularExpression(@"Cobertura_Completa|Daño_a_Terceros")]
+        public string Tipo { get; set; }
+        public int fk_vehiculo { get; set; }
+        [ForeignKey("fk_vehiculo")]
+        [Required]
+        public virtual Vehiculo Vehiculo { get; set; }
+        // No puede ser NULL
+        [Required]
+        public virtual ICollection<Incidente> Incidentes { get; set; }
 
     }
 }

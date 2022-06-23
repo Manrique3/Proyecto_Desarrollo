@@ -12,6 +12,7 @@ namespace ProyectoDesarrolloSoftware.Entidades
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id_Cotizacion { get; set; }
+        
 
 
     }
