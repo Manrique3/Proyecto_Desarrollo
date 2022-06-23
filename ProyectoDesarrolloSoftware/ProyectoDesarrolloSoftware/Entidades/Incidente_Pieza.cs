@@ -7,20 +7,22 @@ using System.Threading.Tasks;
 
 namespace ProyectoDesarrolloSoftware.Entidades
 {
-    public class Pieza_Proveedor
-    { // Tabla de Muchos a Muchos de Pieza a Proveedor
-
+    public class Incidente_Pieza
+    {
         [Key, Column(Order = 1)]
         public int Id_Pieza { get; set; }
 
         [Key, Column(Order = 2)]
-        public int Id_proveedor { get; set; }
-        public int cantidad { get; set; }
+        public int Id_Incidente { get; set; }
 
         [ForeignKey("Id_Pieza")]
         public Pieza Pieza { get; set; }
 
-        [ForeignKey("Id_proveedor")]
-        public Proveedor Proveedor { get; set; }
+        [ForeignKey("Id_Incidente")]
+        public Incidente Incidente { get; set; }
+
+     
+
+
     }
 }

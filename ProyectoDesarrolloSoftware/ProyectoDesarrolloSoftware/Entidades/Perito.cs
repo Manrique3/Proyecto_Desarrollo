@@ -14,7 +14,6 @@ namespace ProyectoDesarrolloSoftware.Entidades
         public int Id_Perito { get; set; }
         [Required]
         public string Nombre { get; set; }
-        
-        public virtual ICollection<Incidente> Incidentes { get; set; }
+       
     }
 }

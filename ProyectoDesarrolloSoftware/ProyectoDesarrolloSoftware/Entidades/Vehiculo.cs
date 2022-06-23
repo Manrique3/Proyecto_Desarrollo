@@ -7,8 +7,7 @@ namespace ProyectoDesarrolloSoftware.Entidades
     public class Vehiculo
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int IDVehiculo { get; set; }
+        public int Placa { get; set; }
         [Required]
         public string Modelo { get; set; }
         [DataType(DataType.Date)]
@@ -17,8 +16,6 @@ namespace ProyectoDesarrolloSoftware.Entidades
         public DateTime Año { get; set; }
         public string color { get; set; }
         public int puestos { get; set; }
-        [Required]
-        public string Placa { get; set; }
         [Required]
         public string SerialMotor { get; set; }
         public int fk_marca { get; set; }

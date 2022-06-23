@@ -12,12 +12,17 @@ namespace ProyectoDesarrolloSoftware.Entidades
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id_Incidente { get; set; }
+        [RegularExpression(@"Pendiente|Evaluado|Evaluado_Culpable|EvaluadoSoloTerceros")]
+        public string estadoEv { get; set; }
+        public int? fk_vehiculo_tercero { get; set; }
+        [ForeignKey("fk_vehiculo_tercero")]
+        public virtual Vehiculo Vehiculo { get; set; }
 
-        [Required]        
-        public virtual ICollection<Cotizacion> Cotizacions { get; set; }
-        // No hay lista de Peritos, seria varios peritos analizando un incidente.
-        // Un Adminsitrador genera un incidente
-        // No hay lista de poliza, Ya que seria varias polizas cubren un solo incidente.
-        
+        public int fk_Poliza { get; set; }
+        [ForeignKey("fk_Poliza")]
+        public virtual Poliza Poliza { get; set; }
+
+
+
     }
 }
