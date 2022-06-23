@@ -15,7 +15,7 @@ namespace ProyectoDesarrolloSoftware.Entidades
         [Key, Column(Order = 2)]
         public int Id_Proveedor { get; set; }
 
-        [Key, Column(Order = 3)]
+        [Column(Order = 3)]
         [RegularExpression(@"Pendiente|Declinado|Cotizado|Con Orden de Compra|Facturado")]
         public string estatus { get; set; }
 

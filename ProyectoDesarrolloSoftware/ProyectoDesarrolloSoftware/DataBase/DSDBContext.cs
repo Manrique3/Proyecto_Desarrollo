@@ -29,7 +29,7 @@ namespace ProyectoDesarrolloSoftware.DataBase
         public DbSet<Cotizacion> Cotizacions { get; set; } //Entidad de Cotizacion
         public DbSet<Pieza_Proveedor> Pieza_Proveedor { get; set; }
         public DbSet<Administrador_Cotizacion> Administrador_Cotizacion { get; set; }
-        public DbSet<Cotizacion__Pieza> Cotizacion__Pieza { get; set; }
+  
         public DbSet<Cotizacion_Proveedor> Cotizacion_Proveedor { get; set; }
         public DbSet<Cotizacion_Taller> Cotizacion_Taller { get; set; }
 
@@ -50,9 +50,6 @@ namespace ProyectoDesarrolloSoftware.DataBase
 
             modelBuilder.Entity<Administrador_Cotizacion>()
                 .HasKey(ac => new { ac.Id_Administrador, ac.Id_Cotizacion });
-
-            modelBuilder.Entity<Cotizacion__Pieza>()
-                .HasKey(cp => new { cp.Id_Cotizacion, cp.Id_Pieza });
 
             modelBuilder.Entity<Cotizacion_Proveedor>()
                 .HasKey(cpe => new { cpe.Id_Cotizacion, cpe.Id_Proveedor, cpe.Id_Pieza_Pieza_Proveedor, cpe.Id_Proveedor_Pieza_Proveedor });

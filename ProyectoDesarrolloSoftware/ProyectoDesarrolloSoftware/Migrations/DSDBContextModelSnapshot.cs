@@ -127,26 +127,23 @@ namespace ProyectoDesarrolloSoftware.Migrations
                     b.Property<int>("Id_Taller")
                         .HasColumnType("integer");
 
+                    b.Property<int>("cantidad_piezas_reparar")
+                        .HasColumnType("integer");
+
+                    b.Property<double>("costo_reparacion")
+                        .HasColumnType("double precision");
+
+                    b.Property<string>("estatus")
+                        .HasColumnType("text");
+
+                    b.Property<int>("tiempo_reparacion")
+                        .HasColumnType("integer");
+
                     b.HasKey("Id_Cotizacion", "Id_Taller");
 
                     b.HasIndex("Id_Taller");
 
                     b.ToTable("Cotizacion_Taller");
-                });
-
-            modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Cotizacion__Pieza", b =>
-                {
-                    b.Property<int>("Id_Cotizacion")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Id_Pieza")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id_Cotizacion", "Id_Pieza");
-
-                    b.HasIndex("Id_Pieza");
-
-                    b.ToTable("Cotizacion__Pieza");
                 });
 
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Incidente", b =>
@@ -165,7 +162,7 @@ namespace ProyectoDesarrolloSoftware.Migrations
                     b.Property<string>("estadoEv")
                         .HasColumnType("text");
 
-                    b.Property<int>("fk_vehiculo")
+                    b.Property<int>("fk_vehiculo_tercero")
                         .HasColumnType("integer");
 
                     b.HasKey("Id_Incidente");
@@ -174,7 +171,7 @@ namespace ProyectoDesarrolloSoftware.Migrations
 
                     b.HasIndex("PolizaId_Poliza");
 
-                    b.HasIndex("fk_vehiculo");
+                    b.HasIndex("fk_vehiculo_tercero");
 
                     b.ToTable("Incidentes");
                 });
@@ -483,25 +480,6 @@ namespace ProyectoDesarrolloSoftware.Migrations
                     b.Navigation("Taller");
                 });
 
-            modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Cotizacion__Pieza", b =>
-                {
-                    b.HasOne("ProyectoDesarrolloSoftware.Entidades.Cotizacion", "Cotizacion")
-                        .WithMany()
-                        .HasForeignKey("Id_Cotizacion")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ProyectoDesarrolloSoftware.Entidades.Pieza", "Pieza")
-                        .WithMany()
-                        .HasForeignKey("Id_Pieza")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Cotizacion");
-
-                    b.Navigation("Pieza");
-                });
-
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Incidente", b =>
                 {
                     b.HasOne("ProyectoDesarrolloSoftware.Entidades.Perito", null)
@@ -514,7 +492,7 @@ namespace ProyectoDesarrolloSoftware.Migrations
 
                     b.HasOne("ProyectoDesarrolloSoftware.Entidades.Vehiculo", "Vehiculo")
                         .WithMany()
-                        .HasForeignKey("fk_vehiculo")
+                        .HasForeignKey("fk_vehiculo_tercero")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

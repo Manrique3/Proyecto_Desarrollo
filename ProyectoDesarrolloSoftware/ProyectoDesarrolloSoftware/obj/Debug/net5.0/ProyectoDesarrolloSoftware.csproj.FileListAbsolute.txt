@@ -1424,3 +1424,4 @@ C:\Users\User\Desktop\Proyecto_Desarrollo\ProyectoDesarrolloSoftware\ProyectoDes
 C:\Users\User\Desktop\Proyecto_Desarrollo\ProyectoDesarrolloSoftware\ProyectoDesarrolloSoftware\obj\Debug\net5.0\ProyectoDesarrolloSoftware.pdb
 C:\Users\User\Desktop\Proyecto_Desarrollo\ProyectoDesarrolloSoftware\ProyectoDesarrolloSoftware\obj\Debug\net5.0\ProyectoDesarrolloSoftware.genruntimeconfig.cache
 C:\Users\Hernani\Documents\GitHub\Proyecto_Desarrollo\ProyectoDesarrolloSoftware\ProyectoDesarrolloSoftware\bin\Debug\net5.0\ProyectoDesarrolloSoftware.StaticWebAssets.xml
+C:\Users\Sergi\Documents\GitHub\Proyecto_Desarrollo\ProyectoDesarrolloSoftware\ProyectoDesarrolloSoftware\bin\Debug\net5.0\ProyectoDesarrolloSoftware.StaticWebAssets.xml

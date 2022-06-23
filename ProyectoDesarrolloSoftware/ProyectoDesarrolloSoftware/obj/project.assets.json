@@ -1803,19 +1803,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Hernani\\.nuget\\packages\\": {}
+    "C:\\Users\\Sergi\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Hernani\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
+      "projectUniqueName": "C:\\Users\\Sergi\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
       "projectName": "ProyectoDesarrolloSoftware",
-      "projectPath": "C:\\Users\\Hernani\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
-      "packagesPath": "C:\\Users\\Hernani\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hernani\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\obj\\",
+      "projectPath": "C:\\Users\\Sergi\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
+      "packagesPath": "C:\\Users\\Sergi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Sergi\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Hernani\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Sergi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

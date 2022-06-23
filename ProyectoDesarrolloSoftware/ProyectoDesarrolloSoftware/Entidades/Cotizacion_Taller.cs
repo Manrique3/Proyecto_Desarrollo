@@ -15,6 +15,12 @@ namespace ProyectoDesarrolloSoftware.Entidades
         [Key, Column(Order = 2)]
         public int Id_Taller { get; set; }
 
+        [RegularExpression(@"Pendiente|Cotizado|Con Orden de Compra|Facturado")]
+        public string estatus { get; set; }
+        public int cantidad_piezas_reparar { get; set; }
+        public double costo_reparacion { get; set; }
+        public int tiempo_reparacion { get; set; }
+
         [ForeignKey("Id_Cotizacion")]
         public Cotizacion Cotizacion { get; set; }
 
