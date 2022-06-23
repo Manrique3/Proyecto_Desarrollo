@@ -10,8 +10,8 @@ using ProyectoDesarrolloSoftware.DataBase;
 namespace ProyectoDesarrolloSoftware.Migrations
 {
     [DbContext(typeof(DSDBContext))]
-    [Migration("20220623203643_cambios_finales")]
-    partial class cambios_finales
+    [Migration("20220623210301_Cambios_Finales")]
+    partial class Cambios_Finales
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -160,18 +160,18 @@ namespace ProyectoDesarrolloSoftware.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<int?>("PolizaId_Poliza")
-                        .HasColumnType("integer");
-
                     b.Property<string>("estadoEv")
                         .HasColumnType("text");
 
-                    b.Property<int>("fk_vehiculo_tercero")
+                    b.Property<int?>("fk_Poliza")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("fk_vehiculo_tercero")
                         .HasColumnType("integer");
 
                     b.HasKey("Id_Incidente");
 
-                    b.HasIndex("PolizaId_Poliza");
+                    b.HasIndex("fk_Poliza");
 
                     b.HasIndex("fk_vehiculo_tercero");
 
@@ -547,15 +547,15 @@ namespace ProyectoDesarrolloSoftware.Migrations
 
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Incidente", b =>
                 {
-                    b.HasOne("ProyectoDesarrolloSoftware.Entidades.Poliza", null)
-                        .WithMany("Incidentes")
-                        .HasForeignKey("PolizaId_Poliza");
+                    b.HasOne("ProyectoDesarrolloSoftware.Entidades.Poliza", "Poliza")
+                        .WithMany()
+                        .HasForeignKey("fk_Poliza");
 
                     b.HasOne("ProyectoDesarrolloSoftware.Entidades.Vehiculo", "Vehiculo")
                         .WithMany()
-                        .HasForeignKey("fk_vehiculo_tercero")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("fk_vehiculo_tercero");
+
+                    b.Navigation("Poliza");
 
                     b.Navigation("Vehiculo");
                 });
@@ -714,11 +714,6 @@ namespace ProyectoDesarrolloSoftware.Migrations
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Lugar", b =>
                 {
                     b.Navigation("fk_lugar");
-                });
-
-            modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Poliza", b =>
-                {
-                    b.Navigation("Incidentes");
                 });
 #pragma warning restore 612, 618
         }

@@ -21,8 +21,7 @@ namespace ProyectoDesarrolloSoftware.Entidades
         [Required]
         public virtual Vehiculo Vehiculo { get; set; }
         // No puede ser NULL
-        [Required]
-        public virtual ICollection<Incidente> Incidentes { get; set; }
+
 
     }
 }

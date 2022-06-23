@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace ProyectoDesarrolloSoftware.Migrations
 {
-    public partial class cambios_finales : Migration
+    public partial class Cambios_Finales : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -283,15 +283,15 @@ namespace ProyectoDesarrolloSoftware.Migrations
                     Id_Incidente = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     estadoEv = table.Column<string>(type: "text", nullable: true),
-                    fk_vehiculo_tercero = table.Column<int>(type: "integer", nullable: false),
-                    PolizaId_Poliza = table.Column<int>(type: "integer", nullable: true)
+                    fk_vehiculo_tercero = table.Column<int>(type: "integer", nullable: true),
+                    fk_Poliza = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Incidentes", x => x.Id_Incidente);
                     table.ForeignKey(
-                        name: "FK_Incidentes_Polizas_PolizaId_Poliza",
-                        column: x => x.PolizaId_Poliza,
+                        name: "FK_Incidentes_Polizas_fk_Poliza",
+                        column: x => x.fk_Poliza,
                         principalTable: "Polizas",
                         principalColumn: "Id_Poliza",
                         onDelete: ReferentialAction.Restrict);
@@ -300,7 +300,7 @@ namespace ProyectoDesarrolloSoftware.Migrations
                         column: x => x.fk_vehiculo_tercero,
                         principalTable: "Vehiculos",
                         principalColumn: "Placa",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -493,14 +493,14 @@ namespace ProyectoDesarrolloSoftware.Migrations
                 column: "Id_Incidente");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Incidentes_fk_Poliza",
+                table: "Incidentes",
+                column: "fk_Poliza");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Incidentes_fk_vehiculo_tercero",
                 table: "Incidentes",
                 column: "fk_vehiculo_tercero");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Incidentes_PolizaId_Poliza",
-                table: "Incidentes",
-                column: "PolizaId_Poliza");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Lugares_LugarId_lugar",
