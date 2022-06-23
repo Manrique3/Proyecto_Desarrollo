@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace ProyectoDesarrolloSoftware.Migrations
 {
-    public partial class cambio : Migration
+    public partial class cambios : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -241,7 +241,8 @@ namespace ProyectoDesarrolloSoftware.Migrations
                 columns: table => new
                 {
                     Id_Pieza = table.Column<int>(type: "integer", nullable: false),
-                    Id_proveedor = table.Column<int>(type: "integer", nullable: false)
+                    Id_proveedor = table.Column<int>(type: "integer", nullable: false),
+                    cantidad = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -398,6 +399,7 @@ namespace ProyectoDesarrolloSoftware.Migrations
                 {
                     Id_Incidente = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    estadoEv = table.Column<string>(type: "text", nullable: true),
                     fk_vehiculo = table.Column<int>(type: "integer", nullable: false),
                     PeritoId_Perito = table.Column<int>(type: "integer", nullable: true),
                     PolizaId_Poliza = table.Column<int>(type: "integer", nullable: true)

@@ -10,8 +10,8 @@ using ProyectoDesarrolloSoftware.DataBase;
 namespace ProyectoDesarrolloSoftware.Migrations
 {
     [DbContext(typeof(DSDBContext))]
-    [Migration("20220623042702_cambio")]
-    partial class cambio
+    [Migration("20220623163643_cambios")]
+    partial class cambios
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -164,6 +164,9 @@ namespace ProyectoDesarrolloSoftware.Migrations
                     b.Property<int?>("PolizaId_Poliza")
                         .HasColumnType("integer");
 
+                    b.Property<string>("estadoEv")
+                        .HasColumnType("text");
+
                     b.Property<int>("fk_vehiculo")
                         .HasColumnType("integer");
 
@@ -256,6 +259,9 @@ namespace ProyectoDesarrolloSoftware.Migrations
                         .HasColumnType("integer");
 
                     b.Property<int>("Id_proveedor")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("cantidad")
                         .HasColumnType("integer");
 
                     b.HasKey("Id_Pieza", "Id_proveedor");

@@ -15,6 +15,7 @@ namespace ProyectoDesarrolloSoftware.Entidades
 
         [Key, Column(Order = 2)]
         public int Id_proveedor { get; set; }
+        public int cantidad { get; set; }
 
         [ForeignKey("Id_Pieza")]
         public Pieza Pieza { get; set; }

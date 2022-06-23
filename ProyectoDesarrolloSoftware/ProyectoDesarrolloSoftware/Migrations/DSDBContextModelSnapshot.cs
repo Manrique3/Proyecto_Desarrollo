@@ -162,6 +162,9 @@ namespace ProyectoDesarrolloSoftware.Migrations
                     b.Property<int?>("PolizaId_Poliza")
                         .HasColumnType("integer");
 
+                    b.Property<string>("estadoEv")
+                        .HasColumnType("text");
+
                     b.Property<int>("fk_vehiculo")
                         .HasColumnType("integer");
 
@@ -254,6 +257,9 @@ namespace ProyectoDesarrolloSoftware.Migrations
                         .HasColumnType("integer");
 
                     b.Property<int>("Id_proveedor")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("cantidad")
                         .HasColumnType("integer");
 
                     b.HasKey("Id_Pieza", "Id_proveedor");
