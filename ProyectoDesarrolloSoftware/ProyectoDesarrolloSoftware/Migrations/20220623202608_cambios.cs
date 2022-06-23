@@ -39,18 +39,6 @@ namespace ProyectoDesarrolloSoftware.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Cotizacions",
-                columns: table => new
-                {
-                    Id_Cotizacion = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Cotizacions", x => x.Id_Cotizacion);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Lugares",
                 columns: table => new
                 {
@@ -122,30 +110,6 @@ namespace ProyectoDesarrolloSoftware.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Usuarios", x => x.IDusuario);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Administrador_Cotizacion",
-                columns: table => new
-                {
-                    Id_Administrador = table.Column<int>(type: "integer", nullable: false),
-                    Id_Cotizacion = table.Column<int>(type: "integer", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Administrador_Cotizacion", x => new { x.Id_Administrador, x.Id_Cotizacion });
-                    table.ForeignKey(
-                        name: "FK_Administrador_Cotizacion_Administradors_Id_Administrador",
-                        column: x => x.Id_Administrador,
-                        principalTable: "Administradors",
-                        principalColumn: "Id_Administrador",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Administrador_Cotizacion_Cotizacions_Id_Cotizacion",
-                        column: x => x.Id_Cotizacion,
-                        principalTable: "Cotizacions",
-                        principalColumn: "Id_Cotizacion",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -262,34 +226,6 @@ namespace ProyectoDesarrolloSoftware.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Cotizacion_Taller",
-                columns: table => new
-                {
-                    Id_Cotizacion = table.Column<int>(type: "integer", nullable: false),
-                    Id_Taller = table.Column<int>(type: "integer", nullable: false),
-                    estatus = table.Column<string>(type: "text", nullable: true),
-                    cantidad_piezas_reparar = table.Column<int>(type: "integer", nullable: false),
-                    costo_reparacion = table.Column<double>(type: "double precision", nullable: false),
-                    tiempo_reparacion = table.Column<int>(type: "integer", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Cotizacion_Taller", x => new { x.Id_Cotizacion, x.Id_Taller });
-                    table.ForeignKey(
-                        name: "FK_Cotizacion_Taller_Cotizacions_Id_Cotizacion",
-                        column: x => x.Id_Cotizacion,
-                        principalTable: "Cotizacions",
-                        principalColumn: "Id_Cotizacion",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Cotizacion_Taller_Tallers_Id_Taller",
-                        column: x => x.Id_Taller,
-                        principalTable: "Tallers",
-                        principalColumn: "Id_Taller",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Taller_Marcas",
                 columns: table => new
                 {
@@ -341,39 +277,6 @@ namespace ProyectoDesarrolloSoftware.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Cotizacion_Proveedor",
-                columns: table => new
-                {
-                    Id_Cotizacion = table.Column<int>(type: "integer", nullable: false),
-                    Id_Proveedor = table.Column<int>(type: "integer", nullable: false),
-                    estatus = table.Column<string>(type: "text", nullable: true),
-                    Id_Pieza_Pieza_Proveedor = table.Column<int>(type: "integer", nullable: false),
-                    Id_Proveedor_Pieza_Proveedor = table.Column<int>(type: "integer", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Cotizacion_Proveedor", x => new { x.Id_Cotizacion, x.Id_Proveedor });
-                    table.ForeignKey(
-                        name: "FK_Cotizacion_Proveedor_Cotizacions_Id_Cotizacion",
-                        column: x => x.Id_Cotizacion,
-                        principalTable: "Cotizacions",
-                        principalColumn: "Id_Cotizacion",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Cotizacion_Proveedor_Pieza_Proveedor_Id_Pieza_Pieza_Proveed~",
-                        columns: x => new { x.Id_Pieza_Pieza_Proveedor, x.Id_Proveedor_Pieza_Proveedor },
-                        principalTable: "Pieza_Proveedor",
-                        principalColumns: new[] { "Id_Pieza", "Id_proveedor" },
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Cotizacion_Proveedor_Proveedores_Id_Proveedor",
-                        column: x => x.Id_Proveedor,
-                        principalTable: "Proveedores",
-                        principalColumn: "Id_proveedor",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Incidentes",
                 columns: table => new
                 {
@@ -408,6 +311,134 @@ namespace ProyectoDesarrolloSoftware.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Cotizacions",
+                columns: table => new
+                {
+                    Id_Cotizacion = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    fk_incidente = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Cotizacions", x => x.Id_Cotizacion);
+                    table.ForeignKey(
+                        name: "FK_Cotizacions_Incidentes_fk_incidente",
+                        column: x => x.fk_incidente,
+                        principalTable: "Incidentes",
+                        principalColumn: "Id_Incidente",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Incidente_Pieza",
+                columns: table => new
+                {
+                    Id_Pieza = table.Column<int>(type: "integer", nullable: false),
+                    Id_Incidente = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Incidente_Pieza", x => new { x.Id_Pieza, x.Id_Incidente });
+                    table.ForeignKey(
+                        name: "FK_Incidente_Pieza_Incidentes_Id_Incidente",
+                        column: x => x.Id_Incidente,
+                        principalTable: "Incidentes",
+                        principalColumn: "Id_Incidente",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Incidente_Pieza_Piezas_Id_Pieza",
+                        column: x => x.Id_Pieza,
+                        principalTable: "Piezas",
+                        principalColumn: "Id_Pieza",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Administrador_Cotizacion",
+                columns: table => new
+                {
+                    Id_Administrador = table.Column<int>(type: "integer", nullable: false),
+                    Id_Cotizacion = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Administrador_Cotizacion", x => new { x.Id_Administrador, x.Id_Cotizacion });
+                    table.ForeignKey(
+                        name: "FK_Administrador_Cotizacion_Administradors_Id_Administrador",
+                        column: x => x.Id_Administrador,
+                        principalTable: "Administradors",
+                        principalColumn: "Id_Administrador",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Administrador_Cotizacion_Cotizacions_Id_Cotizacion",
+                        column: x => x.Id_Cotizacion,
+                        principalTable: "Cotizacions",
+                        principalColumn: "Id_Cotizacion",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Cotizacion_Proveedor",
+                columns: table => new
+                {
+                    Id_Cotizacion = table.Column<int>(type: "integer", nullable: false),
+                    Id_Proveedor = table.Column<int>(type: "integer", nullable: false),
+                    estatus = table.Column<string>(type: "text", nullable: true),
+                    Id_Pieza_Pieza_Proveedor = table.Column<int>(type: "integer", nullable: false),
+                    Id_Proveedor_Pieza_Proveedor = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Cotizacion_Proveedor", x => new { x.Id_Cotizacion, x.Id_Proveedor });
+                    table.ForeignKey(
+                        name: "FK_Cotizacion_Proveedor_Cotizacions_Id_Cotizacion",
+                        column: x => x.Id_Cotizacion,
+                        principalTable: "Cotizacions",
+                        principalColumn: "Id_Cotizacion",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Cotizacion_Proveedor_Pieza_Proveedor_Id_Pieza_Pieza_Proveed~",
+                        columns: x => new { x.Id_Pieza_Pieza_Proveedor, x.Id_Proveedor_Pieza_Proveedor },
+                        principalTable: "Pieza_Proveedor",
+                        principalColumns: new[] { "Id_Pieza", "Id_proveedor" },
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Cotizacion_Proveedor_Proveedores_Id_Proveedor",
+                        column: x => x.Id_Proveedor,
+                        principalTable: "Proveedores",
+                        principalColumn: "Id_proveedor",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Cotizacion_Taller",
+                columns: table => new
+                {
+                    Id_Cotizacion = table.Column<int>(type: "integer", nullable: false),
+                    Id_Taller = table.Column<int>(type: "integer", nullable: false),
+                    estatus = table.Column<string>(type: "text", nullable: true),
+                    cantidad_piezas_reparar = table.Column<int>(type: "integer", nullable: false),
+                    costo_reparacion = table.Column<double>(type: "double precision", nullable: false),
+                    tiempo_reparacion = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Cotizacion_Taller", x => new { x.Id_Cotizacion, x.Id_Taller });
+                    table.ForeignKey(
+                        name: "FK_Cotizacion_Taller_Cotizacions_Id_Cotizacion",
+                        column: x => x.Id_Cotizacion,
+                        principalTable: "Cotizacions",
+                        principalColumn: "Id_Cotizacion",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Cotizacion_Taller_Tallers_Id_Taller",
+                        column: x => x.Id_Taller,
+                        principalTable: "Tallers",
+                        principalColumn: "Id_Taller",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Pedidos",
                 columns: table => new
                 {
@@ -438,37 +469,6 @@ namespace ProyectoDesarrolloSoftware.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "Incidente_Pieza",
-                columns: table => new
-                {
-                    Id_Pieza = table.Column<int>(type: "integer", nullable: false),
-                    Id_Incidente = table.Column<int>(type: "integer", nullable: false),
-                    fk_cotizacion = table.Column<int>(type: "integer", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Incidente_Pieza", x => new { x.Id_Pieza, x.Id_Incidente });
-                    table.ForeignKey(
-                        name: "FK_Incidente_Pieza_Cotizacions_fk_cotizacion",
-                        column: x => x.fk_cotizacion,
-                        principalTable: "Cotizacions",
-                        principalColumn: "Id_Cotizacion",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Incidente_Pieza_Incidentes_Id_Incidente",
-                        column: x => x.Id_Incidente,
-                        principalTable: "Incidentes",
-                        principalColumn: "Id_Incidente",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Incidente_Pieza_Piezas_Id_Pieza",
-                        column: x => x.Id_Pieza,
-                        principalTable: "Piezas",
-                        principalColumn: "Id_Pieza",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
             migrationBuilder.CreateIndex(
                 name: "IX_Administrador_Cotizacion_Id_Cotizacion",
                 table: "Administrador_Cotizacion",
@@ -490,9 +490,9 @@ namespace ProyectoDesarrolloSoftware.Migrations
                 column: "Id_Taller");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Incidente_Pieza_fk_cotizacion",
-                table: "Incidente_Pieza",
-                column: "fk_cotizacion");
+                name: "IX_Cotizacions_fk_incidente",
+                table: "Cotizacions",
+                column: "fk_incidente");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Incidente_Pieza_Id_Incidente",
@@ -594,19 +594,10 @@ namespace ProyectoDesarrolloSoftware.Migrations
                 name: "Administradors");
 
             migrationBuilder.DropTable(
-                name: "Incidentes");
-
-            migrationBuilder.DropTable(
                 name: "Cotizacion_Proveedor");
 
             migrationBuilder.DropTable(
                 name: "Cotizacion_Taller");
-
-            migrationBuilder.DropTable(
-                name: "Peritos");
-
-            migrationBuilder.DropTable(
-                name: "Polizas");
 
             migrationBuilder.DropTable(
                 name: "Pieza_Proveedor");
@@ -618,22 +609,31 @@ namespace ProyectoDesarrolloSoftware.Migrations
                 name: "Tallers");
 
             migrationBuilder.DropTable(
-                name: "Asegurados");
-
-            migrationBuilder.DropTable(
-                name: "Vehiculos");
-
-            migrationBuilder.DropTable(
                 name: "Piezas");
 
             migrationBuilder.DropTable(
                 name: "Proveedores");
 
             migrationBuilder.DropTable(
-                name: "Marcas");
+                name: "Incidentes");
 
             migrationBuilder.DropTable(
                 name: "Lugares");
+
+            migrationBuilder.DropTable(
+                name: "Peritos");
+
+            migrationBuilder.DropTable(
+                name: "Polizas");
+
+            migrationBuilder.DropTable(
+                name: "Asegurados");
+
+            migrationBuilder.DropTable(
+                name: "Vehiculos");
+
+            migrationBuilder.DropTable(
+                name: "Marcas");
         }
     }
 }

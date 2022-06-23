@@ -15,17 +15,13 @@ namespace ProyectoDesarrolloSoftware.Entidades
         [Key, Column(Order = 2)]
         public int Id_Incidente { get; set; }
 
-        public int fk_cotizacion { get; set; }
-
         [ForeignKey("Id_Pieza")]
         public Pieza Pieza { get; set; }
 
         [ForeignKey("Id_Incidente")]
         public Incidente Incidente { get; set; }
 
-        [ForeignKey("fk_cotizacion")]
-        public Cotizacion cotizacion { get; set; }
-
+     
 
 
     }

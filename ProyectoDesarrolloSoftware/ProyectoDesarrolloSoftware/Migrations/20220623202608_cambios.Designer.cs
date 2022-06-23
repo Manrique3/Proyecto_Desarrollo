@@ -10,7 +10,7 @@ using ProyectoDesarrolloSoftware.DataBase;
 namespace ProyectoDesarrolloSoftware.Migrations
 {
     [DbContext(typeof(DSDBContext))]
-    [Migration("20220623200017_cambios")]
+    [Migration("20220623202608_cambios")]
     partial class cambios
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -90,7 +90,12 @@ namespace ProyectoDesarrolloSoftware.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
+                    b.Property<int>("fk_incidente")
+                        .HasColumnType("integer");
+
                     b.HasKey("Id_Cotizacion");
+
+                    b.HasIndex("fk_incidente");
 
                     b.ToTable("Cotizacions");
                 });
@@ -186,14 +191,9 @@ namespace ProyectoDesarrolloSoftware.Migrations
                     b.Property<int>("Id_Incidente")
                         .HasColumnType("integer");
 
-                    b.Property<int>("fk_cotizacion")
-                        .HasColumnType("integer");
-
                     b.HasKey("Id_Pieza", "Id_Incidente");
 
                     b.HasIndex("Id_Incidente");
-
-                    b.HasIndex("fk_cotizacion");
 
                     b.ToTable("Incidente_Pieza");
                 });
@@ -493,6 +493,17 @@ namespace ProyectoDesarrolloSoftware.Migrations
                     b.Navigation("Cotizacion");
                 });
 
+            modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Cotizacion", b =>
+                {
+                    b.HasOne("ProyectoDesarrolloSoftware.Entidades.Incidente", "Incidente")
+                        .WithMany()
+                        .HasForeignKey("fk_incidente")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Incidente");
+                });
+
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Cotizacion_Proveedor", b =>
                 {
                     b.HasOne("ProyectoDesarrolloSoftware.Entidades.Cotizacion", "Cotizacion")
@@ -571,14 +582,6 @@ namespace ProyectoDesarrolloSoftware.Migrations
                         .HasForeignKey("Id_Pieza")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("ProyectoDesarrolloSoftware.Entidades.Cotizacion", "cotizacion")
-                        .WithMany()
-                        .HasForeignKey("fk_cotizacion")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("cotizacion");
 
                     b.Navigation("Incidente");
 

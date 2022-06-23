@@ -12,7 +12,9 @@ namespace ProyectoDesarrolloSoftware.Entidades
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id_Cotizacion { get; set; }
-        
+        public int fk_incidente { get; set; }
+        [ForeignKey("fk_incidente")]
+        public Incidente Incidente { get; set; }
 
 
     }
