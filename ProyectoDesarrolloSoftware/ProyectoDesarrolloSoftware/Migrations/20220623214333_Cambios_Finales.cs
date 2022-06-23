@@ -257,17 +257,17 @@ namespace ProyectoDesarrolloSoftware.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Tipo = table.Column<string>(type: "text", nullable: false),
                     fk_vehiculo = table.Column<int>(type: "integer", nullable: false),
-                    AseguradoCedula = table.Column<int>(type: "integer", nullable: true)
+                    fk_asegurado = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Polizas", x => x.Id_Poliza);
                     table.ForeignKey(
-                        name: "FK_Polizas_Asegurados_AseguradoCedula",
-                        column: x => x.AseguradoCedula,
+                        name: "FK_Polizas_Asegurados_fk_asegurado",
+                        column: x => x.fk_asegurado,
                         principalTable: "Asegurados",
                         principalColumn: "Cedula",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Polizas_Vehiculos_fk_vehiculo",
                         column: x => x.fk_vehiculo,
@@ -284,7 +284,7 @@ namespace ProyectoDesarrolloSoftware.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     estadoEv = table.Column<string>(type: "text", nullable: true),
                     fk_vehiculo_tercero = table.Column<int>(type: "integer", nullable: true),
-                    fk_Poliza = table.Column<int>(type: "integer", nullable: true)
+                    fk_Poliza = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -294,7 +294,7 @@ namespace ProyectoDesarrolloSoftware.Migrations
                         column: x => x.fk_Poliza,
                         principalTable: "Polizas",
                         principalColumn: "Id_Poliza",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Incidentes_Vehiculos_fk_vehiculo_tercero",
                         column: x => x.fk_vehiculo_tercero,
@@ -523,9 +523,9 @@ namespace ProyectoDesarrolloSoftware.Migrations
                 column: "Id_proveedor");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Polizas_AseguradoCedula",
+                name: "IX_Polizas_fk_asegurado",
                 table: "Polizas",
-                column: "AseguradoCedula");
+                column: "fk_asegurado");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Polizas_fk_vehiculo",

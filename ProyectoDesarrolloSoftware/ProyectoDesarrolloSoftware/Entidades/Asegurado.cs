@@ -15,6 +15,7 @@ namespace ProyectoDesarrolloSoftware.Entidades
         public string Nombre { get; set; }
         [Required]
         public string Apellido { get; set; }
-        public virtual ICollection<Poliza> Poliza { get; set; }
+     
+       
     }
 }

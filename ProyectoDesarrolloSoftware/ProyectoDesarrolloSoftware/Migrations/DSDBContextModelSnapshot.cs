@@ -161,7 +161,7 @@ namespace ProyectoDesarrolloSoftware.Migrations
                     b.Property<string>("estadoEv")
                         .HasColumnType("text");
 
-                    b.Property<int?>("fk_Poliza")
+                    b.Property<int>("fk_Poliza")
                         .HasColumnType("integer");
 
                     b.Property<int?>("fk_vehiculo_tercero")
@@ -325,19 +325,19 @@ namespace ProyectoDesarrolloSoftware.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<int?>("AseguradoCedula")
-                        .HasColumnType("integer");
-
                     b.Property<string>("Tipo")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<int>("fk_asegurado")
+                        .HasColumnType("integer");
 
                     b.Property<int>("fk_vehiculo")
                         .HasColumnType("integer");
 
                     b.HasKey("Id_Poliza");
 
-                    b.HasIndex("AseguradoCedula");
+                    b.HasIndex("fk_asegurado");
 
                     b.HasIndex("fk_vehiculo");
 
@@ -547,7 +547,9 @@ namespace ProyectoDesarrolloSoftware.Migrations
                 {
                     b.HasOne("ProyectoDesarrolloSoftware.Entidades.Poliza", "Poliza")
                         .WithMany()
-                        .HasForeignKey("fk_Poliza");
+                        .HasForeignKey("fk_Poliza")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("ProyectoDesarrolloSoftware.Entidades.Vehiculo", "Vehiculo")
                         .WithMany()
@@ -620,15 +622,19 @@ namespace ProyectoDesarrolloSoftware.Migrations
 
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Poliza", b =>
                 {
-                    b.HasOne("ProyectoDesarrolloSoftware.Entidades.Asegurado", null)
-                        .WithMany("Poliza")
-                        .HasForeignKey("AseguradoCedula");
+                    b.HasOne("ProyectoDesarrolloSoftware.Entidades.Asegurado", "Asegurado")
+                        .WithMany()
+                        .HasForeignKey("fk_asegurado")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("ProyectoDesarrolloSoftware.Entidades.Vehiculo", "Vehiculo")
                         .WithMany()
                         .HasForeignKey("fk_vehiculo")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Asegurado");
 
                     b.Navigation("Vehiculo");
                 });
@@ -702,11 +708,6 @@ namespace ProyectoDesarrolloSoftware.Migrations
                         .IsRequired();
 
                     b.Navigation("Marca");
-                });
-
-            modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Asegurado", b =>
-                {
-                    b.Navigation("Poliza");
                 });
 
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Lugar", b =>

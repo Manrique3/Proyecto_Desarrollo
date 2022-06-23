@@ -18,7 +18,7 @@ namespace ProyectoDesarrolloSoftware.Entidades
         [ForeignKey("fk_vehiculo_tercero")]
         public virtual Vehiculo Vehiculo { get; set; }
 
-        public int? fk_Poliza { get; set; }
+        public int fk_Poliza { get; set; }
         [ForeignKey("fk_Poliza")]
         public virtual Poliza Poliza { get; set; }
 
