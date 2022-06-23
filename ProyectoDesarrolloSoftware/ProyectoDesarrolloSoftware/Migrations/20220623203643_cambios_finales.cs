@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace ProyectoDesarrolloSoftware.Migrations
 {
-    public partial class cambios : Migration
+    public partial class cambios_finales : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -284,18 +284,11 @@ namespace ProyectoDesarrolloSoftware.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     estadoEv = table.Column<string>(type: "text", nullable: true),
                     fk_vehiculo_tercero = table.Column<int>(type: "integer", nullable: false),
-                    PeritoId_Perito = table.Column<int>(type: "integer", nullable: true),
                     PolizaId_Poliza = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Incidentes", x => x.Id_Incidente);
-                    table.ForeignKey(
-                        name: "FK_Incidentes_Peritos_PeritoId_Perito",
-                        column: x => x.PeritoId_Perito,
-                        principalTable: "Peritos",
-                        principalColumn: "Id_Perito",
-                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Incidentes_Polizas_PolizaId_Poliza",
                         column: x => x.PolizaId_Poliza,
@@ -505,11 +498,6 @@ namespace ProyectoDesarrolloSoftware.Migrations
                 column: "fk_vehiculo_tercero");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Incidentes_PeritoId_Perito",
-                table: "Incidentes",
-                column: "PeritoId_Perito");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Incidentes_PolizaId_Poliza",
                 table: "Incidentes",
                 column: "PolizaId_Poliza");
@@ -582,6 +570,9 @@ namespace ProyectoDesarrolloSoftware.Migrations
                 name: "Pedidos");
 
             migrationBuilder.DropTable(
+                name: "Peritos");
+
+            migrationBuilder.DropTable(
                 name: "ProvMarcas");
 
             migrationBuilder.DropTable(
@@ -619,9 +610,6 @@ namespace ProyectoDesarrolloSoftware.Migrations
 
             migrationBuilder.DropTable(
                 name: "Lugares");
-
-            migrationBuilder.DropTable(
-                name: "Peritos");
 
             migrationBuilder.DropTable(
                 name: "Polizas");

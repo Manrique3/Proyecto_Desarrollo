@@ -158,9 +158,6 @@ namespace ProyectoDesarrolloSoftware.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<int?>("PeritoId_Perito")
-                        .HasColumnType("integer");
-
                     b.Property<int?>("PolizaId_Poliza")
                         .HasColumnType("integer");
 
@@ -171,8 +168,6 @@ namespace ProyectoDesarrolloSoftware.Migrations
                         .HasColumnType("integer");
 
                     b.HasKey("Id_Incidente");
-
-                    b.HasIndex("PeritoId_Perito");
 
                     b.HasIndex("PolizaId_Poliza");
 
@@ -550,10 +545,6 @@ namespace ProyectoDesarrolloSoftware.Migrations
 
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Incidente", b =>
                 {
-                    b.HasOne("ProyectoDesarrolloSoftware.Entidades.Perito", null)
-                        .WithMany("Incidentes")
-                        .HasForeignKey("PeritoId_Perito");
-
                     b.HasOne("ProyectoDesarrolloSoftware.Entidades.Poliza", null)
                         .WithMany("Incidentes")
                         .HasForeignKey("PolizaId_Poliza");
@@ -721,11 +712,6 @@ namespace ProyectoDesarrolloSoftware.Migrations
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Lugar", b =>
                 {
                     b.Navigation("fk_lugar");
-                });
-
-            modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Perito", b =>
-                {
-                    b.Navigation("Incidentes");
                 });
 
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Poliza", b =>

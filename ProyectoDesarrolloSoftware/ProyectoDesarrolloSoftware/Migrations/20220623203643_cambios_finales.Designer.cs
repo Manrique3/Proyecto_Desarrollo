@@ -10,8 +10,8 @@ using ProyectoDesarrolloSoftware.DataBase;
 namespace ProyectoDesarrolloSoftware.Migrations
 {
     [DbContext(typeof(DSDBContext))]
-    [Migration("20220623202608_cambios")]
-    partial class cambios
+    [Migration("20220623203643_cambios_finales")]
+    partial class cambios_finales
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -160,9 +160,6 @@ namespace ProyectoDesarrolloSoftware.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<int?>("PeritoId_Perito")
-                        .HasColumnType("integer");
-
                     b.Property<int?>("PolizaId_Poliza")
                         .HasColumnType("integer");
 
@@ -173,8 +170,6 @@ namespace ProyectoDesarrolloSoftware.Migrations
                         .HasColumnType("integer");
 
                     b.HasKey("Id_Incidente");
-
-                    b.HasIndex("PeritoId_Perito");
 
                     b.HasIndex("PolizaId_Poliza");
 
@@ -552,10 +547,6 @@ namespace ProyectoDesarrolloSoftware.Migrations
 
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Incidente", b =>
                 {
-                    b.HasOne("ProyectoDesarrolloSoftware.Entidades.Perito", null)
-                        .WithMany("Incidentes")
-                        .HasForeignKey("PeritoId_Perito");
-
                     b.HasOne("ProyectoDesarrolloSoftware.Entidades.Poliza", null)
                         .WithMany("Incidentes")
                         .HasForeignKey("PolizaId_Poliza");
@@ -723,11 +714,6 @@ namespace ProyectoDesarrolloSoftware.Migrations
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Lugar", b =>
                 {
                     b.Navigation("fk_lugar");
-                });
-
-            modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Perito", b =>
-                {
-                    b.Navigation("Incidentes");
                 });
 
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Poliza", b =>
