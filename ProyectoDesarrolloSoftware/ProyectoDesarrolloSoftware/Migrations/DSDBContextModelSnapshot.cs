@@ -110,7 +110,7 @@ namespace ProyectoDesarrolloSoftware.Migrations
                     b.Property<string>("estatus")
                         .HasColumnType("text");
 
-                    b.HasKey("Id_Cotizacion", "Id_Proveedor", "Id_Pieza_Pieza_Proveedor", "Id_Proveedor_Pieza_Proveedor");
+                    b.HasKey("Id_Cotizacion", "Id_Proveedor");
 
                     b.HasIndex("Id_Proveedor");
 
@@ -176,6 +176,26 @@ namespace ProyectoDesarrolloSoftware.Migrations
                     b.ToTable("Incidentes");
                 });
 
+            modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Incidente_Pieza", b =>
+                {
+                    b.Property<int>("Id_Pieza")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Id_Incidente")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("fk_cotizacion")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id_Pieza", "Id_Incidente");
+
+                    b.HasIndex("Id_Incidente");
+
+                    b.HasIndex("fk_cotizacion");
+
+                    b.ToTable("Incidente_Pieza");
+                });
+
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Lugar", b =>
                 {
                     b.Property<int>("Id_lugar")
@@ -215,6 +235,43 @@ namespace ProyectoDesarrolloSoftware.Migrations
                     b.HasKey("IDMarca");
 
                     b.ToTable("Marcas");
+                });
+
+            modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Pedido", b =>
+                {
+                    b.Property<int>("Id_Pedido")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("estatus")
+                        .HasColumnType("text");
+
+                    b.Property<int?>("fk_cotizacion_prov_cot")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("fk_cotizacion_taller_cot")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("fk_proveedor_prov_cot")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("fk_taller_taller_cot")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("numero_factura")
+                        .HasColumnType("integer");
+
+                    b.Property<double>("pago_total")
+                        .HasColumnType("double precision");
+
+                    b.HasKey("Id_Pedido");
+
+                    b.HasIndex("fk_proveedor_prov_cot", "fk_cotizacion_prov_cot");
+
+                    b.HasIndex("fk_taller_taller_cot", "fk_cotizacion_taller_cot");
+
+                    b.ToTable("Pedidos");
                 });
 
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Perito", b =>
@@ -499,11 +556,53 @@ namespace ProyectoDesarrolloSoftware.Migrations
                     b.Navigation("Vehiculo");
                 });
 
+            modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Incidente_Pieza", b =>
+                {
+                    b.HasOne("ProyectoDesarrolloSoftware.Entidades.Incidente", "Incidente")
+                        .WithMany()
+                        .HasForeignKey("Id_Incidente")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProyectoDesarrolloSoftware.Entidades.Pieza", "Pieza")
+                        .WithMany()
+                        .HasForeignKey("Id_Pieza")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProyectoDesarrolloSoftware.Entidades.Cotizacion", "cotizacion")
+                        .WithMany()
+                        .HasForeignKey("fk_cotizacion")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("cotizacion");
+
+                    b.Navigation("Incidente");
+
+                    b.Navigation("Pieza");
+                });
+
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Lugar", b =>
                 {
                     b.HasOne("ProyectoDesarrolloSoftware.Entidades.Lugar", null)
                         .WithMany("fk_lugar")
                         .HasForeignKey("LugarId_lugar");
+                });
+
+            modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Pedido", b =>
+                {
+                    b.HasOne("ProyectoDesarrolloSoftware.Entidades.Cotizacion_Proveedor", "Cotizacion_Proveedor")
+                        .WithMany()
+                        .HasForeignKey("fk_proveedor_prov_cot", "fk_cotizacion_prov_cot");
+
+                    b.HasOne("ProyectoDesarrolloSoftware.Entidades.Cotizacion_Taller", "Cotizacion_Taller")
+                        .WithMany()
+                        .HasForeignKey("fk_taller_taller_cot", "fk_cotizacion_taller_cot");
+
+                    b.Navigation("Cotizacion_Proveedor");
+
+                    b.Navigation("Cotizacion_Taller");
                 });
 
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Pieza_Proveedor", b =>

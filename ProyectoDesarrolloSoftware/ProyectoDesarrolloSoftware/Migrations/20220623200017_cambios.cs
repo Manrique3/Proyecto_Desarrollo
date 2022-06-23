@@ -346,13 +346,13 @@ namespace ProyectoDesarrolloSoftware.Migrations
                 {
                     Id_Cotizacion = table.Column<int>(type: "integer", nullable: false),
                     Id_Proveedor = table.Column<int>(type: "integer", nullable: false),
+                    estatus = table.Column<string>(type: "text", nullable: true),
                     Id_Pieza_Pieza_Proveedor = table.Column<int>(type: "integer", nullable: false),
-                    Id_Proveedor_Pieza_Proveedor = table.Column<int>(type: "integer", nullable: false),
-                    estatus = table.Column<string>(type: "text", nullable: true)
+                    Id_Proveedor_Pieza_Proveedor = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Cotizacion_Proveedor", x => new { x.Id_Cotizacion, x.Id_Proveedor, x.Id_Pieza_Pieza_Proveedor, x.Id_Proveedor_Pieza_Proveedor });
+                    table.PrimaryKey("PK_Cotizacion_Proveedor", x => new { x.Id_Cotizacion, x.Id_Proveedor });
                     table.ForeignKey(
                         name: "FK_Cotizacion_Proveedor_Cotizacions_Id_Cotizacion",
                         column: x => x.Id_Cotizacion,
@@ -407,6 +407,68 @@ namespace ProyectoDesarrolloSoftware.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Pedidos",
+                columns: table => new
+                {
+                    Id_Pedido = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    estatus = table.Column<string>(type: "text", nullable: true),
+                    pago_total = table.Column<double>(type: "double precision", nullable: false),
+                    numero_factura = table.Column<int>(type: "integer", nullable: false),
+                    fk_proveedor_prov_cot = table.Column<int>(type: "integer", nullable: true),
+                    fk_cotizacion_prov_cot = table.Column<int>(type: "integer", nullable: true),
+                    fk_taller_taller_cot = table.Column<int>(type: "integer", nullable: true),
+                    fk_cotizacion_taller_cot = table.Column<int>(type: "integer", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Pedidos", x => x.Id_Pedido);
+                    table.ForeignKey(
+                        name: "FK_Pedidos_Cotizacion_Proveedor_fk_proveedor_prov_cot_fk_cotiz~",
+                        columns: x => new { x.fk_proveedor_prov_cot, x.fk_cotizacion_prov_cot },
+                        principalTable: "Cotizacion_Proveedor",
+                        principalColumns: new[] { "Id_Cotizacion", "Id_Proveedor" },
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Pedidos_Cotizacion_Taller_fk_taller_taller_cot_fk_cotizacio~",
+                        columns: x => new { x.fk_taller_taller_cot, x.fk_cotizacion_taller_cot },
+                        principalTable: "Cotizacion_Taller",
+                        principalColumns: new[] { "Id_Cotizacion", "Id_Taller" },
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Incidente_Pieza",
+                columns: table => new
+                {
+                    Id_Pieza = table.Column<int>(type: "integer", nullable: false),
+                    Id_Incidente = table.Column<int>(type: "integer", nullable: false),
+                    fk_cotizacion = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Incidente_Pieza", x => new { x.Id_Pieza, x.Id_Incidente });
+                    table.ForeignKey(
+                        name: "FK_Incidente_Pieza_Cotizacions_fk_cotizacion",
+                        column: x => x.fk_cotizacion,
+                        principalTable: "Cotizacions",
+                        principalColumn: "Id_Cotizacion",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Incidente_Pieza_Incidentes_Id_Incidente",
+                        column: x => x.Id_Incidente,
+                        principalTable: "Incidentes",
+                        principalColumn: "Id_Incidente",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Incidente_Pieza_Piezas_Id_Pieza",
+                        column: x => x.Id_Pieza,
+                        principalTable: "Piezas",
+                        principalColumn: "Id_Pieza",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Administrador_Cotizacion_Id_Cotizacion",
                 table: "Administrador_Cotizacion",
@@ -428,6 +490,16 @@ namespace ProyectoDesarrolloSoftware.Migrations
                 column: "Id_Taller");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Incidente_Pieza_fk_cotizacion",
+                table: "Incidente_Pieza",
+                column: "fk_cotizacion");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Incidente_Pieza_Id_Incidente",
+                table: "Incidente_Pieza",
+                column: "Id_Incidente");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Incidentes_fk_vehiculo_tercero",
                 table: "Incidentes",
                 column: "fk_vehiculo_tercero");
@@ -446,6 +518,16 @@ namespace ProyectoDesarrolloSoftware.Migrations
                 name: "IX_Lugares_LugarId_lugar",
                 table: "Lugares",
                 column: "LugarId_lugar");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Pedidos_fk_proveedor_prov_cot_fk_cotizacion_prov_cot",
+                table: "Pedidos",
+                columns: new[] { "fk_proveedor_prov_cot", "fk_cotizacion_prov_cot" });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Pedidos_fk_taller_taller_cot_fk_cotizacion_taller_cot",
+                table: "Pedidos",
+                columns: new[] { "fk_taller_taller_cot", "fk_cotizacion_taller_cot" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Pieza_Proveedor_Id_proveedor",
@@ -494,13 +576,10 @@ namespace ProyectoDesarrolloSoftware.Migrations
                 name: "Administrador_Cotizacion");
 
             migrationBuilder.DropTable(
-                name: "Cotizacion_Proveedor");
+                name: "Incidente_Pieza");
 
             migrationBuilder.DropTable(
-                name: "Cotizacion_Taller");
-
-            migrationBuilder.DropTable(
-                name: "Incidentes");
+                name: "Pedidos");
 
             migrationBuilder.DropTable(
                 name: "ProvMarcas");
@@ -515,10 +594,13 @@ namespace ProyectoDesarrolloSoftware.Migrations
                 name: "Administradors");
 
             migrationBuilder.DropTable(
-                name: "Pieza_Proveedor");
+                name: "Incidentes");
 
             migrationBuilder.DropTable(
-                name: "Cotizacions");
+                name: "Cotizacion_Proveedor");
+
+            migrationBuilder.DropTable(
+                name: "Cotizacion_Taller");
 
             migrationBuilder.DropTable(
                 name: "Peritos");
@@ -527,13 +609,13 @@ namespace ProyectoDesarrolloSoftware.Migrations
                 name: "Polizas");
 
             migrationBuilder.DropTable(
+                name: "Pieza_Proveedor");
+
+            migrationBuilder.DropTable(
+                name: "Cotizacions");
+
+            migrationBuilder.DropTable(
                 name: "Tallers");
-
-            migrationBuilder.DropTable(
-                name: "Piezas");
-
-            migrationBuilder.DropTable(
-                name: "Proveedores");
 
             migrationBuilder.DropTable(
                 name: "Asegurados");
@@ -542,10 +624,16 @@ namespace ProyectoDesarrolloSoftware.Migrations
                 name: "Vehiculos");
 
             migrationBuilder.DropTable(
-                name: "Lugares");
+                name: "Piezas");
+
+            migrationBuilder.DropTable(
+                name: "Proveedores");
 
             migrationBuilder.DropTable(
                 name: "Marcas");
+
+            migrationBuilder.DropTable(
+                name: "Lugares");
         }
     }
 }

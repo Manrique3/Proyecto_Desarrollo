@@ -32,6 +32,7 @@ namespace ProyectoDesarrolloSoftware.DataBase
   
         public DbSet<Cotizacion_Proveedor> Cotizacion_Proveedor { get; set; }
         public DbSet<Cotizacion_Taller> Cotizacion_Taller { get; set; }
+        public DbSet<Pedido> Pedidos { get; set; }
 
 
 
@@ -52,10 +53,13 @@ namespace ProyectoDesarrolloSoftware.DataBase
                 .HasKey(ac => new { ac.Id_Administrador, ac.Id_Cotizacion });
 
             modelBuilder.Entity<Cotizacion_Proveedor>()
-                .HasKey(cpe => new { cpe.Id_Cotizacion, cpe.Id_Proveedor, cpe.Id_Pieza_Pieza_Proveedor, cpe.Id_Proveedor_Pieza_Proveedor });
+                .HasKey(cpe => new { cpe.Id_Cotizacion, cpe.Id_Proveedor });
 
             modelBuilder.Entity<Cotizacion_Taller>()
                 .HasKey(CT => new { CT.Id_Cotizacion, CT.Id_Taller });
+
+            modelBuilder.Entity<Incidente_Pieza>()
+                .HasKey(InPi => new { InPi.Id_Pieza, InPi.Id_Incidente });
 
 
 

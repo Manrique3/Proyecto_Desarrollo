@@ -19,10 +19,10 @@ namespace ProyectoDesarrolloSoftware.Entidades
         [RegularExpression(@"Pendiente|Declinado|Cotizado|Con Orden de Compra|Facturado")]
         public string estatus { get; set; }
 
-        [Key, Column(Order = 4)]
+        [Column(Order = 4)]
         public int Id_Pieza_Pieza_Proveedor { get; set; }
 
-        [Key, Column(Order = 5)]
+        [Column(Order = 5)]
         public int Id_Proveedor_Pieza_Proveedor { get; set; }
 
         [ForeignKey("Id_Cotizacion")]
@@ -33,10 +33,6 @@ namespace ProyectoDesarrolloSoftware.Entidades
 
         [ForeignKey("Id_Pieza_Pieza_Proveedor,Id_Proveedor_Pieza_Proveedor")]
         public Pieza_Proveedor Pieza_Proveedor { get; set; }
-
-
-
-
 
     }
 }
