@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using ProyectoDesarrolloSoftware.DataBase;
+using ProyectoDesarrolloSoftware.DataBase.DAOs.Implementations;
 
 namespace ProyectoDesarrolloSoftware
 {
@@ -30,6 +31,10 @@ namespace ProyectoDesarrolloSoftware
         {
 
             services.AddControllers();
+
+            services.AddSingleton<IMarca, MockMarcaData>();
+
+
             services.AddDbContext<DSDBContext>(options =>
               options.UseNpgsql(Configuration["DBConnectionString"], x => x.UseNetTopologySuite()));
             services.AddSwaggerGen(c =>
