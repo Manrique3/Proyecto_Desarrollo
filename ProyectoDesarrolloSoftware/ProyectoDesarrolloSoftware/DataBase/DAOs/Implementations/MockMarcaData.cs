@@ -12,26 +12,27 @@ namespace ProyectoDesarrolloSoftware.DataBase.DAOs.Implementations
         {
             new MarcaDTO()
             {
-                Id = 1,
+                Id =1,
                 Name = "TOYOTA"
             },
 
             new MarcaDTO()
             {
-                Id = 2,
+                Id =2,
                 Name = "HONDA"
             },
             new MarcaDTO()
             {
-                Id = 2,
+                Id =3,
                 Name = "MITSUBISHI"
             }
 
         };
 
         public MarcaDTO AddMarca(MarcaDTO marca)
-        {
-            throw new NotImplementedException();
+        {            
+            marcas.Add(marca);
+            return marca;
         }
 
         public void DeleteMarca(MarcaDTO marca)
@@ -44,9 +45,9 @@ namespace ProyectoDesarrolloSoftware.DataBase.DAOs.Implementations
             throw new NotImplementedException();
         }
 
-        public MarcaDTO GetMarca(int Id)
+        public MarcaDTO GetMarca(int id)
         {
-            throw new NotImplementedException();
+            return marcas.SingleOrDefault(x => x.Id == id);
         }
 
         public List<MarcaDTO> GetMarcas()
