@@ -13,6 +13,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using ProyectoDesarrolloSoftware.DataBase;
+using ProyectoDesarrolloSoftware.Exceptions;
+using ProyectoDesarrolloSoftware.AccesoDatos.DAOs;
+using ProyectoDesarrolloSoftware.Controllers;
 
 namespace ProyectoDesarrolloSoftware
 {
@@ -28,10 +31,11 @@ namespace ProyectoDesarrolloSoftware
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
             services.AddDbContext<DSDBContext>(options =>
-              options.UseNpgsql(Configuration["DBConnectionString"], x => x.UseNetTopologySuite()));
+            options.UseNpgsql(Configuration["DBConnectionString"], x => x.UseNetTopologySuite()));
+            services.AddTransient<DSDBContext>();
+            services.AddTransient<IPiezasDAO,PiezasDAO>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ProyectoDesarrolloSoftware", Version = "v1" });
