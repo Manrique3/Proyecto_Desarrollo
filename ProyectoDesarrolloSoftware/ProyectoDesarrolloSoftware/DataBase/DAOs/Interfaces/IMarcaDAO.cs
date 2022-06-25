@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoDesarrolloSoftware.DataBase
 {
-    public interface IMarca
+    public interface IMarcaDAO
     {
         List<MarcaDTO> GetMarcas();
 

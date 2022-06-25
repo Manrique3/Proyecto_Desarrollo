@@ -13,8 +13,8 @@ namespace ProyectoDesarrolloSoftware.Controllers
     [ApiController]
     public class ControladorMarca : ControllerBase
     {
-        private IMarca _marca;
-        public ControladorMarca(IMarca marca)
+        private IMarcaDAO _marca;
+        public ControladorMarca(IMarcaDAO marca)
         {
             _marca = marca;
 
@@ -51,6 +51,40 @@ namespace ProyectoDesarrolloSoftware.Controllers
             return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + "/" + marca.Id, marca);
 
         }
+        [HttpDelete]
+        [Route("api/[controller]/{id}")] // Ruta en la que se muestra una marca dependiendo de id
+        public IActionResult DeleteMarca(int id)
+        {
+            var marca = _marca.GetMarca(id);
+
+            if (marca != null)
+            {
+                _marca.DeleteMarca(marca);
+                return Ok("Se eliminó la marca");
+            }
+
+            return NotFound($"error al buscar la marca con el id: {id} ");
+
+
+        }
+
+        [HttpPatch]
+        [Route("api/[controller]/{id}")] // Ruta en la que se muestra una marca dependiendo de id
+        public IActionResult EditMarca(int id, MarcaDTO marca)
+        {
+            var ExisteMarca = _marca.GetMarca(id);
+
+            if (ExisteMarca != null)
+            {
+                marca.Id = ExisteMarca.Id;
+                _marca.EditMarca(marca);
+               
+            }
+
+            return Ok("Se cambio la marca a: " + marca);
+
+        }
+
 
 
 

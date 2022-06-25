@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoDesarrolloSoftware.DataBase.DAOs.Implementations
 {
-    public class MockMarcaData : IMarca
+    public class MockMarcaData : IMarcaDAO
     {
         private List<MarcaDTO> marcas = new List<MarcaDTO>()
         {
@@ -37,12 +37,14 @@ namespace ProyectoDesarrolloSoftware.DataBase.DAOs.Implementations
 
         public void DeleteMarca(MarcaDTO marca)
         {
-            throw new NotImplementedException();
+            marcas.Remove(marca);
         }
 
         public MarcaDTO EditMarca(MarcaDTO marca)
         {
-            throw new NotImplementedException();
+            var ExisteMarca = GetMarca(marca.Id);
+            ExisteMarca.Name = marca.Name;
+            return ExisteMarca;
         }
 
         public MarcaDTO GetMarca(int id)

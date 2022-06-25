@@ -14,6 +14,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using ProyectoDesarrolloSoftware.DataBase;
 using ProyectoDesarrolloSoftware.DataBase.DAOs.Implementations;
+using ProyectoDesarrolloSoftware.DataBase.DAOs.Mocks;
 
 namespace ProyectoDesarrolloSoftware
 {
@@ -32,8 +33,9 @@ namespace ProyectoDesarrolloSoftware
 
             services.AddControllers();
 
-            services.AddSingleton<IMarca, MockMarcaData>();
+            services.AddSingleton<IMarcaDAO, MockMarcaData>(); //Realizacion del Mock de Data.
 
+            services.AddScoped<IMarcaDAO,MarcaDataDAO>();
 
             services.AddDbContext<DSDBContext>(options =>
               options.UseNpgsql(Configuration["DBConnectionString"], x => x.UseNetTopologySuite()));
