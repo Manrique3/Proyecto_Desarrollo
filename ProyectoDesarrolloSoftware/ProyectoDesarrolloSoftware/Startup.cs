@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using ProyectoDesarrolloSoftware.AccesoDatos.DAOs;
 using ProyectoDesarrolloSoftware.DataBase;
 using ProyectoDesarrolloSoftware.Exceptions;
 using ProyectoDesarrolloSoftware.AccesoDatos.DAOs;
@@ -35,6 +36,7 @@ namespace ProyectoDesarrolloSoftware
             services.AddControllers();
 
             services.AddDbContext<DSDBContext>(options =>
+<<<<<<< HEAD
             options.UseNpgsql(Configuration["DBConnectionString"], x => x.UseNetTopologySuite()));
             services.AddTransient<DSDBContext>();
             services.AddTransient<IPiezasDAO,PiezasDAO>();
@@ -42,6 +44,13 @@ namespace ProyectoDesarrolloSoftware
            // services.AddSingleton<IMarcaDAO, MockMarcaData>(); //Realizacion del Mock de Data. //Error al hacer simulación de los objetos en DTOs
 
             services.AddScoped<IMarcaDAO, MarcaDAO>();
+=======
+              options.UseNpgsql(Configuration["DBConnectionString"], x => x.UseNetTopologySuite()));
+            
+            services.AddTransient<DSDBContext>();
+            services.AddTransient<AseguradoDAO>();
+
+>>>>>>> Desarrollando
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ProyectoDesarrolloSoftware", Version = "v1" });
