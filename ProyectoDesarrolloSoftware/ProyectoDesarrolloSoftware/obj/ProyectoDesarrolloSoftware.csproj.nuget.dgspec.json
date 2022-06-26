@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj": {}
+    "C:\\Users\\Hernani\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj": {
+    "C:\\Users\\Hernani\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
+        "projectUniqueName": "C:\\Users\\Hernani\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
         "projectName": "ProyectoDesarrolloSoftware",
-        "projectPath": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
+        "projectPath": "C:\\Users\\Hernani\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
         "packagesPath": "C:\\Users\\Hernani\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\obj\\",
+        "outputPath": "C:\\Users\\Hernani\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Hernani\\AppData\\Roaming\\NuGet\\NuGet.Config",

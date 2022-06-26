@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PX5OoTyWPqicUeNkURM1+5vUY9RjzF/HItFrN6+u36h8B25+jCh6/cvhUqe/3kTNHeokp8qilwJTWDpRRYPTSg==",
+  "dgSpecHash": "ONUBvjpklePlQUGH7sJICQGDsX7FIoQhvESp/fOPsVwmUpL2JIuGG8Gr02SXf5cuTEleVYjC16ZV/xJOmqqp4A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\ProyectoDesarrollo.Test\\ProyectoDesarrollo.Test.csproj",
+  "projectFilePath": "C:\\Users\\Hernani\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrollo.Test\\ProyectoDesarrollo.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hernani\\.nuget\\packages\\bogus\\34.0.2\\bogus.34.0.2.nupkg.sha512",
     "C:\\Users\\Hernani\\.nuget\\packages\\castle.core\\5.0.0\\castle.core.5.0.0.nupkg.sha512",
