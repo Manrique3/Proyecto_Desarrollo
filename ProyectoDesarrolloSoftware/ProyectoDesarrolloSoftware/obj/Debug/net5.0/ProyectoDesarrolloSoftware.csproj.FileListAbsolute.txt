@@ -1783,3 +1783,4 @@ C:\Users\aleja\Desktop\PROYECTO DE BISMARK\ProyectoDesarrolloSoftware\ProyectoDe
 C:\Users\aleja\Desktop\PROYECTO DE BISMARK\ProyectoDesarrolloSoftware\ProyectoDesarrolloSoftware\obj\Debug\net5.0\ProyectoDesarrolloSoftware.genruntimeconfig.cache
 C:\Users\aleja\Desktop\PROYECTO DE BISMARK\ProyectoDesarrolloSoftware\ProyectoDesarrolloSoftware\obj\Debug\net5.0\ref\ProyectoDesarrolloSoftware.dll
 C:\Users\aleja\Desktop\PROYECTO DE BISMARK\ProyectoDesarrolloSoftware\ProyectoDesarrolloSoftware\bin\Debug\net5.0\nunit.framework.dll
+C:\Users\User\Desktop\Proyecto_Desarrollo\ProyectoDesarrolloSoftware\ProyectoDesarrolloSoftware\bin\Debug\net5.0\nunit.framework.dll

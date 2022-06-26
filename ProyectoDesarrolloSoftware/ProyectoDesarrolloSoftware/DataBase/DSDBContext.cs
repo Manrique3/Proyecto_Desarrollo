@@ -11,7 +11,7 @@ namespace ProyectoDesarrolloSoftware.DataBase
         {
         }
 
-
+        DbContext DbContext { get; }
         public DbSet<Vehiculo> Vehiculos { get; set; }
         public DbSet<Marca> Marcas { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
@@ -29,7 +29,7 @@ namespace ProyectoDesarrolloSoftware.DataBase
         public DbSet<Cotizacion> Cotizacions { get; set; } //Entidad de Cotizacion
         public DbSet<Pieza_Proveedor> Pieza_Proveedor { get; set; }
         public DbSet<Administrador_Cotizacion> Administrador_Cotizacion { get; set; }
-
+  
         public DbSet<Cotizacion_Proveedor> Cotizacion_Proveedor { get; set; }
         public DbSet<Cotizacion_Taller> Cotizacion_Taller { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }
@@ -39,7 +39,7 @@ namespace ProyectoDesarrolloSoftware.DataBase
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
+            
             modelBuilder.Entity<Proveedor_Marca>()
                 .HasKey(c => new { c.IDMarca, c.Id_proveedor });
 

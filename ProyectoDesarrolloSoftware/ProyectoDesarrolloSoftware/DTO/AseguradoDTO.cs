@@ -1,4 +1,7 @@
-﻿namespace ProyectoDesarrolloSoftware.DTO
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+
+namespace ProyectoDesarrolloSoftware.DTO
 {
     public class AseguradoDTO
     {
