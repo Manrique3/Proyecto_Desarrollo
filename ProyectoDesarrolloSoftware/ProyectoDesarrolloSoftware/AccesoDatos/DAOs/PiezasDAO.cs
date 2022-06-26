@@ -70,6 +70,8 @@ namespace ProyectoDesarrolloSoftware.AccesoDatos.DAOs
             _context.Piezas.Remove(ItemToRemove);
             _context.SaveChanges();
             return Task.CompletedTask;
+
+
         }
 
         public Task update(PiezaDTO piezaDTO, int Id_Pieza)

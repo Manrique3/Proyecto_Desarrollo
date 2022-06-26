@@ -39,7 +39,7 @@ namespace ProyectoDesarrolloSoftware
             services.AddTransient<DSDBContext>();
             services.AddTransient<IPiezasDAO,PiezasDAO>();
 
-            services.AddSingleton<IMarcaDAO, MockMarcaData>(); //Realizacion del Mock de Data.
+           // services.AddSingleton<IMarcaDAO, MockMarcaData>(); //Realizacion del Mock de Data. //Error al hacer simulación de los objetos en DTOs
 
             services.AddScoped<IMarcaDAO, MarcaDAO>();
             services.AddSwaggerGen(c =>

@@ -12,11 +12,11 @@ namespace ProyectoDesarrolloSoftware.DataBase
 
         MarcaDTO GetMarca(int Id);
 
-        MarcaDTO AddMarca(MarcaDTO marca);
+        public Task AddMarca(MarcaDTO marca);
 
-        void DeleteMarca(MarcaDTO marca);
+        public Task DeleteMarca(int Id_Marca); // Se eliminar por ID y no por objeto de Marca
 
-        MarcaDTO EditMarca(MarcaDTO marca);
+        public Task EditMarca(MarcaDTO marca, int id_marca);
 
 
     }

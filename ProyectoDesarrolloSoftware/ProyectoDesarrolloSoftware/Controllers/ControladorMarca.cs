@@ -48,19 +48,19 @@ namespace ProyectoDesarrolloSoftware.Controllers
         public IActionResult GetMarca(MarcaDTO marca)
         {
              _marca.AddMarca(marca);
-
-            return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + "/" + marca.IDMarca, marca);
+            return Ok();
+            //return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + "/" + marca.IDMarca, marca);
 
         }
         [HttpDelete]
         [Route("api/[controller]/{id}")] // Ruta en la que se muestra una marca dependiendo de id
-        public IActionResult DeleteMarca(int id)
+        public IActionResult DeleteMarca(int id) // Se eliminar por ID y no por Objeto de Marca.
         {
             var marca = _marca.GetMarca(id);
 
             if (marca != null)
             {
-                _marca.DeleteMarca(marca);
+                _marca.DeleteMarca(id);
                 return Ok("Se eliminó la marca");
             }
 
@@ -71,15 +71,16 @@ namespace ProyectoDesarrolloSoftware.Controllers
 
         [HttpPatch]
         [Route("api/[controller]/{id}")] // Ruta en la que se muestra una marca dependiendo de id
-        public IActionResult EditMarca(int id, MarcaDTO marca)
+        public IActionResult EditMarca(MarcaDTO marca, int id)
         {
             var ExisteMarca = _marca.GetMarca(id);
 
             if (ExisteMarca != null)
             {
                 marca.IDMarca = ExisteMarca.IDMarca;
-                _marca.EditMarca(marca);
-               
+                _marca.EditMarca(marca, id);
+                
+
             }
 
             return Ok("Se cambio la marca a: " + marca);

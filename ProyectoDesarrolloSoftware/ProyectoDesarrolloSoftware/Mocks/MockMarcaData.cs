@@ -1,4 +1,4 @@
-﻿using ProyectoDesarrolloSoftware.DTO;
+﻿/*using ProyectoDesarrolloSoftware.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,9 +35,10 @@ namespace ProyectoDesarrolloSoftware.DataBase.DAOs.Implementations
             return marca;
         }
 
-        public void DeleteMarca(MarcaDTO marca)
+        public Task DeleteMarca(int id_marca)
         {
-            marcas.Remove(marca);
+            marcas.Remove(id_marca);
+            return Task.CompletedTask;
         }
 
         public MarcaDTO EditMarca(MarcaDTO marca)
@@ -57,4 +58,4 @@ namespace ProyectoDesarrolloSoftware.DataBase.DAOs.Implementations
             return marcas;
         }
     }
-}
+}*/
