@@ -4,7 +4,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace ProyectoDesarrolloSoftware.Migrations
 {
+<<<<<<<< HEAD:ProyectoDesarrolloSoftware/ProyectoDesarrolloSoftware/Migrations/20220626204805_primera.cs
     public partial class primera : Migration
+========
+    public partial class Cambios_Finales : Migration
+>>>>>>>> f24a8612ab587b7e41f03480b54656686c73f08f:ProyectoDesarrolloSoftware/ProyectoDesarrolloSoftware/Migrations/20220626231415_Cambios_Finales.cs
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -36,27 +40,6 @@ namespace ProyectoDesarrolloSoftware.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Asegurados", x => x.Cedula);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Lugares",
-                columns: table => new
-                {
-                    Id_lugar = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    nombre_lugar = table.Column<string>(type: "text", nullable: false),
-                    tipo_lugar = table.Column<string>(type: "text", nullable: false),
-                    LugarId_lugar = table.Column<int>(type: "integer", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Lugares", x => x.Id_lugar);
-                    table.ForeignKey(
-                        name: "FK_Lugares_Lugares_LugarId_lugar",
-                        column: x => x.LugarId_lugar,
-                        principalTable: "Lugares",
-                        principalColumn: "Id_lugar",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -99,6 +82,34 @@ namespace ProyectoDesarrolloSoftware.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Proveedores",
+                columns: table => new
+                {
+                    Id_proveedor = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Nombre = table.Column<string>(type: "text", nullable: false),
+                    Lugar = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Proveedores", x => x.Id_proveedor);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Tallers",
+                columns: table => new
+                {
+                    Id_Taller = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Nombre = table.Column<string>(type: "text", nullable: true),
+                    Lugar = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Tallers", x => x.Id_Taller);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Usuarios",
                 columns: table => new
                 {
@@ -110,46 +121,6 @@ namespace ProyectoDesarrolloSoftware.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Usuarios", x => x.IDusuario);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Proveedores",
-                columns: table => new
-                {
-                    Id_proveedor = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Nombre = table.Column<string>(type: "text", nullable: false),
-                    fk_lugar = table.Column<int>(type: "integer", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Proveedores", x => x.Id_proveedor);
-                    table.ForeignKey(
-                        name: "FK_Proveedores_Lugares_fk_lugar",
-                        column: x => x.fk_lugar,
-                        principalTable: "Lugares",
-                        principalColumn: "Id_lugar",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Tallers",
-                columns: table => new
-                {
-                    Id_Taller = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Nombre = table.Column<string>(type: "text", nullable: true),
-                    fk_lugar = table.Column<int>(type: "integer", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Tallers", x => x.Id_Taller);
-                    table.ForeignKey(
-                        name: "FK_Tallers_Lugares_fk_lugar",
-                        column: x => x.fk_lugar,
-                        principalTable: "Lugares",
-                        principalColumn: "Id_lugar",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -503,11 +474,6 @@ namespace ProyectoDesarrolloSoftware.Migrations
                 column: "fk_vehiculo_tercero");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Lugares_LugarId_lugar",
-                table: "Lugares",
-                column: "LugarId_lugar");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Pedidos_fk_proveedor_prov_cot_fk_cotizacion_prov_cot",
                 table: "Pedidos",
                 columns: new[] { "fk_proveedor_prov_cot", "fk_cotizacion_prov_cot" });
@@ -533,11 +499,6 @@ namespace ProyectoDesarrolloSoftware.Migrations
                 column: "fk_vehiculo");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Proveedores_fk_lugar",
-                table: "Proveedores",
-                column: "fk_lugar");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_ProvMarcas_Id_proveedor",
                 table: "ProvMarcas",
                 column: "Id_proveedor");
@@ -546,11 +507,6 @@ namespace ProyectoDesarrolloSoftware.Migrations
                 name: "IX_Taller_Marcas_Id_Taller",
                 table: "Taller_Marcas",
                 column: "Id_Taller");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Tallers_fk_lugar",
-                table: "Tallers",
-                column: "fk_lugar");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Vehiculos_fk_marca",
@@ -607,9 +563,6 @@ namespace ProyectoDesarrolloSoftware.Migrations
 
             migrationBuilder.DropTable(
                 name: "Incidentes");
-
-            migrationBuilder.DropTable(
-                name: "Lugares");
 
             migrationBuilder.DropTable(
                 name: "Polizas");

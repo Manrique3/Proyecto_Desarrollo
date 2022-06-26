@@ -10,8 +10,13 @@ using ProyectoDesarrolloSoftware.DataBase;
 namespace ProyectoDesarrolloSoftware.Migrations
 {
     [DbContext(typeof(DSDBContext))]
+<<<<<<<< HEAD:ProyectoDesarrolloSoftware/ProyectoDesarrolloSoftware/Migrations/20220626204805_primera.Designer.cs
     [Migration("20220626204805_primera")]
     partial class primera
+========
+    [Migration("20220626231415_Cambios_Finales")]
+    partial class Cambios_Finales
+>>>>>>>> f24a8612ab587b7e41f03480b54656686c73f08f:ProyectoDesarrolloSoftware/ProyectoDesarrolloSoftware/Migrations/20220626231415_Cambios_Finales.Designer.cs
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -193,31 +198,6 @@ namespace ProyectoDesarrolloSoftware.Migrations
                     b.ToTable("Incidente_Pieza");
                 });
 
-            modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Lugar", b =>
-                {
-                    b.Property<int>("Id_lugar")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<int?>("LugarId_lugar")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("nombre_lugar")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("tipo_lugar")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id_lugar");
-
-                    b.HasIndex("LugarId_lugar");
-
-                    b.ToTable("Lugares");
-                });
-
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Marca", b =>
                 {
                     b.Property<int>("IDMarca")
@@ -353,16 +333,14 @@ namespace ProyectoDesarrolloSoftware.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
+                    b.Property<string>("Lugar")
+                        .HasColumnType("text");
+
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("fk_lugar")
-                        .HasColumnType("integer");
-
                     b.HasKey("Id_proveedor");
-
-                    b.HasIndex("fk_lugar");
 
                     b.ToTable("Proveedores");
                 });
@@ -389,15 +367,13 @@ namespace ProyectoDesarrolloSoftware.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
+                    b.Property<string>("Lugar")
+                        .HasColumnType("text");
+
                     b.Property<string>("Nombre")
                         .HasColumnType("text");
 
-                    b.Property<int>("fk_lugar")
-                        .HasColumnType("integer");
-
                     b.HasKey("Id_Taller");
-
-                    b.HasIndex("fk_lugar");
 
                     b.ToTable("Tallers");
                 });
@@ -581,13 +557,6 @@ namespace ProyectoDesarrolloSoftware.Migrations
                     b.Navigation("Pieza");
                 });
 
-            modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Lugar", b =>
-                {
-                    b.HasOne("ProyectoDesarrolloSoftware.Entidades.Lugar", null)
-                        .WithMany("fk_lugar")
-                        .HasForeignKey("LugarId_lugar");
-                });
-
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Pedido", b =>
                 {
                     b.HasOne("ProyectoDesarrolloSoftware.Entidades.Cotizacion_Proveedor", "Cotizacion_Proveedor")
@@ -641,17 +610,6 @@ namespace ProyectoDesarrolloSoftware.Migrations
                     b.Navigation("Vehiculo");
                 });
 
-            modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Proveedor", b =>
-                {
-                    b.HasOne("ProyectoDesarrolloSoftware.Entidades.Lugar", "Lugar")
-                        .WithMany()
-                        .HasForeignKey("fk_lugar")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Lugar");
-                });
-
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Proveedor_Marca", b =>
                 {
                     b.HasOne("ProyectoDesarrolloSoftware.Entidades.Marca", "Marca")
@@ -669,17 +627,6 @@ namespace ProyectoDesarrolloSoftware.Migrations
                     b.Navigation("Marca");
 
                     b.Navigation("Proveedor");
-                });
-
-            modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Taller", b =>
-                {
-                    b.HasOne("ProyectoDesarrolloSoftware.Entidades.Lugar", "Lugar")
-                        .WithMany()
-                        .HasForeignKey("fk_lugar")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Lugar");
                 });
 
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Taller_Marca", b =>
@@ -710,11 +657,6 @@ namespace ProyectoDesarrolloSoftware.Migrations
                         .IsRequired();
 
                     b.Navigation("Marca");
-                });
-
-            modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Lugar", b =>
-                {
-                    b.Navigation("fk_lugar");
                 });
 #pragma warning restore 612, 618
         }

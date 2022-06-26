@@ -36,17 +36,15 @@ namespace ProyectoDesarrolloSoftware
             services.AddControllers();
 
             services.AddDbContext<DSDBContext>(options =>
-
             options.UseNpgsql(Configuration["DBConnectionString"], x => x.UseNetTopologySuite()));
-            services.AddTransient<DSDBContext>();
-            services.AddTransient<IPiezasDAO,PiezasDAO>();
-
-           // services.AddSingleton<IMarcaDAO, MockMarcaData>(); //Realizacion del Mock de Data. //Error al hacer simulación de los objetos en DTOs
-
-            services.AddScoped<IMarcaDAO, MarcaDAO>();
             
             services.AddTransient<DSDBContext>();
+            services.AddTransient<IPiezasDAO,PiezasDAO>();
             services.AddTransient<AseguradoDAO>();
+
+            // services.AddSingleton<IMarcaDAO, MockMarcaData>(); //Realizacion del Mock de Data. //Error al hacer simulaciï¿½n de los objetos en DTOs
+
+            services.AddScoped<IMarcaDAO, MarcaDAO>();
 
             services.AddSwaggerGen(c =>
             {

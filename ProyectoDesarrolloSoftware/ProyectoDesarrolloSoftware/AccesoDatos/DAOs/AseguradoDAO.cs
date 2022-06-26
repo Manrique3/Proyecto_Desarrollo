@@ -4,7 +4,7 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using ProyectoDesarrolloSoftware.DataBase;
 using ProyectoDesarrolloSoftware.DTO;
-using ProyectoDesarrolloSoftware.Excepciones;
+using ProyectoDesarrolloSoftware.Exceptions;
 using System.Threading.Tasks;
 using ProyectoDesarrolloSoftware.Entidades;
 
@@ -37,7 +37,7 @@ namespace ProyectoDesarrolloSoftware.AccesoDatos.DAOs
             }
             catch (Exception ex)
             {
-                throw new ExcepcionesProyecto("Ha ocurrido un error al intentar consultar la lista de Asegurados" + asegurado, ex.Message, ex);
+                throw new Excepciones("Ha ocurrido un error al intentar consultar la lista de Asegurados" + asegurado, ex.Message, ex);
             }
 
         }

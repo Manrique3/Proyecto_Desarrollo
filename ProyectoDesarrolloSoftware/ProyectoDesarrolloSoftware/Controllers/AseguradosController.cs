@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ProyectoDesarrolloSoftware.AccesoDatos.DAOs;
 using ProyectoDesarrolloSoftware.DTO;
-using ProyectoDesarrolloSoftware.Excepciones;
+using ProyectoDesarrolloSoftware.Exceptions;
 using ProyectoDesarrolloSoftware.Responses;
 
 namespace ProyectoDesarrolloSoftware.Controllers
@@ -31,7 +31,7 @@ namespace ProyectoDesarrolloSoftware.Controllers
             {
                 response.Data = _aseguradoDAO.VerRegistrosAsegurado(asegurado);   
             }
-            catch (ExcepcionesProyecto ex)
+            catch (Excepciones ex)
             {
                 response.Success = false;
                 response.Message = ex.Message;
@@ -48,7 +48,7 @@ namespace ProyectoDesarrolloSoftware.Controllers
             {
                 response.Data = _aseguradoDAO.GetAsegurado(cedula);
             }
-            catch (ExcepcionesProyecto ex)
+            catch (Excepciones ex)
             {
                 response.Success = false;
                 response.Message = ex.Message;
