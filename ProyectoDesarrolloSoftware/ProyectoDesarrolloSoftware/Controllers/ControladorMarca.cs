@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using ProyectoDesarrolloSoftware.DataBase;
 using ProyectoDesarrolloSoftware.DTO;
 using System;
@@ -15,9 +16,11 @@ namespace ProyectoDesarrolloSoftware.Controllers
     public class ControladorMarca : ControllerBase
     {
         private IMarcaDAO _marca;
-        public ControladorMarca(IMarcaDAO marca)
+        private readonly ILogger<ControladorMarca> _logger;
+        public ControladorMarca(ILogger<ControladorMarca> logger, IMarcaDAO marca)
         {
             _marca = marca;
+            _logger = logger;
 
         }
 
@@ -44,7 +47,7 @@ namespace ProyectoDesarrolloSoftware.Controllers
         }
 
         [HttpPost]
-        [Route("api/[controller]")] // Ruta en la que se muestra una marca dependiendo de id
+        [Route("api/[controller]")] // Ruta en la que se agrega una marca dependiendo de id
         public IActionResult GetMarca(MarcaDTO marca)
         {
              _marca.AddMarca(marca);

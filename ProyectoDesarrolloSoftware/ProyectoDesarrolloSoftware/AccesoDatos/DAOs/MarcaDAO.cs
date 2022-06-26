@@ -27,14 +27,9 @@ namespace ProyectoDesarrolloSoftware.DataBase.DAOs.Implementations
                 _marca.Name = marca.Nombre;
                 _context.Marcas.Add(_marca);
                 _context.SaveChanges();
-                return Task.CompletedTask;/*
+                return Task.CompletedTask;
 
-                Pieza pieza = new Pieza();
-                pieza.Id_Pieza = piezaDTO.Id_Pieza;
-                pieza.Nombre = piezaDTO.Nombre;
-                _context.Piezas.Add(pieza);
-                _context.SaveChanges();
-                return Task.CompletedTask;*/
+                
             }
             catch (Exception e)
             { 
@@ -66,7 +61,7 @@ namespace ProyectoDesarrolloSoftware.DataBase.DAOs.Implementations
             try
             {
                 var data = _context.Marcas
-                .Where(b => b.IDMarca ==Id)
+                .Where(b => b.IDMarca == Id)
                .Select(b => new MarcaDTO
                {
                    IDMarca = b.IDMarca,
@@ -76,7 +71,7 @@ namespace ProyectoDesarrolloSoftware.DataBase.DAOs.Implementations
                 return data.First();
             }
             catch (Exception e) { //System.InvalidCastException
-                throw new Exception("Ocurrio un error en la base de datos" + e);
+                throw new Exception("Ocurrio un error en la base de datos o no existe la marca en la base de datos" + e);
             }
                 
         }
