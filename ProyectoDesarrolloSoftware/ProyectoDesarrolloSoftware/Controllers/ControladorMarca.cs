@@ -51,7 +51,8 @@ namespace ProyectoDesarrolloSoftware.Controllers
         public IActionResult GetMarca(MarcaDTO marca)
         {
              _marca.AddMarca(marca);
-            return Ok();
+            return Ok("Se Agregó la marca");
+            
             //return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + "/" + marca.IDMarca, marca);
 
         }
@@ -81,12 +82,11 @@ namespace ProyectoDesarrolloSoftware.Controllers
             if (ExisteMarca != null)
             {
                 marca.IDMarca = ExisteMarca.IDMarca;
-                _marca.EditMarca(marca, id);
-                
+                _marca.EditMarca(marca, id);                
 
             }
 
-            return Ok("Se cambio la marca a: " + marca);
+            return Ok("Se cambio la marca a: " + marca.Nombre);
 
         }
 

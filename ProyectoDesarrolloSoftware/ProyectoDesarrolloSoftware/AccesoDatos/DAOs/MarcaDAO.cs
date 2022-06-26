@@ -23,7 +23,8 @@ namespace ProyectoDesarrolloSoftware.DataBase.DAOs.Implementations
             {
 
                 Marca _marca = new Marca();
-                _marca.IDMarca = marca.IDMarca;
+                
+                //_marca.IDMarca = marca.IDMarca;
                 _marca.Name = marca.Nombre;
                 _context.Marcas.Add(_marca);
                 _context.SaveChanges();
