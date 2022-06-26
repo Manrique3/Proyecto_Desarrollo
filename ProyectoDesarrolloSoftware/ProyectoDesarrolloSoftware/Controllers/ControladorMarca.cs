@@ -51,7 +51,7 @@ namespace ProyectoDesarrolloSoftware.Controllers
         public IActionResult GetMarca(MarcaDTO marca)
         {
              _marca.AddMarca(marca);
-            return Ok("Se Agregó la marca");
+            return Ok("Se Agregó la marca: " + marca.Nombre);
             
             //return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + "/" + marca.IDMarca, marca);
 
