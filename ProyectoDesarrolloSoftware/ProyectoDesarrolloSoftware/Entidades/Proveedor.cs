@@ -11,9 +11,7 @@ namespace ProyectoDesarrolloSoftware.Entidades
         public int Id_proveedor { get; set; }
         [Required]
         public string Nombre { get; set; }
-        public int fk_lugar { get; set; }
-        [ForeignKey("fk_lugar")]
-        public virtual Lugar Lugar { get; set; }
+        public string Lugar { get; set; }
 
     }
 }

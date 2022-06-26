@@ -12,8 +12,6 @@ namespace ProyectoDesarrolloSoftware.Entidades
         [Key]
         public int Id_Taller { get; set; }
         public string Nombre { get; set; }
-        public int fk_lugar { get; set; }
-        [ForeignKey("fk_lugar")]
-        public virtual Lugar Lugar { get; set; }
+        public string Lugar { get; set; }
     }
 }

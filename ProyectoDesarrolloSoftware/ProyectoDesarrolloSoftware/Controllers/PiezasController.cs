@@ -1,13 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using ProyectoDesarrolloSoftware.DTO;
-using ProyectoDesarrolloSoftware.AccesoDatos.DAOs;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using ProyectoDesarrolloSoftware.Responses;
-using static ProyectoDesarrolloSoftware.Responses.ResponsesProyecto;
+using ProyectoDesarrolloSoftware.AccesoDatos.DAOs;
+using ProyectoDesarrolloSoftware.DTO;
 using ProyectoDesarrolloSoftware.Exceptions;
+using ProyectoDesarrolloSoftware.Responses;
 namespace ProyectoDesarrolloSoftware.Controllers
 {
     [Route("piezas")]

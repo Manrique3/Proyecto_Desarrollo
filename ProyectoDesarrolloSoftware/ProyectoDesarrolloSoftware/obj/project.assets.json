@@ -1988,34 +1988,19 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
-    "C:\\Users\\User\\.nuget\\packages\\": {}
-=======
     "C:\\Users\\Hernani\\.nuget\\packages\\": {}
->>>>>>> Desarrollando
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
+      "projectUniqueName": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
       "projectName": "ProyectoDesarrolloSoftware",
-      "projectPath": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\obj\\",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-      "projectUniqueName": "C:\\Users\\Hernani\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
-      "projectName": "ProyectoDesarrolloSoftware",
-      "projectPath": "C:\\Users\\Hernani\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
+      "projectPath": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
       "packagesPath": "C:\\Users\\Hernani\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hernani\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\obj\\",
+      "outputPath": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Hernani\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> Desarrollando
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2100,8 +2085,16 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

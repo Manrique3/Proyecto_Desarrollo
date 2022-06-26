@@ -8,7 +8,6 @@ using ProyectoDesarrolloSoftware.Controllers;
 using ProyectoDesarrolloSoftware.Exceptions;
 using ProyectoDesarrolloSoftware.AccesoDatos.DAOs;
 using ProyectoDesarrolloSoftware.Responses;
-using static ProyectoDesarrolloSoftware.Responses.ResponsesProyecto;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -42,7 +41,7 @@ namespace ProyectoDesarrollo.Test.UnitTests.Controllers
                .Returns(new List<PiezaDTO>());
             var result = _controller.GetPiezasByName("");
 
-            Assert.IsType<ApplicationResponse<List<PiezaDTO>>>(result);    
+            Assert.IsType<ProyectoDesarrolloSoftware.Responses.ApplicationResponse<List<PiezaDTO>>>(result);    
             
             return Task.CompletedTask;
         }
