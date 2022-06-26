@@ -16,6 +16,7 @@ using ProyectoDesarrolloSoftware.DataBase;
 using ProyectoDesarrolloSoftware.Exceptions;
 using ProyectoDesarrolloSoftware.AccesoDatos.DAOs;
 using ProyectoDesarrolloSoftware.Controllers;
+using ProyectoDesarrolloSoftware.DataBase.DAOs.Implementations;
 
 namespace ProyectoDesarrolloSoftware
 {
@@ -37,6 +38,10 @@ namespace ProyectoDesarrolloSoftware
             options.UseNpgsql(Configuration["DBConnectionString"], x => x.UseNetTopologySuite()));
             services.AddTransient<DSDBContext>();
             services.AddTransient<IPiezasDAO,PiezasDAO>();
+
+           // services.AddSingleton<IMarcaDAO, MockMarcaData>(); //Realizacion del Mock de Data. //Error al hacer simulación de los objetos en DTOs
+
+            services.AddScoped<IMarcaDAO, MarcaDAO>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ProyectoDesarrolloSoftware", Version = "v1" });
