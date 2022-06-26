@@ -2,10 +2,10 @@
 {
     public class PolizaDTO
     {
-        private int Id_Poliza { get; set; }
-        private string Tipo { get; set; }
-        private VehiculoDTO Vehiculo { get; set; }
-        private AseguradoDTO Asegurado { get; set; }
+        public int Id_Poliza { get; set; }
+        public string Tipo { get; set; }
+        public VehiculoDTO Vehiculo { get; set; }
+        public AseguradoDTO Asegurado { get; set; }
 
     }
 }

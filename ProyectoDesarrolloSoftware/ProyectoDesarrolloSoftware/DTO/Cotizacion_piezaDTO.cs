@@ -2,9 +2,9 @@
 {
     public class Cotizacion_piezaDTO
     {
-        private int Id_Cotizacion { get; set; }
-        private int Id_Pieza { get; set; }
-        private CotizacionDTO Cotizacion { get; set; }
-        private PiezaDTO Pieza { get; set; }
+        public int Id_Cotizacion { get; set; }
+        public int Id_Pieza { get; set; }
+        public CotizacionDTO Cotizacion { get; set; }
+        public PiezaDTO Pieza { get; set; }
     }
 }

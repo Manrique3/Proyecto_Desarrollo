@@ -8,12 +8,12 @@ namespace ProyectoDesarrolloSoftware.DTO
 {
     public class PedidoDTO
     {
-        private int Id_Pedido { get; set; }
+        public int Id_Pedido { get; set; }
 
         [RegularExpression(@"Con Orden de Compra|Facturado")]
-        private string estatus { get; set; }
-        private double Pago_Total { get; set; }
-        private int numero_factura { get; set; }
+        public string estatus { get; set; }
+        public double Pago_Total { get; set; }
+        public int numero_factura { get; set; }
         public virtual Cotizacion_proveedorDTO Cotizacion_Proveedor { get; set; }
         public virtual Cotizacion_TallerDTO Cotizacion_Taller { get; set; }
 

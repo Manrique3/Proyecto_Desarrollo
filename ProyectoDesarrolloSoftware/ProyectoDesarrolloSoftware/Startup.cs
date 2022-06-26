@@ -16,8 +16,6 @@ using ProyectoDesarrolloSoftware.DataBase;
 using ProyectoDesarrolloSoftware.Exceptions;
 using ProyectoDesarrolloSoftware.AccesoDatos.DAOs;
 using ProyectoDesarrolloSoftware.Controllers;
-using ProyectoDesarrolloSoftware.DataBase.DAOs.Implementations;
-using ProyectoDesarrolloSoftware.DataBase.DAOs.Mocks;
 
 namespace ProyectoDesarrolloSoftware
 {
@@ -34,10 +32,6 @@ namespace ProyectoDesarrolloSoftware
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-
-            services.AddSingleton<IMarcaDAO, MockMarcaData>(); //Realizacion del Mock de Data.
-
-            services.AddScoped<IMarcaDAO,MarcaDataDAO>();
 
             services.AddDbContext<DSDBContext>(options =>
             options.UseNpgsql(Configuration["DBConnectionString"], x => x.UseNetTopologySuite()));
