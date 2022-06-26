@@ -6,8 +6,9 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.Extensions.Logging;
 using ProyectoDesarrolloSoftware.Responses;
-using static ProyectoDesarrolloSoftware.Responses.ResponsesProyecto;
 using ProyectoDesarrolloSoftware.Exceptions;
+using static ProyectoDesarrolloSoftware.Responses.ResponsesProyecto;
+
 namespace ProyectoDesarrolloSoftware.Controllers
 {
     [Route("piezas")]
@@ -25,18 +26,15 @@ namespace ProyectoDesarrolloSoftware.Controllers
         
 
         [HttpGet("Listapiezas/{Nombre}")]
-        public ApplicationResponse<List<PiezaDTO>> GetPiezasByName([Required][FromRoute] string Nombre)
+        public Responses.ApplicationResponse<List<PiezaDTO>> GetPiezasByName([Required][FromRoute] string Nombre)
         {
-            var response = new ApplicationResponse<List<PiezaDTO>>();
-            try
-            {
+            var response = new Responses.ApplicationResponse<List<PiezaDTO>>();
+            
+            
                 response.Data = _piezasDAO.GetListaPiezasByName(Nombre);
-            }
-            catch (Excepciones ex)
+            
             {
-                response.Success = false;
-                response.Message = ex.Message;
-                response.Exception = ex.Excepcion.ToString();
+                response.Success = false;                
             }
             return response;
         }

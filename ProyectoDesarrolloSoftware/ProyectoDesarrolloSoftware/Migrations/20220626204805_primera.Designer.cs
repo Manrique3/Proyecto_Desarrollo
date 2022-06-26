@@ -10,13 +10,8 @@ using ProyectoDesarrolloSoftware.DataBase;
 namespace ProyectoDesarrolloSoftware.Migrations
 {
     [DbContext(typeof(DSDBContext))]
-<<<<<<<< HEAD:ProyectoDesarrolloSoftware/ProyectoDesarrolloSoftware/Migrations/20220625174428_first.Designer.cs
-    [Migration("20220625174428_first")]
-    partial class first
-========
-    [Migration("20220625223235_Cambios_Finales")]
-    partial class Cambios_Finales
->>>>>>>> Desarrollando:ProyectoDesarrolloSoftware/ProyectoDesarrolloSoftware/Migrations/20220625223235_Cambios_Finales.Designer.cs
+    [Migration("20220626204805_primera")]
+    partial class primera
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

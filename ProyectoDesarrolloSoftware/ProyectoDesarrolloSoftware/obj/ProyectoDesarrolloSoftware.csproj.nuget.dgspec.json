@@ -1,37 +1,24 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
-    "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj": {}
+    "C:\\Users\\aleja\\Desktop\\PROYECTO DE BISMARK\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj": {
+    "C:\\Users\\aleja\\Desktop\\PROYECTO DE BISMARK\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
+        "projectUniqueName": "C:\\Users\\aleja\\Desktop\\PROYECTO DE BISMARK\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
         "projectName": "ProyectoDesarrolloSoftware",
-        "projectPath": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\obj\\",
+        "projectPath": "C:\\Users\\aleja\\Desktop\\PROYECTO DE BISMARK\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
+        "packagesPath": "C:\\Users\\aleja\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\aleja\\Desktop\\PROYECTO DE BISMARK\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-    "C:\\Users\\Hernani\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\Hernani\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Hernani\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
-        "projectName": "ProyectoDesarrolloSoftware",
-        "projectPath": "C:\\Users\\Hernani\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
-        "packagesPath": "C:\\Users\\Hernani\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hernani\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\Hernani\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> Desarrollando
+          "C:\\Users\\aleja\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -116,7 +103,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

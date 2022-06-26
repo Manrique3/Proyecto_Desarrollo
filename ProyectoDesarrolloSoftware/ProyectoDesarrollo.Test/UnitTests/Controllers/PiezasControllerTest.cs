@@ -42,7 +42,7 @@ namespace ProyectoDesarrollo.Test.UnitTests.Controllers
                .Returns(new List<PiezaDTO>());
             var result = _controller.GetPiezasByName("");
 
-            Assert.IsType<ApplicationResponse<List<PiezaDTO>>>(result);    
+            Assert.IsType<ProyectoDesarrolloSoftware.Responses.ApplicationResponse<List<PiezaDTO>>>(result);    
             
             return Task.CompletedTask;
         }
