@@ -438,3 +438,8 @@ C:\Users\aleja\Desktop\PROYECTO DE BISMARK\ProyectoDesarrolloSoftware\ProyectoDe
 C:\Users\aleja\Desktop\PROYECTO DE BISMARK\ProyectoDesarrolloSoftware\ProyectoDesarrollo.Test\obj\Debug\net5.0\ProyectoDesarrollo.Test.pdb
 C:\Users\aleja\Desktop\PROYECTO DE BISMARK\ProyectoDesarrolloSoftware\ProyectoDesarrollo.Test\obj\Debug\net5.0\ProyectoDesarrollo.Test.genruntimeconfig.cache
 C:\Users\aleja\Desktop\PROYECTO DE BISMARK\ProyectoDesarrolloSoftware\ProyectoDesarrollo.Test\obj\Debug\net5.0\ref\ProyectoDesarrollo.Test.dll
+C:\Users\aleja\Desktop\PROYECTO DE BISMARK\ProyectoDesarrolloSoftware\ProyectoDesarrollo.Test\bin\Debug\net5.0\Bogus.dll
+C:\Users\aleja\Desktop\PROYECTO DE BISMARK\ProyectoDesarrolloSoftware\ProyectoDesarrollo.Test\bin\Debug\net5.0\Castle.Core.dll
+C:\Users\aleja\Desktop\PROYECTO DE BISMARK\ProyectoDesarrolloSoftware\ProyectoDesarrollo.Test\bin\Debug\net5.0\MockQueryable.Core.dll
+C:\Users\aleja\Desktop\PROYECTO DE BISMARK\ProyectoDesarrolloSoftware\ProyectoDesarrollo.Test\bin\Debug\net5.0\Moq.dll
+C:\Users\aleja\Desktop\PROYECTO DE BISMARK\ProyectoDesarrolloSoftware\ProyectoDesarrollo.Test\bin\Debug\net5.0\Moq.AutoMock.dll

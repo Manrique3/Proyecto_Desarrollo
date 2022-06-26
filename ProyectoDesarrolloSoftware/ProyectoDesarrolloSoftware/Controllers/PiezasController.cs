@@ -25,7 +25,7 @@ namespace ProyectoDesarrolloSoftware.Controllers
         
 
         [HttpGet("Listapiezas/{Nombre}")]
-        public ApplicationResponse<List<PiezaDTO>> GetPiezasById([Required][FromRoute] string Nombre)
+        public ApplicationResponse<List<PiezaDTO>> GetPiezasByName([Required][FromRoute] string Nombre)
         {
             var response = new ApplicationResponse<List<PiezaDTO>>();
             try
@@ -42,20 +42,15 @@ namespace ProyectoDesarrolloSoftware.Controllers
         }
 
         [HttpGet("ObtenerPieza/{Id_Pieza}")]
-        public ApplicationResponse<PiezaDTO> GetPieza([Required][FromRoute] int Id_Pieza)
+        [Produces("application/json")]
+        public PiezaDTO GetPieza([Required][FromRoute] int Id_Pieza)
         {
-            var response = new ApplicationResponse<PiezaDTO>();
-            try
-            {
-                response.Data = _piezasDAO.GetPieza(Id_Pieza);
-            }
-            catch (Excepciones ex)
-            {
-                response.Success = false;
-                response.Message = ex.Message;
-                response.Exception = ex.Excepcion.ToString();
-            }
-            return response;
+            var obj = new PiezaDTO();
+            
+                obj = (PiezaDTO)_piezasDAO.GetPieza(Id_Pieza);
+            
+            
+            return obj;
         }
 
         [HttpPost("create")]
@@ -64,7 +59,7 @@ namespace ProyectoDesarrolloSoftware.Controllers
 
             _piezasDAO.Add(piezaDTO);
 
-            return Ok();
+            return Ok(piezaDTO);
         }
 
         [HttpPut("ActualizarPieza/{Id_Pieza}")]
@@ -72,7 +67,7 @@ namespace ProyectoDesarrolloSoftware.Controllers
         public ActionResult UpdatePieza(PiezaDTO piezaDTO, [Required][FromRoute] int Id_Pieza)
         {
             _piezasDAO.update(piezaDTO, Id_Pieza);
-            return Ok();
+            return Ok(piezaDTO);
         }
 
         [HttpDelete("BorrarPieza/{Id_Pieza}")]
