@@ -2,10 +2,10 @@
 {
     public class Taller_MarcaDTO
     {
-        private int IDMarca { get; set; }
-        private int Id_Taller { get; set; }
-        private MarcaDTO Marca { get; set; }
-        private TallerDTO Taller { get; set; }
+        public int IDMarca { get; set; }
+        public int Id_Taller { get; set; }
+        public MarcaDTO Marca { get; set; }
+        public TallerDTO Taller { get; set; }
 
     }
 }

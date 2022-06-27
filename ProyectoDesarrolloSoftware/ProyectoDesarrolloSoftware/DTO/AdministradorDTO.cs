@@ -4,11 +4,11 @@ namespace ProyectoDesarrolloSoftware.DTO
     public class AdministradorDTO
 
     {
-        private int Id_Administrador { get; set; }
-        private string Username { get; set; }
-        private string Password { get; set; }
-        private string Nombre { get; set; }
-        private string Email { get; set; }
+        public int Id_Administrador { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string Nombre { get; set; }
+        public string Email { get; set; }
 
     }
 }
