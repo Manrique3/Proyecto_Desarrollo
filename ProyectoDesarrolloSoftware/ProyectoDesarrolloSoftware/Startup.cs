@@ -15,7 +15,6 @@ using Microsoft.OpenApi.Models;
 using ProyectoDesarrolloSoftware.AccesoDatos.DAOs;
 using ProyectoDesarrolloSoftware.DataBase;
 using ProyectoDesarrolloSoftware.Exceptions;
-using ProyectoDesarrolloSoftware.AccesoDatos.DAOs;
 using ProyectoDesarrolloSoftware.Controllers;
 using ProyectoDesarrolloSoftware.DataBase.DAOs.Implementations;
 
@@ -45,6 +44,7 @@ namespace ProyectoDesarrolloSoftware
             // services.AddSingleton<IMarcaDAO, MockMarcaData>(); //Realizacion del Mock de Data. //Error al hacer simulación de los objetos en DTOs
 
             services.AddScoped<IMarcaDAO, MarcaDAO>();
+            services.AddScoped<ITallerDAO, TallerDAO>();
 
             services.AddSwaggerGen(c =>
             {
