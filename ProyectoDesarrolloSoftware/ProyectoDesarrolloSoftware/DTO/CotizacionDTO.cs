@@ -2,7 +2,7 @@
 {
     public class CotizacionDTO
     {
-        public int Id_cotizacion { get; set; }
+        private int Id_cotizacion { get; set; }
         public IncidenteDTO incidente { get; set; }
     }
 }

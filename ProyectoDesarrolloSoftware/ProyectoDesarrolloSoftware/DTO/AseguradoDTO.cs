@@ -1,12 +1,9 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-
-namespace ProyectoDesarrolloSoftware.DTO
+﻿namespace ProyectoDesarrolloSoftware.DTO
 {
     public class AseguradoDTO
     {
-        public int Cedula { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
+        private int Cedula { get; set; }
+        private string Nombre { get; set; }
+        private string Apellido { get; set; }
     }
 }

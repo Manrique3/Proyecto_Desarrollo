@@ -2,8 +2,8 @@
 {
     public class PeritoDTO
     {
-        public int Id_Perito { get; set; }
-        public string Nombre { get; set; }
+        private int Id_Perito { get; set; }
+        private string Nombre { get; set; }
 
     }
 }

@@ -8,16 +8,16 @@ namespace ProyectoDesarrolloSoftware.DTO
 {
     public class Cotizacion_TallerDTO
     {
-        public int Id_Cotizacion { get; set; }
-        public int Id_Taller { get; set; }
+        private int Id_Cotizacion { get; set; }
+        private int Id_Taller { get; set; }
 
         [RegularExpression(@"Pendiente|Cotizado|Con Orden de Compra|Facturado")]
-        public string estatus { get; set; }
-        public int cantidad_piezas_reparar { get; set; }
-        public double costo_reparacion { get; set; }
-        public int tiempo_reparacion { get; set; }
-        public CotizacionDTO Cotizacion { get; set; }
-        public TallerDTO Taller { get; set; }
+        private string estatus { get; set; }
+        private int cantidad_piezas_reparar { get; set; }
+        private double costo_reparacion { get; set; }
+        private int tiempo_reparacion { get; set; }
+        private CotizacionDTO Cotizacion { get; set; }
+        private TallerDTO Taller { get; set; }
 
 
     }

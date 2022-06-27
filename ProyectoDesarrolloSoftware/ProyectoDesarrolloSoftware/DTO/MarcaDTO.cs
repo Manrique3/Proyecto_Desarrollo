@@ -2,7 +2,7 @@
 {
     public class MarcaDTO
     {
-        public int IDMarca { get; set; }
-        public string Nombre { get; set; }
+        private int IDMarca { get; set; }
+        private string Nombre { get; set; }
     }
 }

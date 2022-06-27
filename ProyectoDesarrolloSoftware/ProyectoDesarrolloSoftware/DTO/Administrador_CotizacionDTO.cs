@@ -2,10 +2,10 @@
 {
     public class Administrador_CotizacionDTO
     {
-        public int Id_administrador { get; set; }
-        public int Id_cotizacion { get; set; }
-        public AdministradorDTO administradorDTO { get; set; }
-        public CotizacionDTO cotizacionDTO { get; set; }
+        private int Id_administrador { get; set; }
+        private int Id_cotizacion { get; set; }
+        private AdministradorDTO administradorDTO { get; set; }
+        private CotizacionDTO cotizacionDTO { get; set; }
 
 
     }

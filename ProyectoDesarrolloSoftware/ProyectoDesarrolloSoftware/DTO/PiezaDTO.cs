@@ -2,8 +2,8 @@
 {
     public class PiezaDTO
     {
-        public int Id_Pieza { get; set; }
-        public string Nombre { get; set; }
+        private int Id_Pieza { get; set; }
+        private string Nombre { get; set; }
 
     }
 }

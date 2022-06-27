@@ -2,9 +2,9 @@
 {
     public class UsuarioDTO
     {
-        public int IDUsuario { get; set; }
-        public string Name { get; set; }
-        public string Password { get; set; }
+        private int IDUsuario { get; set; }
+        private string Name { get; set; }
+        private string Password { get; set; }
 
     }
 }
