@@ -14,8 +14,11 @@ namespace ProyectoDesarrolloSoftware.DTO
         public string estatus { get; set; }
         public double Pago_Total { get; set; }
         public int numero_factura { get; set; }
-        public virtual Cotizacion_proveedorDTO Cotizacion_Proveedor { get; set; }
-        public virtual Cotizacion_TallerDTO Cotizacion_Taller { get; set; }
+        public int fk_proveedor_prov_cotizacion { get; set; }
+        public int fk_cotizacion_prov_cot { get; set; }
+        public int fk_taller_taller_cot { get; set; }
+        public int fk_cotizacion_taller_cot { get; set; }
+
 
     }
 }
