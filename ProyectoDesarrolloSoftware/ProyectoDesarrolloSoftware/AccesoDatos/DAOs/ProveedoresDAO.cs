@@ -77,12 +77,12 @@ namespace ProyectoDesarrolloSoftware.AccesoDatos.DAOs
         public Task update(ProveedorDTO proveedorDTO, int Id_Proveedor)
         {
             var itemToUpdate = _context.Proveedores.Find(Id_Proveedor);
-            if (proveedorDTO.Nombre.Length > 0)
+            if (proveedorDTO.Nombre.Length > 0 && proveedorDTO.Nombre != "string")
             {
                 itemToUpdate.Nombre = proveedorDTO.Nombre;
             }
 
-            if (proveedorDTO.Lugar.Length > 0)
+            if (proveedorDTO.Lugar.Length > 0 && proveedorDTO.Lugar != "string")
             {
                itemToUpdate.Lugar = proveedorDTO.Lugar;
 
