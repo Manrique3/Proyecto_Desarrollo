@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+//MODIFICAR TODAS LAS RUTAS DE MARCA 
 
 namespace ProyectoDesarrolloSoftware.Controllers
 {
@@ -48,7 +48,7 @@ namespace ProyectoDesarrolloSoftware.Controllers
 
         [HttpPost]
         [Route("api/[controller]")] // Ruta en la que se agrega una marca dependiendo de id
-        public IActionResult GetMarca(MarcaDTO marca)
+        public IActionResult AgregarMarca(MarcaDTO marca)
         {
              _marca.AddMarca(marca);
             return Ok("Se Agregó la marca: " + marca.Nombre);
