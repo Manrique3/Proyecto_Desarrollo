@@ -16,6 +16,6 @@ namespace ProyectoDesarrolloSoftware.DTO
         public string Color { get; set; }
         public int Puestos { get; set; }
         public string SerialMotor { get; set; }
-        public virtual MarcaDTO marca { get; set; }
+        public int fk_marca { get; set; }
     }
 }

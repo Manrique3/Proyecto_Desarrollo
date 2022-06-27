@@ -4,8 +4,9 @@
     {
         public int Id_Poliza { get; set; }
         public string Tipo { get; set; }
-        public VehiculoDTO Vehiculo { get; set; }
-        public AseguradoDTO Asegurado { get; set; }
+        public int fk_vehiculo { get; set; }
+        public int fk_asegurado { get; set; }
+
 
     }
 }
