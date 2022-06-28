@@ -7,7 +7,7 @@ namespace ProyectoDesarrolloSoftware.Entidades
     public class Vehiculo
     {
         [Key]
-        public int Placa { get; set; }
+        public string Placa { get; set; }
         [Required]
         public string Modelo { get; set; }
         [DataType(DataType.Date)]

@@ -17,7 +17,7 @@ namespace ProyectoDesarrolloSoftware.Entidades
         [RegularExpression(@"Cobertura_Completa|Daño_a_Terceros")]
         public string Tipo { get; set; }
 
-        public int fk_vehiculo { get; set; }
+        public string fk_vehiculo { get; set; }
         [ForeignKey("fk_vehiculo")]
         [Required]
         public virtual Vehiculo Vehiculo { get; set; }

@@ -14,10 +14,10 @@ namespace ProyectoDesarrolloSoftware.Controllers
     [ApiController]
     public class AseguradosController : ControllerBase
     {
-        private readonly AseguradoDAO _aseguradoDAO;
+        private readonly IAseguradoDAO _aseguradoDAO;
         private readonly ILogger<AseguradosController> _logger;
 
-        public AseguradosController(ILogger<AseguradosController> logger, AseguradoDAO aseguradoDAO)
+        public AseguradosController(ILogger<AseguradosController> logger, IAseguradoDAO aseguradoDAO)
             {
             _aseguradoDAO = aseguradoDAO;
             _logger = logger;
@@ -61,14 +61,14 @@ namespace ProyectoDesarrolloSoftware.Controllers
         public ActionResult RegistrarAsegurado(AseguradoDTO aseguradoDTO)
         {
             _aseguradoDAO.Add(aseguradoDTO);
-            return Ok();
+            return Ok("Se Agregó el asegurado: " + aseguradoDTO.Nombre);
         }
 
         [HttpPut("Actualizar/{Cedula}")]
         public ActionResult UpdateAsegurado(AseguradoDTO aseguradoDTO, [Required][FromRoute] int Cedula)
         {
             _aseguradoDAO.update(aseguradoDTO, Cedula);
-            return Ok();
+            return Ok("Se Actulizaron los datos del asegurado/a: " + aseguradoDTO.Nombre);
         }
 
         [HttpDelete("BorrarAsegurado/{Cedula}")]
@@ -76,7 +76,7 @@ namespace ProyectoDesarrolloSoftware.Controllers
         public ActionResult DeleteAsegurado([Required][FromRoute] int Cedula)
         {
             _aseguradoDAO.Delete(Cedula);
-            return Ok();
+            return Ok("Se Elimino el Asegurado con Exito");
         }
 
     }

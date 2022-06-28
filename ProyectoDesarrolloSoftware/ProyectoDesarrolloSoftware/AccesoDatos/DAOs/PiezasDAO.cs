@@ -45,7 +45,7 @@ namespace ProyectoDesarrolloSoftware.AccesoDatos.DAOs
 
                 return query;
             }
-            catch (Exception)
+            catch (Excepciones)
             {
                 throw new Exception("La lista no puede ser mostrada");
             }

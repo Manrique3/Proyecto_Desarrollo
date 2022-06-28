@@ -5,8 +5,8 @@
         public int Id_Incidente { get; set; }
         public string estadoEv { get; set; }
 
-        public int fk_vehiculo_tercero { get; set; }
-        public int fk_poliza { get; set; }
+        public VehiculoDTO vehiculo_tercero { get; set; }
+        public PolizaDTO poliza { get; set; } 
 
 
     }
