@@ -2143,3 +2143,4 @@ C:\Users\Hernani\Desktop\Proyecto_Desarrollo-Crud_Perito\ProyectoDesarrolloSoftw
 C:\Users\Hernani\Desktop\Proyecto_Desarrollo-Crud_Perito\ProyectoDesarrolloSoftware\ProyectoDesarrolloSoftware\obj\Debug\net5.0\ProyectoDesarrolloSoftware.genruntimeconfig.cache
 C:\Users\Hernani\Desktop\Proyecto_Desarrollo-Crud_Perito\ProyectoDesarrolloSoftware\ProyectoDesarrolloSoftware\obj\Debug\net5.0\ref\ProyectoDesarrolloSoftware.dll
 C:\Users\Hernani\Documents\GitHub\Proyecto_Desarrollo\ProyectoDesarrolloSoftware\ProyectoDesarrolloSoftware\bin\Debug\net5.0\nunit.framework.dll
+C:\Users\Sergi\Documents\GitHub\Proyecto_Desarrollo\ProyectoDesarrolloSoftware\ProyectoDesarrolloSoftware\bin\Debug\net5.0\nunit.framework.dll

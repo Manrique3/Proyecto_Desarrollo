@@ -39,7 +39,6 @@ namespace ProyectoDesarrolloSoftware
             
             services.AddTransient<DSDBContext>();
             services.AddTransient<IPiezasDAO,PiezasDAO>();
-            services.AddTransient<AseguradoDAO>();
             services.AddTransient<IProveedoresDAO, ProveedoresDAO>();
             services.AddTransient<IPieza_ProveedorDAO, Pieza_ProveedorDAO>();
             services.AddTransient<IAseguradoDAO,AseguradoDAO>();
@@ -49,6 +48,7 @@ namespace ProyectoDesarrolloSoftware
 
             services.AddScoped<IMarcaDAO, MarcaDAO>();
             services.AddScoped<ITallerDAO, TallerDAO>();
+            services.AddTransient<IIncidenteDAO, IncidenteDAO>();
 
             services.AddSwaggerGen(c =>
             {
