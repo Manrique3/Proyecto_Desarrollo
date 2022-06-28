@@ -1,11 +1,11 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Moq;
-/*using ProyectoDesarrolloSoftware.AccesoDatos.DAOs;
+using ProyectoDesarrolloSoftware.AccesoDatos.DAOs;
 using ProyectoDesarrolloSoftware.Controllers;
 using Xunit;
 using Microsoft.AspNetCore.Http;
@@ -62,4 +62,4 @@ namespace ProyectoDesarrollo.Test.UnitTests.Controllers
 
 
     }
-}
+}*/
