@@ -1,0 +1,137 @@
+----- INSERTS DE PROYECTO DE DESARROLLO DE SOFTWARE -----
+
+----- INSERT MARCAS
+
+
+INSERT INTO public."Marcas" ("Name") VALUES ('BMW');
+INSERT INTO public."Marcas" ("Name") VALUES ('Mercedez-Benz');
+INSERT INTO public."Marcas" ("Name") VALUES ('Audi');
+INSERT INTO public."Marcas" ("Name") VALUES ('Lexus');
+INSERT INTO public."Marcas" ("Name") VALUES ('Renault');
+INSERT INTO public."Marcas" ("Name") VALUES ('Ford');
+INSERT INTO public."Marcas" ("Name") VALUES ('Chevrolet');
+INSERT INTO public."Marcas" ("Name") VALUES ('Mazda');
+INSERT INTO public."Marcas" ("Name") VALUES ('Toyota');
+INSERT INTO public."Marcas" ("Name") VALUES ('Honda');
+
+
+
+----- INSERT TALLER
+
+
+INSERT INTO public."Tallers"( "Nombre","Lugar") VALUES('Mecanica Center','Colinas de Carrizal');
+INSERT INTO public."Tallers"( "Nombre","Lugar") VALUES('Magicar Center','San Antonio');
+INSERT INTO public."Tallers"( "Nombre","Lugar") VALUES('AutoCar','La Carlota');
+INSERT INTO public."Tallers"( "Nombre","Lugar") VALUES('King Auto Center','Altamira');
+INSERT INTO public."Tallers"( "Nombre","Lugar") VALUES('Autos Super Star','Montalban');
+INSERT INTO public."Tallers"( "Nombre","Lugar") VALUES('Mega Service','Los Teques');
+INSERT INTO public."Tallers"( "Nombre","Lugar") VALUES('Mega Autos','Los Palos Grandes');
+INSERT INTO public."Tallers"( "Nombre","Lugar") VALUES('Auto Prime','El Paraiso');
+INSERT INTO public."Tallers"( "Nombre","Lugar") VALUES('Auto Aliado','La Urbina');
+INSERT INTO public."Tallers"( "Nombre","Lugar") VALUES('Taller Servi Express','Los Simbolos');
+
+
+
+----- INSERT ASEGURADOS
+
+
+INSERT INTO public."Asegurados"("Cedula", "Nombre", "Apellido") VALUES (6460293,'ADRIANA','HERNANDEZ MONTERROZA');
+INSERT INTO public."Asegurados"("Cedula", "Nombre", "Apellido") VALUES (8060263,'ALEJANDRO ','ABONDANO ACEVEDO ');
+INSERT INTO public."Asegurados"("Cedula", "Nombre", "Apellido") VALUES (7751293,'BRIGITE','POLANCO RUIZ');
+INSERT INTO public."Asegurados"("Cedula", "Nombre", "Apellido") VALUES (16931148,'DANIEL','CASTIBLANCO SALGADO');
+INSERT INTO public."Asegurados"("Cedula", "Nombre", "Apellido") VALUES (25349253,'DIANA','DIAZ BELTRAN');
+INSERT INTO public."Asegurados"("Cedula", "Nombre", "Apellido") VALUES (9873654,'DIEGO','FORERO PEÑA');
+INSERT INTO public."Asegurados"("Cedula", "Nombre", "Apellido") VALUES (11060293,'GABRIEL FELIPE','HERRERA MORENO');
+INSERT INTO public."Asegurados"("Cedula", "Nombre", "Apellido") VALUES (8960143,'JUAN CAMILO','ORTEGA PEÑA ');
+INSERT INTO public."Asegurados"("Cedula", "Nombre", "Apellido") VALUES (6503473,'SANDRA','GARCÉS PARRA');
+INSERT INTO public."Asegurados"("Cedula", "Nombre", "Apellido") VALUES (10921248,'NATALIA','BUITRAGO CONTRERAS');
+
+
+----- INSERT PIEZAS
+
+
+INSERT INTO public."Piezas"("Nombre") VALUES('Parachoque');
+INSERT INTO public."Piezas"("Nombre") VALUES('Parabrisas');
+INSERT INTO public."Piezas"("Nombre") VALUES('Retrovisor');
+INSERT INTO public."Piezas"("Nombre") VALUES('Caucho');
+INSERT INTO public."Piezas"("Nombre") VALUES('Bujias');
+INSERT INTO public."Piezas"("Nombre") VALUES('Plato de Freno');
+INSERT INTO public."Piezas"("Nombre") VALUES('Croche');
+INSERT INTO public."Piezas"("Nombre") VALUES('Chasis');
+INSERT INTO public."Piezas"("Nombre") VALUES('Amortiguador');
+INSERT INTO public."Piezas"("Nombre") VALUES('Valvulas Admision');
+
+
+----- INSERT PROVEEDOR
+
+
+INSERT INTO public."Proveedores"("Nombre", "Lugar")VALUES ('Revizzi','Valencia');
+INSERT INTO public."Proveedores"("Nombre", "Lugar")VALUES ('AutoCar','San Antonio');
+INSERT INTO public."Proveedores"("Nombre", "Lugar")VALUES ('La Elite Del Auto','Quinta Crespop');
+INSERT INTO public."Proveedores"("Nombre", "Lugar")VALUES ('Machining Max','Baruta');
+INSERT INTO public."Proveedores"("Nombre", "Lugar")VALUES ('ADN Car','La Urbina');
+INSERT INTO public."Proveedores"("Nombre", "Lugar")VALUES ('AutoForce Elite','Carrizal');
+INSERT INTO public."Proveedores"("Nombre", "Lugar")VALUES ('Repuestos Pamaca','Chacao');
+INSERT INTO public."Proveedores"("Nombre", "Lugar")VALUES ('MundoStore','Plaza Venezuela');
+INSERT INTO public."Proveedores"("Nombre", "Lugar")VALUES ('Aldor Bujias','Los Teques');
+INSERT INTO public."Proveedores"("Nombre", "Lugar")VALUES ('Cladi C.A.','Quinta Crespo');
+
+
+----- INSERT PERITOS
+
+
+INSERT INTO public."Peritos"("Nombre")VALUES ('JOSE GUZMAN');
+INSERT INTO public."Peritos"("Nombre")VALUES ('ALEXANDER CARVAJAL');
+INSERT INTO public."Peritos"("Nombre")VALUES ('ANDREA CRUZ');
+INSERT INTO public."Peritos"("Nombre")VALUES ('ANDRES VILLA');
+INSERT INTO public."Peritos"("Nombre")VALUES ('CATHERINE OSPINA');
+INSERT INTO public."Peritos"("Nombre")VALUES ('CLAUDIA TORRES');
+INSERT INTO public."Peritos"("Nombre")VALUES ('GLORIA TARRIO');
+INSERT INTO public."Peritos"("Nombre")VALUES ('MARIA OVALLES');
+INSERT INTO public."Peritos"("Nombre")VALUES ('ERNESTO SUAREZ');
+INSERT INTO public."Peritos"("Nombre")VALUES ('ELVIRA SABAL');
+
+
+----- INSERT VEHICULOS
+
+
+INSERT INTO public."Vehiculos"("Placa", "Modelo", "Año", color, puestos, "SerialMotor", fk_marca)VALUES ('RAP125','FOCUS','31/12/1998','BLANCO',4,'52WVC10338',6);
+INSERT INTO public."Vehiculos"("Placa", "Modelo", "Año", color, puestos, "SerialMotor", fk_marca)VALUES ('ABI346','Mondeo','31/12/1998','AZUL',4,'52WVC14587',6);
+INSERT INTO public."Vehiculos"("Placa", "Modelo", "Año", color, puestos, "SerialMotor", fk_marca)VALUES ('2Z0568','BMW Serie 1 2023','31/12/2020','AZUL',4,'98CVK78952',1);
+INSERT INTO public."Vehiculos"("Placa", "Modelo", "Año", color, puestos, "SerialMotor", fk_marca)VALUES ('GCH125','BMW Serie 2 Gran Coupé 2023','24/02/2022','MORADO',4,'41KLQ56347',1);
+INSERT INTO public."Vehiculos"("Placa", "Modelo", "Año", color, puestos, "SerialMotor", fk_marca)VALUES ('BFY456','A1 Sportback 2022','06/01/2022','BLANCO',4,'01QWE56879',3);
+INSERT INTO public."Vehiculos"("Placa", "Modelo", "Año", color, puestos, "SerialMotor", fk_marca)VALUES ('LUP890','Aveo','09/06/2007','PLATEADO',4,'21ERT85698',7);
+INSERT INTO public."Vehiculos"("Placa", "Modelo", "Año", color, puestos, "SerialMotor", fk_marca)VALUES ('VMN689','Cruze','20/01/2011','GRIS',4,'32ERT12356',7);
+INSERT INTO public."Vehiculos"("Placa", "Modelo", "Año", color, puestos, "SerialMotor", fk_marca)VALUES ('KFD248','Mazda3 Sedan','09/03/2014','NEGRO',4,'87QMN23456',8);
+INSERT INTO public."Vehiculos"("Placa", "Modelo", "Año", color, puestos, "SerialMotor", fk_marca)VALUES ('QAS212','Mazda CX-30','01/03/2019','NEGRO',4,'45LKJ26143',8);
+
+
+----- INSERT PIEZA_PROVEEDOR
+
+
+INSERT INTO public."Pieza_Proveedor"("Id_Pieza", "Id_proveedor", cantidad)VALUES (4,3,60);
+INSERT INTO public."Pieza_Proveedor"("Id_Pieza", "Id_proveedor", cantidad)VALUES (5,3,100);
+INSERT INTO public."Pieza_Proveedor"("Id_Pieza", "Id_proveedor", cantidad)VALUES (6,3,30);
+INSERT INTO public."Pieza_Proveedor"("Id_Pieza", "Id_proveedor", cantidad)VALUES (1,1,20);
+INSERT INTO public."Pieza_Proveedor"("Id_Pieza", "Id_proveedor", cantidad)VALUES (8,1,10);
+INSERT INTO public."Pieza_Proveedor"("Id_Pieza", "Id_proveedor", cantidad)VALUES (5,9,120);
+INSERT INTO public."Pieza_Proveedor"("Id_Pieza", "Id_proveedor", cantidad)VALUES (7,7,20);
+INSERT INTO public."Pieza_Proveedor"("Id_Pieza", "Id_proveedor", cantidad)VALUES (9,7,30);
+INSERT INTO public."Pieza_Proveedor"("Id_Pieza", "Id_proveedor", cantidad)VALUES (3,2,40);
+INSERT INTO public."Pieza_Proveedor"("Id_Pieza", "Id_proveedor", cantidad)VALUES (10,2,60);
+
+
+
+----- INSERT PROVMARCAS
+
+
+INSERT INTO public."ProvMarcas"("IDMarca", "Id_proveedor")VALUES (6,2);
+INSERT INTO public."ProvMarcas"("IDMarca", "Id_proveedor")VALUES (7,2);
+INSERT INTO public."ProvMarcas"("IDMarca", "Id_proveedor")VALUES (8,7);
+INSERT INTO public."ProvMarcas"("IDMarca", "Id_proveedor")VALUES (9,8);
+INSERT INTO public."ProvMarcas"("IDMarca", "Id_proveedor")VALUES (10,5);
+INSERT INTO public."ProvMarcas"("IDMarca", "Id_proveedor")VALUES (5,5);
+INSERT INTO public."ProvMarcas"("IDMarca", "Id_proveedor")VALUES (9,1);
+INSERT INTO public."ProvMarcas"("IDMarca", "Id_proveedor")VALUES (1,1);
+INSERT INTO public."ProvMarcas"("IDMarca", "Id_proveedor")VALUES (2,6);
+INSERT INTO public."ProvMarcas"("IDMarca", "Id_proveedor")VALUES (3,4);
