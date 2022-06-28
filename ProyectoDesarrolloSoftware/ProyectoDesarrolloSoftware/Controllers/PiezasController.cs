@@ -24,15 +24,18 @@ namespace ProyectoDesarrolloSoftware.Controllers
         
 
         [HttpGet("Listapiezas/{Nombre}")]
-        public Responses.ApplicationResponse<List<PiezaDTO>> GetPiezasByName([Required][FromRoute] string Nombre)
+        public ApplicationResponse<List<PiezaDTO>> GetPiezasByName([Required][FromRoute] string Nombre)
         {
-            var response = new Responses.ApplicationResponse<List<PiezaDTO>>();
-            
-            
-                response.Data = _piezasDAO.GetListaPiezasByName(Nombre);
-            
+            var response = new ApplicationResponse<List<PiezaDTO>>();
+            try
             {
-                response.Success = false;                
+                response.Data = _piezasDAO.GetListaPiezasByName(Nombre);
+            }
+            catch (Excepciones ex)
+            {
+                response.Success = false;
+                response.Message = ex.Message;
+                response.Exception = ex.Excepcion.ToString();
             }
             return response;
         }

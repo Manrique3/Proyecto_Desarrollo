@@ -6,7 +6,7 @@ namespace ProyectoDesarrolloSoftware.DTO
 {
     public class VehiculoDTO
     {
-        public int Placa { get; set; }
+        public string Placa { get; set; }
         public string Modelo { get; set; }
 
         [DataType(DataType.Date)]

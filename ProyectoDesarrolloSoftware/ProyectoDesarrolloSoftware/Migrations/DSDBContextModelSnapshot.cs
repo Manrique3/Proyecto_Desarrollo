@@ -164,8 +164,8 @@ namespace ProyectoDesarrolloSoftware.Migrations
                     b.Property<int>("fk_Poliza")
                         .HasColumnType("integer");
 
-                    b.Property<int?>("fk_vehiculo_tercero")
-                        .HasColumnType("integer");
+                    b.Property<string>("fk_vehiculo_tercero")
+                        .HasColumnType("text");
 
                     b.HasKey("Id_Incidente");
 
@@ -307,8 +307,8 @@ namespace ProyectoDesarrolloSoftware.Migrations
                     b.Property<int>("fk_asegurado")
                         .HasColumnType("integer");
 
-                    b.Property<int>("fk_vehiculo")
-                        .HasColumnType("integer");
+                    b.Property<string>("fk_vehiculo")
+                        .HasColumnType("text");
 
                     b.HasKey("Id_Poliza");
 
@@ -406,10 +406,8 @@ namespace ProyectoDesarrolloSoftware.Migrations
 
             modelBuilder.Entity("ProyectoDesarrolloSoftware.Entidades.Vehiculo", b =>
                 {
-                    b.Property<int>("Placa")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                    b.Property<string>("Placa")
+                        .HasColumnType("text");
 
                     b.Property<DateTime>("Año")
                         .HasColumnType("timestamp without time zone");

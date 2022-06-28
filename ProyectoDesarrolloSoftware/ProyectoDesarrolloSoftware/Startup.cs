@@ -42,6 +42,8 @@ namespace ProyectoDesarrolloSoftware
             services.AddTransient<AseguradoDAO>();
             services.AddTransient<IProveedoresDAO, ProveedoresDAO>();
             services.AddTransient<IPieza_ProveedorDAO, Pieza_ProveedorDAO>();
+            services.AddTransient<IAseguradoDAO,AseguradoDAO>();
+            services.AddTransient<IPolizaDAO, PolizaDAO>();
 
             // services.AddSingleton<IMarcaDAO, MockMarcaData>(); //Realizacion del Mock de Data. //Error al hacer simulaci�n de los objetos en DTOs
 

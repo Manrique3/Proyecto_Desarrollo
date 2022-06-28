@@ -14,7 +14,7 @@ namespace ProyectoDesarrolloSoftware.Entidades
         public int Id_Incidente { get; set; }
         [RegularExpression(@"Pendiente|Evaluado|Evaluado_Culpable|EvaluadoSoloTerceros")]
         public string estadoEv { get; set; }
-        public int? fk_vehiculo_tercero { get; set; }
+        public string? fk_vehiculo_tercero { get; set; }
         [ForeignKey("fk_vehiculo_tercero")]
         public virtual Vehiculo Vehiculo { get; set; }
 

@@ -15,6 +15,10 @@ namespace ProyectoDesarrolloSoftware.DTO
         public string estatus { get; set; }
         public int Id_Pieza_Pieza_Proveedor { get; set; }
         public int Id_Proveedor_Pieza_Proveedor { get; set; }
+        public CotizacionDTO Cotizacion { get; set; }
+        public ProveedorDTO Proveedor { get; set; }
+        public Pieza_ProveedorDTO Pieza_Proveedor { get; set; }
+
 
     }
 }
