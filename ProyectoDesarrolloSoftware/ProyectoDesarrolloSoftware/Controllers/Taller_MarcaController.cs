@@ -79,12 +79,12 @@ namespace ProyectoDesarrolloSoftware.Controllers
 
         }
 
-        [HttpPut("ActualizarTallerMarca/{IDMarca}/{Id_Taller}")]
+       /* [HttpPut("ActualizarTallerMarca/{IDMarca}/{Id_Taller}")]
         public ActionResult UpdateTallerMarca(Taller_MarcaDTO taller_marcaDTO, [Required][FromRoute] int IDMarca, [Required][FromRoute] int Id_Taller)
         {
             _taller_MarcaDAO.update(taller_marcaDTO, IDMarca, Id_Taller);
             return Ok("Se actualizo con exito el taller" + taller_marcaDTO.Nombre_Marca);
-        }
+        }*/
 
         [HttpDelete("BorrarTallerMarca/{IDMarca}/{Id_Taller}")]
         public ActionResult DeleteTallerMarca([Required][FromRoute] int IDMarca, [Required][FromRoute] int Id_Taller)

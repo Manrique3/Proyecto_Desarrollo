@@ -119,13 +119,13 @@ namespace ProyectoDesarrolloSoftware.AccesoDatos.DAOs
         }
 
 
-        public Task update(Taller_MarcaDTO taller_MarcaDTO, int IDMarca, int Id_Taller)
+       /* public Task update(Taller_MarcaDTO taller_MarcaDTO, int IDMarca, int Id_Taller)
         {
             var itemToUpdate = _context.Taller_Marcas.Find(IDMarca, Id_Taller);
             itemToUpdate.IDMarca = taller_MarcaDTO.IDMarca;
             itemToUpdate.Id_Taller = taller_MarcaDTO.Id_Taller;
             _context.SaveChanges();
             return Task.CompletedTask;
-        }
+        }*/
     }
 }

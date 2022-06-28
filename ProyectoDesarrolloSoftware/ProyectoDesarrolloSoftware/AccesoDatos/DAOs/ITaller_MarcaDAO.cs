@@ -10,7 +10,8 @@ namespace ProyectoDesarrolloSoftware.AccesoDatos.DAOs
     {
         public List<Taller_MarcaDTO> GetListaMarcaDeTallerById();//(int IDMarca, int Id_Taller);
         public Task Add(Taller_MarcaDTO taller_MarcaDTO);
-        public Task update(Taller_MarcaDTO taller_MarcaDTO, int IDMarca, int Id_Taller);
+
+        ///public Task update(Taller_MarcaDTO taller_MarcaDTO, int IDMarca, int Id_Taller);
         public Task delete(int IDMarca, int Id_Taller);
         public List<Taller_MarcaDTO> GetMarcaDeTaller(int Id_Taller);
         public List<Taller_MarcaDTO> GetTallerDeMarca(int IDMarca);
