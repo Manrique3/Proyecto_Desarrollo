@@ -105,6 +105,14 @@ INSERT INTO public."Vehiculos"("Placa", "Modelo", "Año", color, puestos, "Seria
 INSERT INTO public."Vehiculos"("Placa", "Modelo", "Año", color, puestos, "SerialMotor", fk_marca)VALUES ('KFD248','Mazda3 Sedan','09/03/2014','NEGRO',4,'87QMN23456',8);
 INSERT INTO public."Vehiculos"("Placa", "Modelo", "Año", color, puestos, "SerialMotor", fk_marca)VALUES ('QAS212','Mazda CX-30','01/03/2019','NEGRO',4,'45LKJ26143',8);
 
+-- ESTOS SON VEHICULOS DE TERCEROS
+
+INSERT INTO public."Vehiculos"("Placa", "Modelo", "Año", color, puestos, "SerialMotor", fk_marca)VALUES ('HGS531','Mercedes A12','02/04/2012','NEGRO',4,'67HAF98145',2);
+INSERT INTO public."Vehiculos"("Placa", "Modelo", "Año", color, puestos, "SerialMotor", fk_marca)VALUES ('DKA202','Audi R8','05/06/2017','ROJO',4,'81JJD33829',3);
+INSERT INTO public."Vehiculos"("Placa", "Modelo", "Año", color, puestos, "SerialMotor", fk_marca)VALUES ('KAI145','Cruze K34','05/08/2015','AZUL',4,'1JMA92KD1',7);
+INSERT INTO public."Vehiculos"("Placa", "Modelo", "Año", color, puestos, "SerialMotor", fk_marca)VALUES ('LSK045','Aveo Serie 3','04/10/2018','PLATEADO',4,'1JMA92KD1',7);
+INSERT INTO public."Vehiculos"("Placa", "Modelo", "Año", color, puestos, "SerialMotor", fk_marca)VALUES ('NUW450','Corolla 2011','20/01/2010','PLATEADO',4,'AA804ULAD',9);
+
 
 ----- INSERT PIEZA_PROVEEDOR
 
@@ -135,3 +143,31 @@ INSERT INTO public."ProvMarcas"("IDMarca", "Id_proveedor")VALUES (9,1);
 INSERT INTO public."ProvMarcas"("IDMarca", "Id_proveedor")VALUES (1,1);
 INSERT INTO public."ProvMarcas"("IDMarca", "Id_proveedor")VALUES (2,6);
 INSERT INTO public."ProvMarcas"("IDMarca", "Id_proveedor")VALUES (3,4);
+
+-- INSERTS DE POLIZAS
+
+INSERT INTO public."Polizas"("Id_Poliza", "Tipo", "fk_vehiculo", "fk_asegurado") VALUES (1, 'Cobertura Completa', 'RAP125', 6460293);
+INSERT INTO public."Polizas"("Id_Poliza", "Tipo", "fk_vehiculo", "fk_asegurado") VALUES (2, 'Cobertura Completa', 'ABI346', 8060263);
+INSERT INTO public."Polizas"("Id_Poliza", "Tipo", "fk_vehiculo", "fk_asegurado") VALUES (3, 'Cobertura Completa', '2Z0568', 7751293);
+INSERT INTO public."Polizas"("Id_Poliza", "Tipo", "fk_vehiculo", "fk_asegurado") VALUES (4, 'Cobertura Completa', 'GCH125', 16931148);
+INSERT INTO public."Polizas"("Id_Poliza", "Tipo", "fk_vehiculo", "fk_asegurado") VALUES (5, 'Cobertura Completa', 'BFY456', 25349253);
+INSERT INTO public."Polizas"("Id_Poliza", "Tipo", "fk_vehiculo", "fk_asegurado") VALUES (6, 'Daño a Terceros', 'LUP890', 9873654);
+INSERT INTO public."Polizas"("Id_Poliza", "Tipo", "fk_vehiculo", "fk_asegurado") VALUES (7, 'Daño a Terceros', 'VMN689', 11060293);
+INSERT INTO public."Polizas"("Id_Poliza", "Tipo", "fk_vehiculo", "fk_asegurado") VALUES (8, 'Daño a Terceros', 'KFD248', 8960143);
+INSERT INTO public."Polizas"("Id_Poliza", "Tipo", "fk_vehiculo", "fk_asegurado") VALUES (9, 'Daño a Terceros', 'QAS212', 6503473);
+
+-- INSERTS DE INCIDENTES
+
+INSERT INTO public."Incidentes"("Id_Incidente", "estadoEv", "fk_vehiculo_tercero", "fk_Poliza") VALUES (1, 'Pendiente', 'HGS531', 1);
+INSERT INTO public."Incidentes"("Id_Incidente", "estadoEv", "fk_vehiculo_tercero", "fk_Poliza") VALUES (2, 'Pendiente', 'DKA202', 2);
+INSERT INTO public."Incidentes"("Id_Incidente", "estadoEv", "fk_vehiculo_tercero", "fk_Poliza") VALUES (3, 'Pendiente', 'KAI145', 3);
+INSERT INTO public."Incidentes"("Id_Incidente", "estadoEv", "fk_vehiculo_tercero", "fk_Poliza") VALUES (4, 'Pendiente', 'LSK045', 4);
+INSERT INTO public."Incidentes"("Id_Incidente", "estadoEv", "fk_vehiculo_tercero", "fk_Poliza") VALUES (5, 'Pendiente', 'NUW450', 5);
+
+--INSERTS DE COTIZACIONES
+
+INSERT INTO public."Cotizacions"("Id_Cotizacion", "fk_incidente") VALUES (1,2);
+INSERT INTO public."Cotizacions"("Id_Cotizacion", "fk_incidente") VALUES (2,1);
+INSERT INTO public."Cotizacions"("Id_Cotizacion", "fk_incidente") VALUES (3,4);
+INSERT INTO public."Cotizacions"("Id_Cotizacion", "fk_incidente") VALUES (4,5);
+INSERT INTO public."Cotizacions"("Id_Cotizacion", "fk_incidente") VALUES (5,3);
