@@ -1988,19 +1988,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Hernani\\.nuget\\packages\\": {}
+    "C:\\Users\\aleja\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Hernani\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
+      "projectUniqueName": "C:\\Users\\aleja\\Desktop\\PROYECTO DE BISMARK\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
       "projectName": "ProyectoDesarrolloSoftware",
-      "projectPath": "C:\\Users\\Hernani\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
-      "packagesPath": "C:\\Users\\Hernani\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hernani\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\obj\\",
+      "projectPath": "C:\\Users\\aleja\\Desktop\\PROYECTO DE BISMARK\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
+      "packagesPath": "C:\\Users\\aleja\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\aleja\\Desktop\\PROYECTO DE BISMARK\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Hernani\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\aleja\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2085,7 +2090,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }
