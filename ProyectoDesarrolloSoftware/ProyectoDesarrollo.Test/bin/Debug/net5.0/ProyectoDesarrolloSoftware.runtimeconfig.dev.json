@@ -1,11 +1,16 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
+<<<<<<< HEAD
       "C:\\Users\\aleja\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\aleja\\.nuget\\packages",
       "C:\\Users\\Sergi\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\Sergi\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+=======
+      "C:\\Users\\Hernani\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Hernani\\.nuget\\packages"
+>>>>>>> parent of 2657c48... migraciones bien
     ]
   }
 }
