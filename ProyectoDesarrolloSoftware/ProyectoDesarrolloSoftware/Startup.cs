@@ -50,6 +50,7 @@ namespace ProyectoDesarrolloSoftware
 
             services.AddScoped<IMarcaDAO, MarcaDAO>();
             services.AddScoped<ITallerDAO, TallerDAO>();
+            services.AddTransient<IIncidenteDAO, IncidenteDAO>();
 
             services.AddSwaggerGen(c =>
             {
