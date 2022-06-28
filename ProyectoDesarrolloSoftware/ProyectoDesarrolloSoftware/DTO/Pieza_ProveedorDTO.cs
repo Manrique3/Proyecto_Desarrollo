@@ -8,7 +8,6 @@ namespace ProyectoDesarrolloSoftware.DTO
         public int Id_Proveedor { get; set; }
         public int cantidad { get; set; }
         public string Nombre_Proveedor { get; internal set; }
-
         public string Nombre_Pieza { get; internal set; }
     }
 }
