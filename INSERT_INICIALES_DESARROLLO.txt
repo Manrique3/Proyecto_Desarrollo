@@ -31,6 +31,18 @@ INSERT INTO public."Tallers"( "Nombre","Lugar") VALUES('Auto Aliado','La Urbina'
 INSERT INTO public."Tallers"( "Nombre","Lugar") VALUES('Taller Servi Express','Los Simbolos');
 
 
+-- INSERTS DE TALLERES Y MARCAS
+
+INSERT INTO public."Taller_Marcas"("IDMarca","Id_Taller") VALUES (6,3);
+INSERT INTO public."Taller_Marcas"("IDMarca","Id_Taller") VALUES (1,2);
+INSERT INTO public."Taller_Marcas"("IDMarca","Id_Taller") VALUES (4,5);
+INSERT INTO public."Taller_Marcas"("IDMarca","Id_Taller") VALUES (3,1);
+INSERT INTO public."Taller_Marcas"("IDMarca","Id_Taller") VALUES (7,9);
+INSERT INTO public."Taller_Marcas"("IDMarca","Id_Taller") VALUES (8,10);
+INSERT INTO public."Taller_Marcas"("IDMarca","Id_Taller") VALUES (2,4);
+INSERT INTO public."Taller_Marcas"("IDMarca","Id_Taller") VALUES (9,6);
+INSERT INTO public."Taller_Marcas"("IDMarca","Id_Taller") VALUES (10,7);
+
 
 ----- INSERT ASEGURADOS
 
@@ -156,18 +168,50 @@ INSERT INTO public."Polizas"("Id_Poliza", "Tipo", "fk_vehiculo", "fk_asegurado")
 INSERT INTO public."Polizas"("Id_Poliza", "Tipo", "fk_vehiculo", "fk_asegurado") VALUES (8, 'Daño a Terceros', 'KFD248', 8960143);
 INSERT INTO public."Polizas"("Id_Poliza", "Tipo", "fk_vehiculo", "fk_asegurado") VALUES (9, 'Daño a Terceros', 'QAS212', 6503473);
 
+
 -- INSERTS DE INCIDENTES
 
-INSERT INTO public."Incidentes"("Id_Incidente", "estadoEv", "fk_vehiculo_tercero", "fk_Poliza") VALUES (1, 'Pendiente', 'HGS531', 1);
-INSERT INTO public."Incidentes"("Id_Incidente", "estadoEv", "fk_vehiculo_tercero", "fk_Poliza") VALUES (2, 'Pendiente', 'DKA202', 2);
-INSERT INTO public."Incidentes"("Id_Incidente", "estadoEv", "fk_vehiculo_tercero", "fk_Poliza") VALUES (3, 'Pendiente', 'KAI145', 3);
-INSERT INTO public."Incidentes"("Id_Incidente", "estadoEv", "fk_vehiculo_tercero", "fk_Poliza") VALUES (4, 'Pendiente', 'LSK045', 4);
-INSERT INTO public."Incidentes"("Id_Incidente", "estadoEv", "fk_vehiculo_tercero", "fk_Poliza") VALUES (5, 'Pendiente', 'NUW450', 5);
+INSERT INTO public."Incidentes"("Id_Incidente", "estadoEv", "fk_Poliza") VALUES (1, 'Pendiente', 1);
+INSERT INTO public."Incidentes"("Id_Incidente", "estadoEv", "fk_Poliza") VALUES (2, 'Pendiente', 2);
+INSERT INTO public."Incidentes"("Id_Incidente", "estadoEv", "fk_Poliza") VALUES (3, 'Pendiente',3);
+INSERT INTO public."Incidentes"("Id_Incidente", "estadoEv", "fk_vehiculo_tercero", "fk_Poliza") VALUES (4, 'Pendiente', 'LSK045', 6);
+INSERT INTO public."Incidentes"("Id_Incidente", "estadoEv", "fk_vehiculo_tercero", "fk_Poliza") VALUES (5, 'Pendiente', 'NUW450', 7);
+
+-- INSERTS DE INCIDENTES_PIEZA
+
+INSERT INTO public."Incidente_Pieza"("Id_Incidente", "Id_Pieza") VALUES (1,1);
+INSERT INTO public."Incidente_Pieza"("Id_Incidente", "Id_Pieza") VALUES (2,4);
+INSERT INTO public."Incidente_Pieza"("Id_Incidente", "Id_Pieza") VALUES (4,7);
+INSERT INTO public."Incidente_Pieza"("Id_Incidente", "Id_Pieza") VALUES (4,6);
+INSERT INTO public."Incidente_Pieza"("Id_Incidente", "Id_Pieza") VALUES (3,5);
+INSERT INTO public."Incidente_Pieza"("Id_Incidente", "Id_Pieza") VALUES (5,3);
 
 --INSERTS DE COTIZACIONES
 
 INSERT INTO public."Cotizacions"("Id_Cotizacion", "fk_incidente") VALUES (1,2);
-INSERT INTO public."Cotizacions"("Id_Cotizacion", "fk_incidente") VALUES (2,1);
-INSERT INTO public."Cotizacions"("Id_Cotizacion", "fk_incidente") VALUES (3,4);
-INSERT INTO public."Cotizacions"("Id_Cotizacion", "fk_incidente") VALUES (4,5);
-INSERT INTO public."Cotizacions"("Id_Cotizacion", "fk_incidente") VALUES (5,3);
+INSERT INTO public."Cotizacions"("Id_Cotizacion", "fk_incidente") VALUES (2,5);
+INSERT INTO public."Cotizacions"("Id_Cotizacion", "fk_incidente") VALUES (3,1);
+INSERT INTO public."Cotizacions"("Id_Cotizacion", "fk_incidente") VALUES (4,4);
+INSERT INTO public."Cotizacions"("Id_Cotizacion", "fk_incidente") VALUES (5,4);
+INSERT INTO public."Cotizacions"("Id_Cotizacion", "fk_incidente") VALUES (6,3);
+
+
+
+--INSERTS DE COTIZACIONES DE LOS PROVEEDORES
+
+INSERT INTO public."Cotizacion_Proveedor"("Id_Cotizacion", "Id_Proveedor", "estatus", "Id_Pieza_Pieza_Proveedor", "Id_Proveedor_Pieza_Proveedor") VALUES (1,1, 'Pendiente', 1,1);
+INSERT INTO public."Cotizacion_Proveedor"("Id_Cotizacion", "Id_Proveedor", "estatus", "Id_Pieza_Pieza_Proveedor", "Id_Proveedor_Pieza_Proveedor") VALUES (2,3, 'Pendiente', 4,3);
+
+INSERT INTO public."Cotizacion_Proveedor"("Id_Cotizacion", "Id_Proveedor", "estatus", "Id_Pieza_Pieza_Proveedor", "Id_Proveedor_Pieza_Proveedor") VALUES (3,1, 'Pendiente', 1,1);
+INSERT INTO public."Cotizacion_Proveedor"("Id_Cotizacion", "Id_Proveedor", "estatus", "Id_Pieza_Pieza_Proveedor", "Id_Proveedor_Pieza_Proveedor") VALUES (4,3, 'Pendiente', 4,3);
+INSERT INTO public."Cotizacion_Proveedor"("Id_Cotizacion", "Id_Proveedor", "estatus", "Id_Pieza_Pieza_Proveedor", "Id_Proveedor_Pieza_Proveedor") VALUES (5,3, 'Pendiente', 6,3);
+
+INSERT INTO public."Cotizacion_Proveedor"("Id_Cotizacion", "Id_Proveedor", "estatus", "Id_Pieza_Pieza_Proveedor", "Id_Proveedor_Pieza_Proveedor") VALUES (6,9, 'Pendiente', 5,9);
+
+-- INSERTS DE COTIZACIONES DE LOS TALLERES
+
+INSERT INTO public."Cotizacion_Taller"("Id_Cotizacion", "Id_Taller", "estatus", "cantidad_piezas_reparar", "costo_reparacion", "tiempo_reparacion") VALUES (1,3, 'Pendiente', 1,300, 5);
+INSERT INTO public."Cotizacion_Taller"("Id_Cotizacion", "Id_Taller", "estatus", "cantidad_piezas_reparar", "costo_reparacion", "tiempo_reparacion") VALUES (2,6, 'Pendiente', 1,250, 3);
+INSERT INTO public."Cotizacion_Taller"("Id_Cotizacion", "Id_Taller", "estatus", "cantidad_piezas_reparar", "costo_reparacion", "tiempo_reparacion") VALUES (3,3, 'Pendiente', 1,220, 4);
+INSERT INTO public."Cotizacion_Taller"("Id_Cotizacion", "Id_Taller", "estatus", "cantidad_piezas_reparar", "costo_reparacion", "tiempo_reparacion") VALUES (4,9, 'Pendiente', 2,300, 5);
+INSERT INTO public."Cotizacion_Taller"("Id_Cotizacion", "Id_Taller", "estatus", "cantidad_piezas_reparar", "costo_reparacion", "tiempo_reparacion") VALUES (2,3, 'Pendiente', 1,400, 4);
