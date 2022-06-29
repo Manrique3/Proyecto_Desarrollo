@@ -4,8 +4,8 @@
     {
         public int IDMarca { get; set; }
         public int Id_Taller { get; set; }
-        public MarcaDTO Marca { get; set; }
-        public TallerDTO Taller { get; set; }
+        public string Nombre_Taller { get; internal set; }
+        public string Nombre_Marca { get; internal set; }
 
     }
 }

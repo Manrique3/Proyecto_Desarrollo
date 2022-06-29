@@ -39,20 +39,22 @@ namespace ProyectoDesarrolloSoftware
             
             services.AddTransient<DSDBContext>();
             services.AddTransient<IPiezasDAO,PiezasDAO>();
-            services.AddTransient<AseguradoDAO>();
             services.AddTransient<IProveedoresDAO, ProveedoresDAO>();
             services.AddTransient<IPieza_ProveedorDAO, Pieza_ProveedorDAO>();
+
             services.AddTransient<IAseguradoDAO,AseguradoDAO>();
             services.AddTransient<IPolizaDAO, PolizaDAO>();
             services.AddTransient<ICotizacionDAO, CotizacionDAO>();
             services.AddTransient<ICotizacion_TallerDAO, Cotizacion_TallerDAO>();
 
-            // services.AddSingleton<IMarcaDAO, MockMarcaData>(); //Realizacion del Mock de Data. //Error al hacer simulaci�n de los objetos en DTOs
+
+            // services.AddSingleton<IMarcaDAO, MockMarcaData>(); //Realizacion del Mock de Data. //Error al hacer simulación de los objetos en DTOs
 
             services.AddScoped<IMarcaDAO, MarcaDAO>();
             services.AddScoped<ITallerDAO, TallerDAO>();
             services.AddTransient<IIncidenteDAO, IncidenteDAO>();
-            services.AddTransient<IIncidente_PiezaDAO,Incidente_PiezaDAO>();
+            services.AddTransient<IIncidente_PiezaDAO, Incidente_PiezaDAO>();
+            services.AddTransient<ITaller_MarcaDAO, Taller_MarcaDAO>();
 
             services.AddSwaggerGen(c =>
             {
