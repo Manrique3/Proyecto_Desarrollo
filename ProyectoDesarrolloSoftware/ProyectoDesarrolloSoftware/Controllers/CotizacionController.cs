@@ -71,7 +71,7 @@ namespace ProyectoDesarrolloSoftware.Controllers
 
         [HttpDelete("BorrarCotizacion/{Id_Cotizacion}")]
 
-        public ActionResult DeletePieza([Required][FromRoute] int Id_Cotizacion)
+        public ActionResult DeleteCotizacion([Required][FromRoute] int Id_Cotizacion)
         {
             _cotizacionDAO.delete(Id_Cotizacion);
             return Ok();
