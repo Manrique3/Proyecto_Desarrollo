@@ -14,7 +14,9 @@ namespace ProyectoDesarrolloSoftware.DTO
         [RegularExpression(@"Pendiente|Declinado|Cotizado|Con Orden de Compra|Facturado")]
         public string estatus { get; set; }
         public string Nombre_Proveedor { get; internal set; } //NOMBRE DEL PROVEEDOR DE LA COTIZACION
-        public string Nombre_Pieza { get; internal set; } //NOMBRE DE LA PIEZA EN LA COTIZACION
+        public int Id_Pieza { get; internal set; } //ID DE LA PIEZA EN LA COTIZACION
+
+        public string Nombre_Pieza { get; internal set; }
 
 
     }

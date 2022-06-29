@@ -21,43 +21,39 @@ namespace ProyectoDesarrolloSoftware.AccesoDatos.DAOs
         {
             int id_del_proveedor;
 
-            id_del_proveedor = (from pm in _context.ProvMarcas
-                                from cp in _context.Cotizacion_Proveedor
-                                from c in _context.Cotizacions
-                                from i in _context.Incidentes
-                                from p in _context.Polizas
-                                from v in _context.Vehiculos
-                                from m in _context.Marcas
+            id_del_proveedor = (from pip in _context.Pieza_Proveedor
+                                from inp in _context.Incidente_Pieza
+                                from co in _context.Cotizacions
+                                from pi in _context.Piezas
 
+                                where co.Id_Cotizacion == Id_Cotizacion
+                                && co.fk_incidente == inp.Id_Incidente
+                                && inp.Id_Pieza == pip.Id_Pieza
+                                && pip.Id_Pieza == pi.Id_Pieza
 
-                                where c.Id_Cotizacion == Id_Cotizacion
-                                && c.fk_incidente == i.Id_Incidente
-                                && i.fk_Poliza == p.Id_Poliza
-                                && p.fk_vehiculo == v.Placa
-                                && v.fk_marca == m.IDMarca
-                                && m.IDMarca == pm.IDMarca
-
-                                select pm.Id_proveedor
+                                select pip.Id_proveedor
                                 ).First();
 
-            /*Cotizacion_Taller cotizacion_taller = new Cotizacion_Taller();
-            cotizacion_TallerDTO.Id_Cotizacion = Id_Cotizacion;
-            cotizacion_TallerDTO.Id_Taller = id_del_taller;
-            cotizacion_taller.Id_Cotizacion = cotizacion_TallerDTO.Id_Cotizacion;
-            cotizacion_taller.Id_Taller = cotizacion_TallerDTO.Id_Taller;
-            cotizacion_taller.costo_reparacion = cotizacion_TallerDTO.costo_reparacion;
-            cotizacion_taller.tiempo_reparacion = cotizacion_TallerDTO.tiempo_reparacion;
-            cotizacion_taller.cantidad_piezas_reparar = cotizacion_TallerDTO.cantidad_piezas_reparar;
-            cotizacion_taller.estatus = cotizacion_TallerDTO.estatus;*/
+            int id_de_pieza;
 
+            id_de_pieza = (from inp in _context.Incidente_Pieza
+                           from co in _context.Cotizacions
+
+                           where co.Id_Cotizacion == Id_Cotizacion
+                           && co.fk_incidente == inp.Id_Incidente                           
+
+                           select inp.Id_Pieza
+                                ).First();
 
             Cotizacion_Proveedor cotizacion_pro = new Cotizacion_Proveedor();
             cotizacion_proveedorDTO.Id_Cotizacion = Id_Cotizacion;
             cotizacion_proveedorDTO.Id_Proveedor = id_del_proveedor;
+            cotizacion_proveedorDTO.Id_Pieza = id_de_pieza;
             cotizacion_pro.Id_Cotizacion = cotizacion_proveedorDTO.Id_Cotizacion;
             cotizacion_pro.Id_Proveedor = cotizacion_proveedorDTO.Id_Proveedor;
             cotizacion_pro.estatus = cotizacion_proveedorDTO.estatus;
             cotizacion_pro.Id_Proveedor_Pieza_Proveedor = cotizacion_proveedorDTO.Id_Proveedor;
+            cotizacion_pro.Id_Pieza_Pieza_Proveedor = cotizacion_proveedorDTO.Id_Pieza;
             
             _context.Cotizacion_Proveedor.Add(cotizacion_pro);
             _context.SaveChanges();
