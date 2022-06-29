@@ -52,17 +52,19 @@ namespace ProyectoDesarrolloSoftware.Controllers
 
         [HttpPost]
         [Route("CrearCotizacionProveedor")]
-        public IActionResult CreatePiezaProveedor(Cotizacion_proveedorDTO cotizacion_Proveedor, int Id_Cotizacion, int Id_Proveedor)        {
+        public IActionResult CreatePiezaProveedor(Cotizacion_proveedorDTO cotizacion_Proveedor, int Id_Cotizacion)   {
 
-            _Cotizacion_Proveedor.AddCotizacion_Proveedor(cotizacion_Proveedor,Id_Cotizacion, Id_Proveedor);
+            _Cotizacion_Proveedor.AddCotizacion_Proveedor(cotizacion_Proveedor,Id_Cotizacion);
             return Ok("Se ha creado con exito la cotizacion");
 
         }
+
 
         [HttpPut("ActualizarCotizacionProveedor/{Id_Cotizacion}/{Id_Proveedor}")]
         public ActionResult EditarCotizacion_Proveedor(Cotizacion_proveedorDTO cotizacion_proveedorDTO, [Required][FromRoute] int Id_Cotizacion, [Required][FromRoute] int Id_Proveedor)
         {
             _Cotizacion_Proveedor.EditCotizacion_Proveedor(cotizacion_proveedorDTO, Id_Cotizacion, Id_Proveedor);
+
             return Ok("Se actualizo con exito la cotizacion del proveedor");
         }
 

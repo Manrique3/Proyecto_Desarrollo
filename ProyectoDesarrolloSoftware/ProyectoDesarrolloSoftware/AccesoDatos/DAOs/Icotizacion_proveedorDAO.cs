@@ -12,7 +12,7 @@ namespace ProyectoDesarrolloSoftware.AccesoDatos.DAOs
 
         List<Cotizacion_proveedorDTO> GetProveedoresPorCotizaciones(int Id_Cotizacion);
 
-        public Task AddCotizacion_Proveedor(Cotizacion_proveedorDTO cotizacion_proveedor, int Id_Cotizacion, int Id_Proveedor);
+        public Task AddCotizacion_Proveedor(Cotizacion_proveedorDTO cotizacion_proveedor, int Id_Cotizacion);
 
         public Task DeleteCotizacion_Proveedor(int Id_Cotizacion, int Id_Proveedor); // Se eliminar por ID y no por objeto de Marca
 
