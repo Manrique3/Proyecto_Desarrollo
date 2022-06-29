@@ -58,6 +58,8 @@ namespace ProyectoDesarrolloSoftware
             services.AddTransient<IPedidoDAO, PedidoDAO>();
             services.AddTransient<IProveedor_MarcaDAO, Proveedor_MarcaDAO>();
 
+            services.AddTransient<ICotizacion_ProveedorDAO, Cotizacion_ProveedorDAO>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ProyectoDesarrolloSoftware", Version = "v1" });

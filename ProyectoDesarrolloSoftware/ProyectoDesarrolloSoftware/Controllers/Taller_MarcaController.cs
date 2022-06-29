@@ -29,7 +29,6 @@ namespace ProyectoDesarrolloSoftware.Controllers
         {
             var response = new Responses.ApplicationResponse<List<Taller_MarcaDTO>>();
 
-
             response.Data = _taller_MarcaDAO.GetListaMarcaDeTallerById();//(IDMarca, Id_Taller);
 
             {
