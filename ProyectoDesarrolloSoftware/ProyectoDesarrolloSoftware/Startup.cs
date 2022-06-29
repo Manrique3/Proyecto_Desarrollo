@@ -55,6 +55,8 @@ namespace ProyectoDesarrolloSoftware
             services.AddTransient<IIncidenteDAO, IncidenteDAO>();
             services.AddTransient<IIncidente_PiezaDAO, Incidente_PiezaDAO>();
             services.AddTransient<ITaller_MarcaDAO, Taller_MarcaDAO>();
+            services.AddTransient<IPedidoDAO, PedidoDAO>();
+            services.AddTransient<IProveedor_MarcaDAO, Proveedor_MarcaDAO>();
 
             services.AddSwaggerGen(c =>
             {
