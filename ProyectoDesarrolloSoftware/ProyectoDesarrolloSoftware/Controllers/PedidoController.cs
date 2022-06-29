@@ -40,7 +40,7 @@ namespace ProyectoDesarrolloSoftware.Controllers
             return response;
         }
 
-        [HttpGet("pedidoregistrado/{id_pedido}")]
+        [HttpGet("pedidoregistrado/{Id_Pedido}")]
         public ApplicationResponse<PedidoDTO> GetPedido([Required][FromRoute] int Id_Pedido)
         {
             var response = new ApplicationResponse<PedidoDTO>();
@@ -64,14 +64,14 @@ namespace ProyectoDesarrolloSoftware.Controllers
             return Ok("Se Agregó el pedido con el numero de factura: " + pedidoDTO.numero_factura);
         }
 
-        [HttpPut("Actualizar/{estatus}")]
+        [HttpPut("Actualizar/{Id_Pedido}")]
         public ActionResult UpdatePedido(PedidoDTO pedidoDTO, [Required][FromRoute] int Id_Pedido)
         {
             _pedidoDAO.update(pedidoDTO, Id_Pedido);
             return Ok("Se Actulizo el estado del pedido: " + pedidoDTO.estatus);
         }
 
-        [HttpDelete("BorrarPedido/{Cedula}")]
+        [HttpDelete("BorrarPedido/{Id_Pedido}")]
 
         public ActionResult DeletePedido([Required][FromRoute] int Id_Pedido)
         {

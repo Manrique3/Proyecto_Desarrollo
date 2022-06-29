@@ -22,22 +22,19 @@ namespace ProyectoDesarrolloSoftware.AccesoDatos.DAOs
         {
             try
             {
-                var data = _context.Pedidos
-                   .Where(a => a.numero_factura == pedido)
+                var query = _context.Pedidos
+                   .Where(a => a.Id_Pedido == pedido)
                    .Select(a => new PedidoDTO
                    {
                        Id_Pedido = a.Id_Pedido,
                        estatus = a.estatus,
                        pago_total = a.pago_total,
                        numero_factura = a.numero_factura,
-                        fk_proveedor_prov_cot = a.fk_proveedor_prov_cot,
-                       fk_cotizacion_prov_cot = a.fk_cotizacion_prov_cot,
-                       fk_taller_taller_cot = a.fk_taller_taller_cot,
-                       fk_cotizacion_taller_cot = a.fk_cotizacion_taller_cot
+                        
 
                    });
 
-                return data.ToList();
+                return query.ToList();
             }
             catch (Exception ex)
             {
@@ -89,10 +86,7 @@ namespace ProyectoDesarrolloSoftware.AccesoDatos.DAOs
                     estatus = a.estatus,
                     pago_total = a.pago_total,
                     numero_factura = a.numero_factura,
-                    fk_proveedor_prov_cot = a.fk_proveedor_prov_cot,
-                    fk_cotizacion_prov_cot=a.fk_cotizacion_prov_cot,
-                    fk_taller_taller_cot=a.fk_taller_taller_cot,
-                    fk_cotizacion_taller_cot=a.fk_cotizacion_taller_cot
+                    
 
 
                 });
