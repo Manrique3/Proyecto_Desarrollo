@@ -35,19 +35,21 @@ namespace ProyectoDesarrolloSoftware.AccesoDatos.DAOs
         }
 
 
-        public List<Pieza_ProveedorDTO> GetListaPiezasDeProveedoresById(int Id_Pieza, int Id_Proveedor)
+        public List<Pieza_ProveedorDTO> GetListaPiezasDeProveedoresById(int Id_Proveedor)
         {
             try
             {
                 var query = (from pp in _context.Pieza_Proveedor
-                             join pi in _context.Piezas on pp.Id_Pieza equals pi.Id_Pieza
-                             join pr in _context.Proveedores on pp.Id_proveedor equals pr.Id_proveedor
-                             where pi.Id_Pieza == pp.Id_Pieza
-                             && pr.Id_proveedor == pp.Id_proveedor
+                             from pi in _context.Piezas
+                             from pr in _context.Proveedores
+                             where pr.Id_proveedor == Id_Proveedor      
+                             && pp.Id_proveedor == pr.Id_proveedor
+                             && pp.Id_Pieza == pi.Id_Pieza
                              select new Pieza_ProveedorDTO
                              {
                                  Id_Pieza = pi.Id_Pieza,
                                  Id_Proveedor = pr.Id_proveedor,
+                                 cantidad = pp.cantidad,
                                  Nombre_Proveedor = pr.Nombre,
                                  Nombre_Pieza = pi.Nombre
                              }).ToList();

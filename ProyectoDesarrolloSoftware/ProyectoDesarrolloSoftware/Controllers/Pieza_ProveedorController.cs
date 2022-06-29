@@ -23,13 +23,13 @@ namespace ProyectoDesarrolloSoftware.Controllers
         }
 
 
-        [HttpGet("ListaPieza_Proveedor/{Id_Pieza}/{Id_Proveedor}")]
-        public Responses.ApplicationResponse<List<Pieza_ProveedorDTO>> GetPiezasDeProveedorById([Required][FromRoute] int Id_Pieza, [Required][FromRoute] int Id_Proveedor)
+        [HttpGet("ListaPieza_Proveedor/{Id_Proveedor}")]
+        public Responses.ApplicationResponse<List<Pieza_ProveedorDTO>> GetPiezasDeProveedorById([Required][FromRoute] int Id_Proveedor)
         {
             var response = new Responses.ApplicationResponse<List<Pieza_ProveedorDTO>>();
 
 
-            response.Data = _pieza_proveedorDAO.GetListaPiezasDeProveedoresById(Id_Pieza, Id_Proveedor);
+            response.Data = _pieza_proveedorDAO.GetListaPiezasDeProveedoresById(Id_Proveedor);
 
             {
                 response.Success = false;
