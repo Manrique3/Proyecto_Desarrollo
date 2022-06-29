@@ -16,6 +16,8 @@ namespace ProyectoDesarrolloSoftware.DTO
         public int Id_Pieza_Pieza_Proveedor { get; set; }
         public int Id_Proveedor_Pieza_Proveedor { get; set; }
 
+        public string Nombre_Proveedor { get; internal set; }
+
 
     }
 }
