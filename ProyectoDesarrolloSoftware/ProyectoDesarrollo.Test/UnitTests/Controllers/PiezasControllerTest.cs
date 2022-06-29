@@ -60,23 +60,33 @@ namespace ProyectoDesarrollo.Test.UnitTests.Controllers
             return Task.CompletedTask;
         }
 
-        /*[Fact(DisplayName = "Agregar una Pieza")]
+        [Fact(DisplayName = "Agregar una Pieza")]
 
         public Task AgregarPieza()
         {
-            var  pieza = new PiezaDTO();
-            pieza.Id_Pieza = 100;
-            pieza.Nombre = "Pieza de carrito";
+            
             _serviceMock
-                .Setup(x => x.Add(pieza))
-                .Verifiable();
+                .Setup(x => x.Add(PiezaDTO piezadto)
+                .Returns(new PiezaDTO())
+            // Realizamos la prueba
+            var result = _controller.PostVehicle(new VehicleDTO()
+            {
+                Brand = "Toyota",
+                Model = "SSD",
+                Year = new DateTime(2005, 12, 5),
+                Type = EnumVehicle.Carro_Particular,
+                Serial_Bodywork = "452a154",
+                Serial_Engine = "25a25s1"
+            });
+
+
             var result = _controller.GetPieza(100);
 
             Assert.Equal((IEnumerable<PiezaDTO>)result, (IEnumerable<PiezaDTO>)pieza);
 
             return Task.CompletedTask;
 
-        }*/
+        }
 
 
     }
