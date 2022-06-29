@@ -6,14 +6,17 @@ using System.Threading.Tasks;
 
 namespace ProyectoDesarrolloSoftware.AccesoDatos.DAOs
 {
-    public interface Icotizacion_proveedorDAO
+    public interface ICotizacion_ProveedorDAO
     {
-        public List<Cotizacion_proveedorDTO> GetListaCotizacionesDeProveedores();//(int IDMarca, int Id_Taller);
-        public Task Add(Cotizacion_proveedorDTO cotizacion_ProveedorDTO);
+        List<Cotizacion_proveedorDTO> GetCotizacionesPorProveedor(int Id_Proveedor);
 
-        ///public Task update(Taller_MarcaDTO taller_MarcaDTO, int IDMarca, int Id_Taller);
-        public Task delete(int Id_Cotizacion, int Id_Taller);
-        public List<Cotizacion_proveedorDTO> GetCotizacionDeProveeor(int ID_Cotizacion);
-        public List<Cotizacion_proveedorDTO> GetCotizacionProveedor(int Id_Cotizacion);
+        List<Cotizacion_proveedorDTO> GetProveedoresPorCotizaciones(int Id_Cotizacion);
+
+        public Task AddCotizacion_Proveedor(Cotizacion_proveedorDTO cotizacion_proveedor, int Id_Cotizacion, int Id_Proveedor);
+
+        public Task DeleteCotizacion_Proveedor(int Id_Cotizacion, int Id_Proveedor); // Se eliminar por ID y no por objeto de Marca
+
+        public Task EditCotizacion_Proveedor(Cotizacion_proveedorDTO cotizacion_proveedorDTO, int Id_Cotizacion, int Id_Proveedor);
+
     }
 }
