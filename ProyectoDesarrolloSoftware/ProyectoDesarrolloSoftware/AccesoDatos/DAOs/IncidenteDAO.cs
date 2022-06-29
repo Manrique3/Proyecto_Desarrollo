@@ -20,7 +20,21 @@ namespace ProyectoDesarrolloSoftware.AccesoDatos.DAOs
             _context = context;
         }
 
-       
+
+        public Task AddVehiculoTercaro(VehiculoDTO vehiculoDTO)
+        {
+            Vehiculo vehiculo = new Vehiculo();
+            vehiculo.Placa = vehiculoDTO.Placa;
+            vehiculo.Modelo = vehiculoDTO.Modelo;
+            vehiculo.Año = vehiculoDTO.Año;
+            vehiculo.color = vehiculoDTO.Color;
+            vehiculo.puestos = vehiculoDTO.Puestos;
+            vehiculo.SerialMotor = vehiculoDTO.SerialMotor;
+            vehiculo.fk_marca = vehiculoDTO.fk_marca;
+            _context.Vehiculos.Add(vehiculo);
+            _context.SaveChanges();
+            return Task.CompletedTask;
+        }
 
         public Task Add(IncidenteDTO incidenteDTO)
         {
@@ -62,7 +76,7 @@ namespace ProyectoDesarrolloSoftware.AccesoDatos.DAOs
                     estadoEv = a.estadoEv,
                     fk_vehiculo_tercero = a.fk_vehiculo_tercero,
                     fk_Poliza = a.fk_Poliza
-                 
+
                 });
             return query.First();
         }
