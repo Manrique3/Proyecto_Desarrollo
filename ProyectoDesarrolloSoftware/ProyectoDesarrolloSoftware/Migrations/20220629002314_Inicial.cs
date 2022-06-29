@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace ProyectoDesarrolloSoftware.Migrations
 {
-    public partial class Cambios_Finales : Migration
+    public partial class Inicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -123,8 +123,7 @@ namespace ProyectoDesarrolloSoftware.Migrations
                 name: "Vehiculos",
                 columns: table => new
                 {
-                    Placa = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Placa = table.Column<string>(type: "text", nullable: false),
                     Modelo = table.Column<string>(type: "text", nullable: false),
                     Año = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
                     color = table.Column<string>(type: "text", nullable: true),
@@ -223,7 +222,7 @@ namespace ProyectoDesarrolloSoftware.Migrations
                     Id_Poliza = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Tipo = table.Column<string>(type: "text", nullable: false),
-                    fk_vehiculo = table.Column<int>(type: "integer", nullable: false),
+                    fk_vehiculo = table.Column<string>(type: "text", nullable: true),
                     fk_asegurado = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
@@ -250,7 +249,7 @@ namespace ProyectoDesarrolloSoftware.Migrations
                     Id_Incidente = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     estadoEv = table.Column<string>(type: "text", nullable: true),
-                    fk_vehiculo_tercero = table.Column<int>(type: "integer", nullable: true),
+                    fk_vehiculo_tercero = table.Column<string>(type: "text", nullable: true),
                     fk_Poliza = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>

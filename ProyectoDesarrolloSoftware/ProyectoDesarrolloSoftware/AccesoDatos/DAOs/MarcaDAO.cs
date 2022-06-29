@@ -84,7 +84,7 @@ namespace ProyectoDesarrolloSoftware.DataBase.DAOs.Implementations
                 .Select(b => new MarcaDTO
                 {
                     IDMarca = b.IDMarca,
-                    Nombre = b.Name,                    
+                    Nombre = b.Name,
 
                 }).ToList();
 

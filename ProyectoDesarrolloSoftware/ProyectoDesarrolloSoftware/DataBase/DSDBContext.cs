@@ -30,6 +30,7 @@ namespace ProyectoDesarrolloSoftware.DataBase
         public DbSet<Administrador_Cotizacion> Administrador_Cotizacion { get; set; }
         public DbSet<Cotizacion_Proveedor> Cotizacion_Proveedor { get; set; }
         public DbSet<Cotizacion_Taller> Cotizacion_Taller { get; set; }
+        public DbSet<Incidente_Pieza> Incidente_Pieza { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }
 
 

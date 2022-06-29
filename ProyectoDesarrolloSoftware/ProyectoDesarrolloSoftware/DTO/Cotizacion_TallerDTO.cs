@@ -16,8 +16,6 @@ namespace ProyectoDesarrolloSoftware.DTO
         public int cantidad_piezas_reparar { get; set; }
         public double costo_reparacion { get; set; }
         public int tiempo_reparacion { get; set; }
-        public CotizacionDTO Cotizacion { get; set; }
-        public TallerDTO Taller { get; set; }
 
 
     }
