@@ -53,7 +53,9 @@ namespace ProyectoDesarrolloSoftware.AccesoDatos.DAOs
 
         public PiezaDTO GetPieza(int Id_Pieza)
         {
-            var query = _context.Piezas
+            try
+            {
+                var query = _context.Piezas
                   .Where(b => b.Id_Pieza == Id_Pieza)
                   .Select(b => new PiezaDTO
                   {
@@ -61,7 +63,13 @@ namespace ProyectoDesarrolloSoftware.AccesoDatos.DAOs
                       Nombre = b.Nombre
                   });
 
-            return query.First();
+                return query.First();
+            }
+            catch (Excepciones)
+            {
+                throw new Exception("La pieza no puede ser mostrada");
+            }
+
         }
 
         public Task delete(int Id_Pieza)

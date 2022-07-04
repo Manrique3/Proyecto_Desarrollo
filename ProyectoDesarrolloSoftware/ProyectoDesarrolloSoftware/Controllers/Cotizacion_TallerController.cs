@@ -52,11 +52,11 @@ namespace ProyectoDesarrolloSoftware.Controllers
             return obj;
         }
 
-        [HttpPost("create/{Id_Cotizacion}")]
-        public ActionResult CreateCotizacionTaller(Cotizacion_TallerDTO cotizacion_tallerDTO, [Required][FromRoute] int Id_Cotizacion)
+        [HttpPost("create/{Id_Cotizacion}/{Id_Taller}")]
+        public ActionResult CreateCotizacionTaller(Cotizacion_TallerDTO cotizacion_tallerDTO, [Required][FromRoute] int Id_Cotizacion, [Required][FromRoute] int Id_Taller)
         {
 
-            _cotizacionTallerDAO.Add(cotizacion_tallerDTO, Id_Cotizacion);
+            _cotizacionTallerDAO.Add(cotizacion_tallerDTO, Id_Cotizacion, Id_Taller);
 
             return Ok(cotizacion_tallerDTO);
         }

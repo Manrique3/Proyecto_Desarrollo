@@ -8,7 +8,7 @@ namespace ProyectoDesarrolloSoftware.AccesoDatos.DAOs
     public interface ICotizacion_TallerDAO
     {
         public List<Cotizacion_TallerDTO> GetListaCotizacionDeTallerById(int Id_Cotizacion);
-        public Task Add(Cotizacion_TallerDTO cotizacion_tallerDTO, int Id_Cotizacion);
+        public Task Add(Cotizacion_TallerDTO cotizacion_tallerDTO, int Id_Cotizacion, int Id_Taller);
         public Task update(Cotizacion_TallerDTO cotizacion_tallerDTO, int Id_Cotizacion);
         public Task delete(int Id_Cotizacion);
         public Cotizacion_TallerDTO GetCotizacionTaller(int Id_Cotizacion);

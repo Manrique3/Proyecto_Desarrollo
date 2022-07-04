@@ -43,9 +43,9 @@ namespace ProyectoDesarrolloSoftware.AccesoDatos.DAOs
 
         }
 
-        public Task Add(Cotizacion_TallerDTO cotizacion_TallerDTO, int Id_Cotizacion)
+        public Task Add(Cotizacion_TallerDTO cotizacion_TallerDTO, int Id_Cotizacion, int Id_Taller)
         {
-            int id_del_taller;
+            /*int id_del_taller;
             id_del_taller = (from ta in _context.Taller_Marcas
                          from ma in _context.Marcas
                          from co in _context.Cotizacions
@@ -62,13 +62,33 @@ namespace ProyectoDesarrolloSoftware.AccesoDatos.DAOs
                          && ma.IDMarca == ta.IDMarca
 
                          select ta.Id_Taller                        
-                         ).First();          
-            
-            
+                         ).First();*/
+
+            int id_de_poliza;
+            id_de_poliza = (from po in _context.Polizas
+                            from co in _context.Cotizacions
+                            from inc in _context.Incidentes
+
+                            where co.Id_Cotizacion == Id_Cotizacion
+                            && co.fk_incidente == inc.Id_Incidente
+                            && inc.fk_Poliza == po.Id_Poliza
+                            select po.Id_Poliza).First();
+
+            int año_poliza;
+            año_poliza = (from po in _context.Polizas
+                          where po.Id_Poliza == id_de_poliza
+
+                          select po.Año.Year).First();
+
+
+
+            if(año_poliza > 2020) {
+                cotizacion_TallerDTO.costo_reparacion = cotizacion_TallerDTO.costo_reparacion / 2;
+            }
 
             Cotizacion_Taller cotizacion_taller = new Cotizacion_Taller();
             cotizacion_TallerDTO.Id_Cotizacion = Id_Cotizacion;
-            cotizacion_TallerDTO.Id_Taller = id_del_taller;
+            cotizacion_TallerDTO.Id_Taller = Id_Taller;
             cotizacion_taller.Id_Cotizacion = cotizacion_TallerDTO.Id_Cotizacion;
             cotizacion_taller.Id_Taller = cotizacion_TallerDTO.Id_Taller;
             cotizacion_taller.costo_reparacion = cotizacion_TallerDTO.costo_reparacion;
@@ -79,6 +99,7 @@ namespace ProyectoDesarrolloSoftware.AccesoDatos.DAOs
             _context.Cotizacion_Taller.Add(cotizacion_taller);
             _context.SaveChanges();
             return Task.CompletedTask;
+
         }
 
         public Task update(Cotizacion_TallerDTO cotizacion_TallerDTO, int Id_Cotizacion)

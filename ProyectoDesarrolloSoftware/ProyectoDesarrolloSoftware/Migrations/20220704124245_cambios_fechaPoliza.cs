@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace ProyectoDesarrolloSoftware.Migrations
 {
-    public partial class Inicial : Migration
+    public partial class cambios_fechaPoliza : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -222,6 +222,7 @@ namespace ProyectoDesarrolloSoftware.Migrations
                     Id_Poliza = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Tipo = table.Column<string>(type: "text", nullable: false),
+                    Año = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
                     fk_vehiculo = table.Column<string>(type: "text", nullable: true),
                     fk_asegurado = table.Column<int>(type: "integer", nullable: false)
                 },

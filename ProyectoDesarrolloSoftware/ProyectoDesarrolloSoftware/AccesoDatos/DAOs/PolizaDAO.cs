@@ -27,6 +27,7 @@ namespace ProyectoDesarrolloSoftware.AccesoDatos.DAOs
                 {
                     Id_Poliza = p.Id_Poliza,
                     Tipo = p.Tipo,
+                    Año = p.Año,
                     fk_vehiculo = p.fk_vehiculo,
                     fk_asegurado = p.fk_asegurado,
                 });
@@ -53,6 +54,7 @@ namespace ProyectoDesarrolloSoftware.AccesoDatos.DAOs
             Poliza poliza = new Poliza();
             poliza.Id_Poliza = polizaDTO.Id_Poliza;
             poliza.Tipo = polizaDTO.Tipo;
+            poliza.Año = polizaDTO.Año;
             poliza.fk_vehiculo = polizaDTO.fk_vehiculo;
             poliza.fk_asegurado = polizaDTO.fk_asegurado;
             _context.Polizas.Add(poliza);

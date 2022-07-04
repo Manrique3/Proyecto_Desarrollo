@@ -10,8 +10,8 @@ using ProyectoDesarrolloSoftware.DataBase;
 namespace ProyectoDesarrolloSoftware.Migrations
 {
     [DbContext(typeof(DSDBContext))]
-    [Migration("20220629002314_Inicial")]
-    partial class Inicial
+    [Migration("20220704124245_cambios_fechaPoliza")]
+    partial class cambios_fechaPoliza
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -301,6 +301,9 @@ namespace ProyectoDesarrolloSoftware.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<DateTime>("Año")
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Tipo")
                         .IsRequired()
