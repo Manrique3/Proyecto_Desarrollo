@@ -1,6 +1,7 @@
 ﻿    
 using ProyectoDesarrolloSoftware.DTO;
 using ProyectoDesarrolloSoftware.Entidades;
+using ProyectoDesarrolloSoftware.Fabricas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,12 +11,11 @@ namespace ProyectoDesarrolloSoftware.DataBase.DAOs.Implementations
 {
     public class MarcaDAO : IMarcaDAO
     {
-        private DSDBContext _context;
-        public MarcaDAO(DSDBContext context)
-        {
-            _context = context;
+        private static DesignTimeDBContextFactory desing = new DesignTimeDBContextFactory();
+        private IMarcaDBContext _context = desing.CreateDbContext(null);
 
-        }
+       
+        
       
         public Task AddMarca(MarcaDTO marca)
         {
@@ -27,7 +27,7 @@ namespace ProyectoDesarrolloSoftware.DataBase.DAOs.Implementations
                 //_marca.IDMarca = marca.IDMarca;
                 _marca.Name = marca.Nombre;
                 _context.Marcas.Add(_marca);
-                _context.SaveChanges();
+                _context.DSDBContext.SaveChanges();
                 return Task.CompletedTask;
 
                 
@@ -42,7 +42,7 @@ namespace ProyectoDesarrolloSoftware.DataBase.DAOs.Implementations
         {
             var data = _context.Marcas.Find(Id_marca); // Se Debe eliminar por ID, no por objeto.
             _context.Marcas.Remove(data);
-            _context.SaveChanges();
+            _context.DSDBContext.SaveChanges();
             return Task.CompletedTask;
 
       
@@ -52,7 +52,7 @@ namespace ProyectoDesarrolloSoftware.DataBase.DAOs.Implementations
         {
             var data = _context.Marcas.Find(id_marca);
             data.Name = marca.Nombre;
-            _context.SaveChanges();
+            _context.DSDBContext.SaveChanges();
 
             return Task.CompletedTask;
         }
