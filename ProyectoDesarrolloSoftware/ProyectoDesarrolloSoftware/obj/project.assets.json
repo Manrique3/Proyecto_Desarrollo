@@ -663,6 +663,56 @@
         "runtime": {
           "lib/netcoreapp2.1/_._": {}
         }
+      },
+      "ProyectoDesarrolloSoftware.BussinesLogic.DTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/ProyectoDesarrolloSoftware.BussinesLogic.DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ProyectoDesarrolloSoftware.BussinesLogic.DTO.dll": {}
+        }
+      },
+      "ProyectoDesarrolloSoftware.BussinessLogic.Command/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/ProyectoDesarrolloSoftware.BussinessLogic.Command.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ProyectoDesarrolloSoftware.BussinessLogic.Command.dll": {}
+        }
+      },
+      "ProyectoDesarrolloSoftware.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.17",
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.17",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "5.0.10",
+          "ProyectoDesarrolloSoftware.BussinesLogic.DTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ProyectoDesarrolloSoftware.DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ProyectoDesarrolloSoftware.DataAccess.dll": {}
+        }
+      },
+      "ProyectoDesarrolloSoftware.Mappers/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "ProyectoDesarrolloSoftware.BussinesLogic.DTO": "1.0.0",
+          "ProyectoDesarrolloSoftware.DataAccess": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ProyectoDesarrolloSoftware.Mappers.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ProyectoDesarrolloSoftware.Mappers.dll": {}
+        }
       }
     }
   },
@@ -1972,6 +2022,26 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "ProyectoDesarrolloSoftware.BussinesLogic.DTO/1.0.0": {
+      "type": "project",
+      "path": "../BussinesLogic/ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj",
+      "msbuildProject": "../BussinesLogic/ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj"
+    },
+    "ProyectoDesarrolloSoftware.BussinessLogic.Command/1.0.0": {
+      "type": "project",
+      "path": "../BussinessLogic.Command/ProyectoDesarrolloSoftware.BussinessLogic.Command.csproj",
+      "msbuildProject": "../BussinessLogic.Command/ProyectoDesarrolloSoftware.BussinessLogic.Command.csproj"
+    },
+    "ProyectoDesarrolloSoftware.DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../DataAccess/ProyectoDesarrolloSoftware.DataAccess.csproj",
+      "msbuildProject": "../DataAccess/ProyectoDesarrolloSoftware.DataAccess.csproj"
+    },
+    "ProyectoDesarrolloSoftware.Mappers/1.0.0": {
+      "type": "project",
+      "path": "../Mappers/ProyectoDesarrolloSoftware.Mappers.csproj",
+      "msbuildProject": "../Mappers/ProyectoDesarrolloSoftware.Mappers.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1984,6 +2054,9 @@
       "Npgsql >= 5.0.13",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 5.0.10",
       "Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite >= 5.0.10",
+      "ProyectoDesarrolloSoftware.BussinesLogic.DTO >= 1.0.0",
+      "ProyectoDesarrolloSoftware.BussinessLogic.Command >= 1.0.0",
+      "ProyectoDesarrolloSoftware.Mappers >= 1.0.0",
       "Swashbuckle.AspNetCore >= 5.6.3"
     ]
   },
@@ -2013,7 +2086,17 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj"
+            },
+            "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinessLogic.Command\\ProyectoDesarrolloSoftware.BussinessLogic.Command.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinessLogic.Command\\ProyectoDesarrolloSoftware.BussinessLogic.Command.csproj"
+            },
+            "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\Mappers\\ProyectoDesarrolloSoftware.Mappers.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\Mappers\\ProyectoDesarrolloSoftware.Mappers.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

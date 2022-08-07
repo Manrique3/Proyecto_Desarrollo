@@ -1,15 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using ProyectoDesarrolloSoftware.AccesoDatos.DAOs;
-using ProyectoDesarrolloSoftware.DTO;
-using ProyectoDesarrolloSoftware.Exceptions;
-using ProyectoDesarrolloSoftware.Responses;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+using ProyectoDesarrolloSoftware.BussinesLogic.DTO.DTO;
+using ProyectoDesarrolloSoftware.DataAccess.DAOs;
 //FALTA POR TERMINAR CONTROLADOR
 
 
@@ -17,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoDesarrolloSoftware.Controllers
 {
-    
+
     [ApiController]
     public class TallerController : ControllerBase
     {

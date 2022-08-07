@@ -1,17 +1,11 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using ProyectoDesarrolloSoftware.DataBase;
-using ProyectoDesarrolloSoftware.DTO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
+using ProyectoDesarrolloSoftware.BussinesLogic.DTO.DTO;
+using ProyectoDesarrolloSoftware.DataAccess.DAOs;
 
 namespace ProyectoDesarrolloSoftware.Controllers
 {
-    
+
     [ApiController]
     public class ControladorMarca : ControllerBase
     {

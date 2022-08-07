@@ -1,0 +1,16 @@
+C:\Users\User\Desktop\Proyecto_Desarrollo\ProyectoDesarrolloSoftware\BussinesLogic\bin\Debug\net5.0\ProyectoDesarrolloSoftware.BussinesLogic.DTO.exe
+C:\Users\User\Desktop\Proyecto_Desarrollo\ProyectoDesarrolloSoftware\BussinesLogic\bin\Debug\net5.0\ProyectoDesarrolloSoftware.BussinesLogic.DTO.deps.json
+C:\Users\User\Desktop\Proyecto_Desarrollo\ProyectoDesarrolloSoftware\BussinesLogic\bin\Debug\net5.0\ProyectoDesarrolloSoftware.BussinesLogic.DTO.runtimeconfig.json
+C:\Users\User\Desktop\Proyecto_Desarrollo\ProyectoDesarrolloSoftware\BussinesLogic\bin\Debug\net5.0\ProyectoDesarrolloSoftware.BussinesLogic.DTO.runtimeconfig.dev.json
+C:\Users\User\Desktop\Proyecto_Desarrollo\ProyectoDesarrolloSoftware\BussinesLogic\bin\Debug\net5.0\ProyectoDesarrolloSoftware.BussinesLogic.DTO.dll
+C:\Users\User\Desktop\Proyecto_Desarrollo\ProyectoDesarrolloSoftware\BussinesLogic\bin\Debug\net5.0\ref\ProyectoDesarrolloSoftware.BussinesLogic.DTO.dll
+C:\Users\User\Desktop\Proyecto_Desarrollo\ProyectoDesarrolloSoftware\BussinesLogic\bin\Debug\net5.0\ProyectoDesarrolloSoftware.BussinesLogic.DTO.pdb
+C:\Users\User\Desktop\Proyecto_Desarrollo\ProyectoDesarrolloSoftware\BussinesLogic\obj\Debug\net5.0\ProyectoDesarrolloSoftware.BussinesLogic.DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Proyecto_Desarrollo\ProyectoDesarrolloSoftware\BussinesLogic\obj\Debug\net5.0\ProyectoDesarrolloSoftware.BussinesLogic.DTO.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Proyecto_Desarrollo\ProyectoDesarrolloSoftware\BussinesLogic\obj\Debug\net5.0\ProyectoDesarrolloSoftware.BussinesLogic.DTO.AssemblyInfo.cs
+C:\Users\User\Desktop\Proyecto_Desarrollo\ProyectoDesarrolloSoftware\BussinesLogic\obj\Debug\net5.0\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Proyecto_Desarrollo\ProyectoDesarrolloSoftware\BussinesLogic\obj\Debug\net5.0\ProyectoDesarrolloSoftware.BussinesLogic.DTO.dll
+C:\Users\User\Desktop\Proyecto_Desarrollo\ProyectoDesarrolloSoftware\BussinesLogic\obj\Debug\net5.0\ref\ProyectoDesarrolloSoftware.BussinesLogic.DTO.dll
+C:\Users\User\Desktop\Proyecto_Desarrollo\ProyectoDesarrolloSoftware\BussinesLogic\obj\Debug\net5.0\ProyectoDesarrolloSoftware.BussinesLogic.DTO.pdb
+C:\Users\User\Desktop\Proyecto_Desarrollo\ProyectoDesarrolloSoftware\BussinesLogic\obj\Debug\net5.0\ProyectoDesarrolloSoftware.BussinesLogic.DTO.genruntimeconfig.cache
+C:\Users\User\Desktop\Proyecto_Desarrollo\ProyectoDesarrolloSoftware\BussinesLogic\obj\Debug\net5.0\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj.AssemblyReference.cache

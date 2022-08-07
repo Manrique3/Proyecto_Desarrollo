@@ -1,13 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using ProyectoDesarrolloSoftware.AccesoDatos.DAOs;
-using ProyectoDesarrolloSoftware.DTO;
-using System;
+using ProyectoDesarrolloSoftware.BussinesLogic.DTO.DTO;
+using ProyectoDesarrolloSoftware.DataAccess.DAOs;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ProyectoDesarrolloSoftware.Controllers
 {

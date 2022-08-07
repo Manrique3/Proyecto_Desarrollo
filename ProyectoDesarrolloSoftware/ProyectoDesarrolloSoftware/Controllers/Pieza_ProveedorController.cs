@@ -1,12 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using ProyectoDesarrolloSoftware.AccesoDatos.DAOs;
-using ProyectoDesarrolloSoftware.DTO;
-using ProyectoDesarrolloSoftware.Exceptions;
-using ProyectoDesarrolloSoftware.Responses;
+using ProyectoDesarrolloSoftware.BussinesLogic.DTO.DTO;
+using ProyectoDesarrolloSoftware.DataAccess.DAOs;
+
 namespace ProyectoDesarrolloSoftware.Controllers
 {
     [Route("PiezasProveedores")]

@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ProyectoDesarrolloSoftware.AccesoDatos.DAOs;
-using ProyectoDesarrolloSoftware.DTO;
+using ProyectoDesarrolloSoftware.BussinesLogic.DTO.DTO;
+using ProyectoDesarrolloSoftware.DataAccess.DAOs;
 using ProyectoDesarrolloSoftware.Exceptions;
 using ProyectoDesarrolloSoftware.Responses;
 namespace ProyectoDesarrolloSoftware.Controllers
@@ -65,7 +65,7 @@ namespace ProyectoDesarrolloSoftware.Controllers
 
         public ActionResult UpdateCotizacion(CotizacionDTO cotizacionDTO, [Required][FromRoute] int Id_Cotizacion)
         {
-            _cotizacionDAO.update(cotizacionDTO, Id_Cotizacion);
+            _cotizacionDAO.Update(cotizacionDTO, Id_Cotizacion);
             return Ok(cotizacionDTO);
         }
 
@@ -73,7 +73,7 @@ namespace ProyectoDesarrolloSoftware.Controllers
 
         public ActionResult DeleteCotizacion([Required][FromRoute] int Id_Cotizacion)
         {
-            _cotizacionDAO.delete(Id_Cotizacion);
+            _cotizacionDAO.Delete(Id_Cotizacion);
             return Ok();
         }
     }
