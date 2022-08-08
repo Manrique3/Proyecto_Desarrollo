@@ -24,7 +24,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
             _context = context;
         }*/
 
-        public List<AseguradoDTO> VerRegistrosAsegurado(string asegurado)
+        public AseguradoDTO VerRegistrosAsegurado(string asegurado)
         {
             try
             {
@@ -37,7 +37,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
                        Apellido = a.Apellido
                    });
 
-                return data.ToList();
+                return data.Single();
             }
             catch (Exception ex)
             {
@@ -45,6 +45,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
             }
 
         }
+    
        
         public Task Add(AseguradoDTO aseguradoDTO)
         {

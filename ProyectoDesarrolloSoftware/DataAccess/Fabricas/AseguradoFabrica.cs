@@ -9,7 +9,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.Fabricas
 {
     public class AseguradoFabrica
     {
-        public static AseguradoDAO CreateProviderDB()
+        public static AseguradoDAO CreateAseguradoDB()
         {
             return new AseguradoDAO();
         }

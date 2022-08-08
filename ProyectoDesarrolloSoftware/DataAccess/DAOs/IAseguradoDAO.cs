@@ -6,7 +6,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
 {
     public interface IAseguradoDAO
     {
-        public List<AseguradoDTO> VerRegistrosAsegurado(string asegurado);
+        public AseguradoDTO VerRegistrosAsegurado(string asegurado);
         public Task Add(AseguradoDTO aseguradoDTO);
         public Task update(AseguradoDTO aseguradoDTO, int Cedula);
         public Task Delete(int Cedula);

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj": {}
+    "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj": {
+    "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj",
+        "projectUniqueName": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj",
         "projectName": "ProyectoDesarrolloSoftware.BussinesLogic.DTO",
-        "projectPath": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinesLogic\\obj\\",
+        "projectPath": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj",
+        "packagesPath": "C:\\Users\\Hernani\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\BussinesLogic\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Hernani\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -54,75 +54,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinessLogic.Command\\ProyectoDesarrolloSoftware.BussinessLogic.Command.csproj": {
+    "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\BussinessLogic.Command\\ProyectoDesarrolloSoftware.BussinessLogic.Command.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinessLogic.Command\\ProyectoDesarrolloSoftware.BussinessLogic.Command.csproj",
+        "projectUniqueName": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\BussinessLogic.Command\\ProyectoDesarrolloSoftware.BussinessLogic.Command.csproj",
         "projectName": "ProyectoDesarrolloSoftware.BussinessLogic.Command",
-        "projectPath": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinessLogic.Command\\ProyectoDesarrolloSoftware.BussinessLogic.Command.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinessLogic.Command\\obj\\",
+        "projectPath": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\BussinessLogic.Command\\ProyectoDesarrolloSoftware.BussinessLogic.Command.csproj",
+        "packagesPath": "C:\\Users\\Hernani\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\BussinessLogic.Command\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net5.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\DataAccess\\ProyectoDesarrolloSoftware.DataAccess.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\DataAccess\\ProyectoDesarrolloSoftware.DataAccess.csproj",
-        "projectName": "ProyectoDesarrolloSoftware.DataAccess",
-        "projectPath": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\DataAccess\\ProyectoDesarrolloSoftware.DataAccess.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\DataAccess\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Hernani\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -136,8 +82,72 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj"
+              "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj": {
+                "projectPath": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj"
+              },
+              "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\DataAccess\\ProyectoDesarrolloSoftware.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\DataAccess\\ProyectoDesarrolloSoftware.DataAccess.csproj"
+              },
+              "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\Mappers\\ProyectoDesarrolloSoftware.Mappers.csproj": {
+                "projectPath": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\Mappers\\ProyectoDesarrolloSoftware.Mappers.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\DataAccess\\ProyectoDesarrolloSoftware.DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\DataAccess\\ProyectoDesarrolloSoftware.DataAccess.csproj",
+        "projectName": "ProyectoDesarrolloSoftware.DataAccess",
+        "projectPath": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\DataAccess\\ProyectoDesarrolloSoftware.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Hernani\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Hernani\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj": {
+                "projectPath": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj"
               }
             }
           }
@@ -171,6 +181,10 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[5.0.10, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.4.0, )"
             }
           },
           "imports": [
@@ -188,21 +202,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\Mappers\\ProyectoDesarrolloSoftware.Mappers.csproj": {
+    "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\Mappers\\ProyectoDesarrolloSoftware.Mappers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\Mappers\\ProyectoDesarrolloSoftware.Mappers.csproj",
+        "projectUniqueName": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\Mappers\\ProyectoDesarrolloSoftware.Mappers.csproj",
         "projectName": "ProyectoDesarrolloSoftware.Mappers",
-        "projectPath": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\Mappers\\ProyectoDesarrolloSoftware.Mappers.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\Mappers\\obj\\",
+        "projectPath": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\Mappers\\ProyectoDesarrolloSoftware.Mappers.csproj",
+        "packagesPath": "C:\\Users\\Hernani\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\Mappers\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Hernani\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -216,11 +230,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj"
+              "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj": {
+                "projectPath": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj"
               },
-              "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\DataAccess\\ProyectoDesarrolloSoftware.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\DataAccess\\ProyectoDesarrolloSoftware.DataAccess.csproj"
+              "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\DataAccess\\ProyectoDesarrolloSoftware.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\DataAccess\\ProyectoDesarrolloSoftware.DataAccess.csproj"
               }
             }
           }
@@ -249,21 +263,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj": {
+    "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
+        "projectUniqueName": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
         "projectName": "ProyectoDesarrolloSoftware",
-        "projectPath": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\obj\\",
+        "projectPath": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
+        "packagesPath": "C:\\Users\\Hernani\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Hernani\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -277,14 +291,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj"
+              "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj": {
+                "projectPath": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj"
               },
-              "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinessLogic.Command\\ProyectoDesarrolloSoftware.BussinessLogic.Command.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinessLogic.Command\\ProyectoDesarrolloSoftware.BussinessLogic.Command.csproj"
+              "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\BussinessLogic.Command\\ProyectoDesarrolloSoftware.BussinessLogic.Command.csproj": {
+                "projectPath": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\BussinessLogic.Command\\ProyectoDesarrolloSoftware.BussinessLogic.Command.csproj"
               },
-              "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\Mappers\\ProyectoDesarrolloSoftware.Mappers.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\Mappers\\ProyectoDesarrolloSoftware.Mappers.csproj"
+              "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\Mappers\\ProyectoDesarrolloSoftware.Mappers.csproj": {
+                "projectPath": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\Mappers\\ProyectoDesarrolloSoftware.Mappers.csproj"
               }
             }
           }
@@ -358,7 +372,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

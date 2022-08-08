@@ -6,6 +6,9 @@ using ProyectoDesarrolloSoftware.BussinesLogic.DTO.DTO;
 using ProyectoDesarrolloSoftware.DataAccess.DAOs;
 using ProyectoDesarrolloSoftware.Exceptions;
 using ProyectoDesarrolloSoftware.Responses;
+using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Asegurado;
+using ProyectoDesarrolloSoftware.BussinessLogic.Command;
+
 
 namespace ProyectoDesarrolloSoftware.Controllers
 {
@@ -23,20 +26,25 @@ namespace ProyectoDesarrolloSoftware.Controllers
             }
 
         [HttpGet("asegurados/{asegurado}")]
-        public ApplicationResponse<List<AseguradoDTO>> VerRegistrosAsegurado([Required][FromRoute] string asegurado)
+        public AseguradoDTO VerRegistrosAsegurado([Required][FromRoute] string asegurado)
         {
-            var response = new ApplicationResponse<List<AseguradoDTO>>();
+            //var response = new ApplicationResponse<List<AseguradoDTO>>();
             try
             {
-                response.Data = _aseguradoDAO.VerRegistrosAsegurado(asegurado);   
+                VerRegistrosAseguradoCommand command =
+                    CommandFactory.createVerRegistrosAseguradoCommand(asegurado);
+                command.Execute();
+                return command.GetResult();
+                //response.Data = _aseguradoDAO.VerRegistrosAsegurado(asegurado);   
             }
             catch (Excepciones ex)
             {
-                response.Success = false;
-                response.Message = ex.Message;
-                response.Exception = ex.Excepcion.ToString();
+                throw;
+                //response.Success = false;
+                //response.Message = ex.Message;
+                //response.Exception = ex.Excepcion.ToString();
             }
-            return response;
+            //return response;
         }
 
         [HttpGet("aseguradoregistrado/{cedula}")]

@@ -40,25 +40,25 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DataBase
 
         DbContext IDSDBContext.DbContext => throw new System.NotImplementedException();
 
-        DbSet<Vehiculo> IDSDBContext.Vehiculos { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-        DbSet<Usuario> IDSDBContext.Usuarios { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-        DbSet<Administrador> IDSDBContext.Administradors { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-        DbSet<Poliza> IDSDBContext.Polizas { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-        DbSet<Proveedor> IDSDBContext.Proveedores { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-        DbSet<Taller> IDSDBContext.Tallers { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-        DbSet<Perito> IDSDBContext.Peritos { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-        DbSet<Taller_Marca> IDSDBContext.Taller_Marcas { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-        DbSet<Proveedor_Marca> IDSDBContext.ProvMarcas { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-        DbSet<Pieza> IDSDBContext.Piezas { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-        DbSet<Asegurado> IDSDBContext.Asegurados { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-        DbSet<Incidente> IDSDBContext.Incidentes { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-        DbSet<Cotizacion> IDSDBContext.Cotizacions { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-        DbSet<Pieza_Proveedor> IDSDBContext.Pieza_Proveedor { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-        DbSet<Administrador_Cotizacion> IDSDBContext.Administrador_Cotizacion { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-        DbSet<Cotizacion_Proveedor> IDSDBContext.Cotizacion_Proveedor { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-        DbSet<Cotizacion_Taller> IDSDBContext.Cotizacion_Taller { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-        DbSet<Incidente_Pieza> IDSDBContext.Incidente_Pieza { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-        DbSet<Pedido> IDSDBContext.Pedidos { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        //DbSet<Vehiculo> IDSDBContext.Vehiculos { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        //DbSet<Usuario> IDSDBContext.Usuarios { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        //DbSet<Administrador> IDSDBContext.Administradors { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        //DbSet<Poliza> IDSDBContext.Polizas { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        //DbSet<Proveedor> IDSDBContext.Proveedores { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        //DbSet<Taller> IDSDBContext.Tallers { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        //DbSet<Perito> IDSDBContext.Peritos { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        //DbSet<Taller_Marca> IDSDBContext.Taller_Marcas { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        //DbSet<Proveedor_Marca> IDSDBContext.ProvMarcas { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        //DbSet<Pieza> IDSDBContext.Piezas { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        //DbSet<Asegurado> IDSDBContext.Asegurados { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        //DbSet<Incidente> IDSDBContext.Incidentes { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        //DbSet<Cotizacion> IDSDBContext.Cotizacions { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        //DbSet<Pieza_Proveedor> IDSDBContext.Pieza_Proveedor { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        //DbSet<Administrador_Cotizacion> IDSDBContext.Administrador_Cotizacion { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        //DbSet<Cotizacion_Proveedor> IDSDBContext.Cotizacion_Proveedor { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        //DbSet<Cotizacion_Taller> IDSDBContext.Cotizacion_Taller { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        //DbSet<Incidente_Pieza> IDSDBContext.Incidente_Pieza { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        //DbSet<Pedido> IDSDBContext.Pedidos { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
