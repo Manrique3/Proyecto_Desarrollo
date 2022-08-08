@@ -6,7 +6,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
 {
     public interface ITallerDAO
     {
-        List<TallerDTO>GetTalleres();
+        public TallerDTO VerRegistrosTaller(string taller);
         public Task AddTaller(TallerDTO tallerDTO);
         public Task UpdateTaller(TallerDTO taller, int Id_Taller);
         public Task DeleteTaller(int Id_Taller);

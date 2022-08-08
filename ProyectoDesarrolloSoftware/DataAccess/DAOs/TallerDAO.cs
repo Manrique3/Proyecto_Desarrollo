@@ -64,18 +64,27 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
             return query.First();
         }
 
-        public List<TallerDTO> GetTalleres() //
+        public TallerDTO VerRegistrosTaller(string taller)
         {
-            var data = _context.Tallers
-                 .Select(b => new TallerDTO
-                 {
-                     Id_Taller = b.Id_Taller,
-                     Nombre = b.Nombre,
-                     Lugar = b.Lugar,
+            try
+            {
+                var data = _context.Tallers
+                    .Where(b => b.Nombre == taller)
+                     .Select(b => new TallerDTO
+                     {
+                         Id_Taller = b.Id_Taller,
+                         Nombre = b.Nombre,
+                         Lugar = b.Lugar,
 
-                 }).ToList();
+                     });
 
-            return data;
+                return data.Single();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            
         }
 
         public Task UpdateTaller(TallerDTO taller, int Id_Taller)

@@ -10,6 +10,7 @@ using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.MarcasC;
 using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Pieza_Proveedores;
 
 using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Piezas;
+using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Talleres;
 using ProyectoDesarrolloSoftware.Entidades;
 
 namespace ProyectoDesarrolloSoftware.BussinessLogic.Command
@@ -40,6 +41,11 @@ namespace ProyectoDesarrolloSoftware.BussinessLogic.Command
         public static VerRegistrosPieza_ProveedoresCommand createVerRegistrosPieza_ProveedoresCommand(int Id_Proveedor)
         {
             return new VerRegistrosPieza_ProveedoresCommand(Id_Proveedor);
+        }
+        
+        public static VerRegistroTallerCommand createVerRegistroTallerCommand(string taller)
+        {
+            return new VerRegistroTallerCommand(taller);
         }
 
     }

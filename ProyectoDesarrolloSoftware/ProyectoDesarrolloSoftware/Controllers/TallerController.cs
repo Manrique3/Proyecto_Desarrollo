@@ -1,7 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ProyectoDesarrolloSoftware.BussinesLogic.DTO.DTO;
+using ProyectoDesarrolloSoftware.BussinessLogic.Command;
+using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Talleres;
 using ProyectoDesarrolloSoftware.DataAccess.DAOs;
+using ProyectoDesarrolloSoftware.Exceptions;
 //FALTA POR TERMINAR CONTROLADOR
 
 
@@ -23,10 +27,26 @@ namespace ProyectoDesarrolloSoftware.Controllers
         }
 
         [HttpGet]
-        [Route("api/[controller]/Lista")]
-        public IActionResult GetTalleres()
+        [Route("talleres/{taller}")]
+        public TallerDTO VerRegistrosTaller([Required][FromRoute] string taller)
         {
-            return Ok(_taller.GetTalleres());
+            //var response = new ApplicationResponse<List<AseguradoDTO>>();
+            try
+            {
+                VerRegistroTallerCommand command =
+                    CommandFactory.createVerRegistroTallerCommand(taller);
+                command.Execute();
+                return command.GetResult();
+                //response.Data = _aseguradoDAO.VerRegistrosAsegurado(asegurado);   
+            }
+            catch (Excepciones ex)
+            {
+                throw;
+                //response.Success = false;
+                //response.Message = ex.Message;
+                //response.Exception = ex.Excepcion.ToString();
+            }
+            //return response;
         }
 
         [HttpGet]
