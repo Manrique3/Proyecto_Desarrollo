@@ -6,9 +6,9 @@ using ProyectoDesarrolloSoftware.BussinesLogic.DTO.DTO;
 using ProyectoDesarrolloSoftware.DataAccess.DAOs;
 using ProyectoDesarrolloSoftware.Exceptions;
 using ProyectoDesarrolloSoftware.Responses;
-using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Asegurado;
+using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Asegurados;
 using ProyectoDesarrolloSoftware.BussinessLogic.Command;
-
+using ProyectoDesarrolloSoftware.Mappers.Mappers;
 
 namespace ProyectoDesarrolloSoftware.Controllers
 {

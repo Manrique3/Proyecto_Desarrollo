@@ -45,9 +45,35 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
             }
 
         }
-    
-       
-        public Task Add(AseguradoDTO aseguradoDTO)
+
+
+        //public AseguradoDTO CrearRegistroAsegurado(Asegurado asegurado)
+        //{
+        //    try
+        //    {
+        //        _context.Asegurados.Add(asegurado);
+        //        _context.DbContext.SaveChanges();
+
+        //        var data = _context.Asegurados
+        //              .Where(a => a.Nombre == asegurado.Nombre && a.Cedula == asegurado.Cedula)
+        //              .Select(a => new AseguradoDTO
+        //              {
+        //                  Cedula = a.Cedula,
+        //                  Nombre = a.Nombre,
+        //                  Apellido = a.Apellido
+        //              });
+
+        //        return data.Single();
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+
+        //}
+
+
+            public Task Add(AseguradoDTO aseguradoDTO)
         {
             Asegurado asegurado = new Asegurado();
             asegurado.Cedula = aseguradoDTO.Cedula;

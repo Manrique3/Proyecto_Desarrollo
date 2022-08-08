@@ -43,6 +43,7 @@
           "Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite": "5.0.10",
           "ProyectoDesarrolloSoftware.BussinesLogic.DTO": "1.0.0",
           "ProyectoDesarrolloSoftware.BussinessLogic.Command": "1.0.0",
+          "ProyectoDesarrolloSoftware.DataAccess": "1.0.0",
           "ProyectoDesarrolloSoftware.Mappers": "1.0.0",
           "Swashbuckle.AspNetCore": "5.6.3",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",

@@ -2461,29 +2461,25 @@
       "Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite >= 5.0.10",
       "ProyectoDesarrolloSoftware.BussinesLogic.DTO >= 1.0.0",
       "ProyectoDesarrolloSoftware.BussinessLogic.Command >= 1.0.0",
+      "ProyectoDesarrolloSoftware.DataAccess >= 1.0.0",
       "ProyectoDesarrolloSoftware.Mappers >= 1.0.0",
       "Swashbuckle.AspNetCore >= 5.6.3"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Sergi\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Hernani\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sergi\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
+      "projectUniqueName": "C:\\Users\\Hernani\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
       "projectName": "ProyectoDesarrolloSoftware",
-      "projectPath": "C:\\Users\\Sergi\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
-      "packagesPath": "C:\\Users\\Sergi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sergi\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\obj\\",
+      "projectPath": "C:\\Users\\Hernani\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware.csproj",
+      "packagesPath": "C:\\Users\\Hernani\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Hernani\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\ProyectoDesarrolloSoftware\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Sergi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Hernani\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2497,14 +2493,17 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Sergi\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj": {
-              "projectPath": "C:\\Users\\Sergi\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj"
+            "C:\\Users\\Hernani\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj": {
+              "projectPath": "C:\\Users\\Hernani\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj"
             },
-            "C:\\Users\\Sergi\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinessLogic.Command\\ProyectoDesarrolloSoftware.BussinessLogic.Command.csproj": {
-              "projectPath": "C:\\Users\\Sergi\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinessLogic.Command\\ProyectoDesarrolloSoftware.BussinessLogic.Command.csproj"
+            "C:\\Users\\Hernani\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinessLogic.Command\\ProyectoDesarrolloSoftware.BussinessLogic.Command.csproj": {
+              "projectPath": "C:\\Users\\Hernani\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinessLogic.Command\\ProyectoDesarrolloSoftware.BussinessLogic.Command.csproj"
             },
-            "C:\\Users\\Sergi\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\Mappers\\ProyectoDesarrolloSoftware.Mappers.csproj": {
-              "projectPath": "C:\\Users\\Sergi\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\Mappers\\ProyectoDesarrolloSoftware.Mappers.csproj"
+            "C:\\Users\\Hernani\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\DataAccess\\ProyectoDesarrolloSoftware.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\Hernani\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\DataAccess\\ProyectoDesarrolloSoftware.DataAccess.csproj"
+            },
+            "C:\\Users\\Hernani\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\Mappers\\ProyectoDesarrolloSoftware.Mappers.csproj": {
+              "projectPath": "C:\\Users\\Hernani\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\Mappers\\ProyectoDesarrolloSoftware.Mappers.csproj"
             }
           }
         }

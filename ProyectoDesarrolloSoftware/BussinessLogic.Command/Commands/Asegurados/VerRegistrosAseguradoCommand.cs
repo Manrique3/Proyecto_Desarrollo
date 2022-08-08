@@ -3,7 +3,7 @@ using ProyectoDesarrolloSoftware.DataAccess.DAOs;
 using ProyectoDesarrolloSoftware.DataAccess.Fabricas;
 
 
-namespace ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Asegurado
+namespace ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Asegurados
 {
 
     public class VerRegistrosAseguradoCommand : Command<AseguradoDTO>
