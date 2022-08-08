@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Asegurado;
+using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Asegurados;
 
 using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.MarcasC;
 
