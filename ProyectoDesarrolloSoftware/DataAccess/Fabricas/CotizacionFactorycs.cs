@@ -9,7 +9,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.Fabricas
 {
     public class CotizacionFactorycs
     {
-        public static CotizacionDAO CreateProviderDB()
+        public static CotizacionDAO CreateCotizacionDB()
         {
             return new CotizacionDAO();
         }

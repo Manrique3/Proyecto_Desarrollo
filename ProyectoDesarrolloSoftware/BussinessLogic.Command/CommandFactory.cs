@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Asegurados;
-
+using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Cotizacion;
 using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.MarcasC;
 
 using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Pieza_Proveedores;
@@ -46,6 +46,12 @@ namespace ProyectoDesarrolloSoftware.BussinessLogic.Command
         public static VerRegistroTallerCommand createVerRegistroTallerCommand(string taller)
         {
             return new VerRegistroTallerCommand(taller);
+        }
+
+        public static VerRegistrosCotizacionCommand createVerRegistrosCotizacionCommand(int id)
+        {
+            return new VerRegistrosCotizacionCommand(id);
+
         }
 
     }

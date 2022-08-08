@@ -27,14 +27,15 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
         public Task AddMarca(MarcaDTO marca)
         {
             try
-            {
+            {         
+
 
                 Marca _marca = new Marca();
-                
-                //_marca.IDMarca = marca.IDMarca;
+              
                 _marca.Name = marca.Nombre;
                 _context.Marcas.Add(_marca);
                 _context.DbContext.SaveChanges();
+
                 return Task.CompletedTask;
 
                 
@@ -44,6 +45,8 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
                 throw new Exception("Ocurrio un error en la base de datos" + e);
             }
         }
+
+        
 
         public Task DeleteMarca(int Id_marca)
         {
