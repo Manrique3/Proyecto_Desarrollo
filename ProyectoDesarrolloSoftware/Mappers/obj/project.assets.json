@@ -1154,19 +1154,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\Sergi\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\Mappers\\ProyectoDesarrolloSoftware.Mappers.csproj",
+      "projectUniqueName": "C:\\Users\\Sergi\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\Mappers\\ProyectoDesarrolloSoftware.Mappers.csproj",
       "projectName": "ProyectoDesarrolloSoftware.Mappers",
-      "projectPath": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\Mappers\\ProyectoDesarrolloSoftware.Mappers.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\Mappers\\obj\\",
+      "projectPath": "C:\\Users\\Sergi\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\Mappers\\ProyectoDesarrolloSoftware.Mappers.csproj",
+      "packagesPath": "C:\\Users\\Sergi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Sergi\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\Mappers\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Sergi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1180,11 +1185,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj"
+            "C:\\Users\\Sergi\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj": {
+              "projectPath": "C:\\Users\\Sergi\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj"
             },
-            "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\DataAccess\\ProyectoDesarrolloSoftware.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\DataAccess\\ProyectoDesarrolloSoftware.DataAccess.csproj"
+            "C:\\Users\\Sergi\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\DataAccess\\ProyectoDesarrolloSoftware.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\Sergi\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\DataAccess\\ProyectoDesarrolloSoftware.DataAccess.csproj"
             }
           }
         }
@@ -1213,7 +1218,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

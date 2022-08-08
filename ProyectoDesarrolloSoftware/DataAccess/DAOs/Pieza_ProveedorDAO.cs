@@ -35,11 +35,11 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
         }
 
 
-        public List<Pieza_ProveedorDTO> GetListaPiezasDeProveedoresById(int Id_Proveedor)
+        public Pieza_ProveedorDTO VerRegistrosPieza_Proveedor(int Id_Proveedor)
         {
             try
             {
-                var query = (from pp in _context.Pieza_Proveedor
+                var data = (from pp in _context.Pieza_Proveedor
                              from pi in _context.Piezas
                              from pr in _context.Proveedores
                              where pr.Id_proveedor == Id_Proveedor      
@@ -54,7 +54,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
                                  Nombre_Pieza = pi.Nombre
                              }).ToList();
 
-                return query;                
+                return data.Single();
             }
             catch (Exception)
             {
