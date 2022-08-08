@@ -1,6 +1,7 @@
 ﻿using ProyectoDesarrolloSoftware.BussinesLogic.DTO.DTO;
 using ProyectoDesarrolloSoftware.DataAccess.DataBase;
 using ProyectoDesarrolloSoftware.Entidades;
+using ProyectoDesarrolloSoftware.Fabricas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,13 +11,15 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
 {
     public class Taller_MarcaDAO : ITaller_MarcaDAO
     {
-        public readonly DSDBContext _context;
+        private static DesignTimeDBContextFactory desing = new DesignTimeDBContextFactory(); // Cuando Inicie el DAO Pasa por la Fabrica y crea el objeto
+        private IDSDBContext _context = desing.CreateDbContext(null);
+        /*public readonly DSDBContext _context;
 
         public Taller_MarcaDAO(DSDBContext context)
         {
             _context = context;
 
-        }
+        }*/
 
         public List<Taller_MarcaDTO> GetListaMarcaDeTallerById()//(int IDMarca, int Id_Taller)
         {
@@ -49,7 +52,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
                 taller_marca.Id_Taller = taller_MarcaDTO.Id_Taller;
                 taller_marca.IDMarca = taller_MarcaDTO.IDMarca;                
                 _context.Taller_Marcas.Add(taller_marca);
-                _context.SaveChanges();
+                _context.DbContext.SaveChanges();
                 return Task.CompletedTask;
             
             /*catch (Exception e)
@@ -62,7 +65,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
         {
             var ItemToRemove = _context.Taller_Marcas.Find(IDMarca, Id_Taller);
             _context.Taller_Marcas.Remove(ItemToRemove);
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
             return Task.CompletedTask;
         }
 

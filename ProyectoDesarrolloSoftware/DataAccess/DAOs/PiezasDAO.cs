@@ -6,17 +6,20 @@ using System.Threading.Tasks;
 using ProyectoDesarrolloSoftware.Entidades;
 using ProyectoDesarrolloSoftware.DataAccess.DataBase;
 using ProyectoDesarrolloSoftware.BussinesLogic.DTO.DTO;
+using ProyectoDesarrolloSoftware.Fabricas;
 
 namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
 {
     public class PiezasDAO : IPiezasDAO
     {
-        public readonly DSDBContext _context;
+        private static DesignTimeDBContextFactory desing = new DesignTimeDBContextFactory(); // Cuando Inicie el DAO Pasa por la Fabrica y crea el objeto
+        private IDSDBContext _context = desing.CreateDbContext(null);
+        /*public readonly DSDBContext _context;
 
         public PiezasDAO(DSDBContext context)
         {
             _context = context;
-        }
+        }*/
 
         public Task Add(PiezaDTO piezaDTO)
         {
@@ -24,7 +27,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
             pieza.Id_Pieza = piezaDTO.Id_Pieza;
             pieza.Nombre = piezaDTO.Nombre;
             _context.Piezas.Add(pieza);
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
             return Task.CompletedTask;
         }
 
@@ -66,7 +69,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
         {
             var ItemToRemove = _context.Piezas.Find(Id_Pieza);
             _context.Piezas.Remove(ItemToRemove);
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
             return Task.CompletedTask;
         }
 
@@ -74,7 +77,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
         {
             var itemToUpdate = _context.Piezas.Find(Id_Pieza);
             itemToUpdate.Nombre = piezaDTO.Nombre;
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
                 
 
             return Task.CompletedTask;

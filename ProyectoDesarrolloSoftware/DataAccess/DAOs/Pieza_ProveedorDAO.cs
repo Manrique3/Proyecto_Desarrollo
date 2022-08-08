@@ -5,19 +5,23 @@ using System.Threading.Tasks;
 using ProyectoDesarrolloSoftware.Entidades;
 using ProyectoDesarrolloSoftware.DataAccess.DataBase;
 using ProyectoDesarrolloSoftware.BussinesLogic.DTO.DTO;
+using ProyectoDesarrolloSoftware.Fabricas;
 
 namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
 {
     public class Pieza_ProveedorDAO : IPieza_ProveedorDAO
     {
-        public readonly DSDBContext _context;
+        private static DesignTimeDBContextFactory desing = new DesignTimeDBContextFactory(); // Cuando Inicie el DAO Pasa por la Fabrica y crea el objeto
+        private IDSDBContext _context = desing.CreateDbContext(null);
+
+        /*public readonly DSDBContext _context;
 
         public object objeto { get; private set; }
 
         public Pieza_ProveedorDAO(DSDBContext context)
         {
             _context = context;
-        }
+        }*/
 
         public Task Add(Pieza_ProveedorDTO pieza_proveedorDTO)
         {
@@ -26,7 +30,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
             pieza_proveedor.Id_proveedor = pieza_proveedorDTO.Id_Proveedor;
             pieza_proveedor.cantidad = pieza_proveedorDTO.cantidad;
             _context.Pieza_Proveedor.Add(pieza_proveedor);
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
             return Task.CompletedTask;
         }
 
@@ -82,7 +86,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
         {
             var ItemToRemove = _context.Pieza_Proveedor.Find(Id_Pieza, Id_Proveedor);
             _context.Pieza_Proveedor.Remove(ItemToRemove);
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
             return Task.CompletedTask;
         }
 
@@ -90,7 +94,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
         {
             var itemToUpdate = _context.Pieza_Proveedor.Find(Id_Pieza, Id_proveedor);
             itemToUpdate.cantidad = pieza_proveedorDTO.cantidad;
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
 
 
             return Task.CompletedTask;

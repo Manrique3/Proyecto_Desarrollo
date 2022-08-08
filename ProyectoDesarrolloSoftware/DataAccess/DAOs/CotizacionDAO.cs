@@ -6,17 +6,21 @@ using ProyectoDesarrolloSoftware.Entidades;
 using ProyectoDesarrolloSoftware.DataAccess.DataBase;
 using ProyectoDesarrolloSoftware.Exceptions;
 using ProyectoDesarrolloSoftware.BussinesLogic.DTO.DTO;
+using ProyectoDesarrolloSoftware.Fabricas;
 
 namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
 {
     public class CotizacionDAO : ICotizacionDAO
     {
-        public readonly DSDBContext _context;
+        private static DesignTimeDBContextFactory desing = new DesignTimeDBContextFactory(); // Cuando Inicie el DAO Pasa por la Fabrica y crea el objeto
+        private IDSDBContext _context = desing.CreateDbContext(null);
+
+        /*public readonly DSDBContext _context;
 
         public CotizacionDAO(DSDBContext context)
         {
             _context = context;
-        }
+        }*/
 
         public List<CotizacionDTO> GetListaCotizacionesById(int Id_Cotizacion)
         {
@@ -45,7 +49,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
             cotizacion.Id_Cotizacion = cotizacionDTO.Id_cotizacion;
             cotizacion.fk_incidente = cotizacionDTO.fk_incidente;
             _context.Cotizacions.Add(cotizacion);
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
             return Task.CompletedTask;
         }
 
@@ -53,7 +57,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
         {
             var itemToUpdate = _context.Cotizacions.Find(Id_Cotizacion);
             itemToUpdate.fk_incidente = cotizacionDTO.fk_incidente;
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
 
             return Task.CompletedTask;
         }
@@ -62,7 +66,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
         {
             var ItemToRemove = _context.Cotizacions.Find(Id_Cotizacion);
             _context.Cotizacions.Remove(ItemToRemove);
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
             return Task.CompletedTask;
         }
 

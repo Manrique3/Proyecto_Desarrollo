@@ -1,6 +1,7 @@
 ﻿using ProyectoDesarrolloSoftware.BussinesLogic.DTO.DTO;
 using ProyectoDesarrolloSoftware.DataAccess.DataBase;
 using ProyectoDesarrolloSoftware.Entidades;
+using ProyectoDesarrolloSoftware.Fabricas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,12 +11,15 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
 {
     public class TallerDAO : ITallerDAO
     {
-        private DSDBContext _context;
+        private static DesignTimeDBContextFactory desing = new DesignTimeDBContextFactory(); // Cuando Inicie el DAO Pasa por la Fabrica y crea el objeto
+        private IDSDBContext _context = desing.CreateDbContext(null);
+
+        /*private DSDBContext _context;
         public TallerDAO(DSDBContext context)
         {
             _context = context;
 
-        }
+        }*/
 
         public Task AddTaller(TallerDTO tallerDTO)
         {
@@ -28,7 +32,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
                 _taller.Nombre = tallerDTO.Nombre;
                 _taller.Nombre = tallerDTO.Lugar;
                 _context.Tallers.Add(_taller);
-                _context.SaveChanges();
+                _context.DbContext.SaveChanges();
                 return Task.CompletedTask;
 
 
@@ -42,7 +46,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
         {
             var data = _context.Tallers.Find(Id_Taller); // Se Debe eliminar por ID, no por objeto.
             _context.Tallers.Remove(data);
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
             return Task.CompletedTask;
         }
 
@@ -79,7 +83,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
             var data = _context.Tallers.Find(Id_Taller);
             data.Nombre = taller.Nombre;
             data.Lugar = taller.Lugar;
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
 
             return Task.CompletedTask;
         }

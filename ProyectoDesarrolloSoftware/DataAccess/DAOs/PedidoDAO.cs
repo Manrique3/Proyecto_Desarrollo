@@ -6,17 +6,21 @@ using System.Threading.Tasks;
 using ProyectoDesarrolloSoftware.Entidades;
 using ProyectoDesarrolloSoftware.DataAccess.DataBase;
 using ProyectoDesarrolloSoftware.BussinesLogic.DTO.DTO;
+using ProyectoDesarrolloSoftware.Fabricas;
 
 namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
 {
     public class PedidoDAO : IPedidoDAO
     {
-        public readonly DSDBContext _context;
+        private static DesignTimeDBContextFactory desing = new DesignTimeDBContextFactory();
+        private IDSDBContext _context = desing.CreateDbContext(null);
+
+        /*public readonly DSDBContext _context;
 
         public PedidoDAO(DSDBContext context)
         {
             _context = context;
-        }
+        }*/
 
         public List<PedidoDTO> GetListaPedidoById(int pedido)
         {
@@ -55,7 +59,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
             pedido.fk_taller_taller_cot = pedidoDTO.fk_taller_taller_cot;
             pedido.fk_cotizacion_taller_cot = pedidoDTO.fk_cotizacion_taller_cot;
             _context.Pedidos.Add(pedido);
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
             return Task.CompletedTask;
         }
 
@@ -63,7 +67,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
         {
             var itemToUpdate = _context.Pedidos.Find(Id_Pedido);
             itemToUpdate.estatus = pedidoDTO.estatus;
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
 
             return Task.CompletedTask;
         }
@@ -72,7 +76,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
         {
             var ItemToRemove = _context.Pedidos.Find(Id_Pedido);
             _context.Pedidos.Remove(ItemToRemove);
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
             return Task.CompletedTask;
         }
 

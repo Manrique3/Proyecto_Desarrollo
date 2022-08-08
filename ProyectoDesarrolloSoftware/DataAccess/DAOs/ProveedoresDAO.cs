@@ -5,17 +5,21 @@ using System.Threading.Tasks;
 using ProyectoDesarrolloSoftware.Entidades;
 using ProyectoDesarrolloSoftware.DataAccess.DataBase;
 using ProyectoDesarrolloSoftware.BussinesLogic.DTO.DTO;
+using ProyectoDesarrolloSoftware.Fabricas;
 
 namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
 {
     public class ProveedoresDAO : IProveedoresDAO
     {
-        public readonly DSDBContext _context;
+        private static DesignTimeDBContextFactory desing = new DesignTimeDBContextFactory(); // Cuando Inicie el DAO Pasa por la Fabrica y crea el objeto
+        private IDSDBContext _context = desing.CreateDbContext(null);
+
+        /*public readonly DSDBContext _context;
 
         public ProveedoresDAO(DSDBContext context)
         {
             _context = context;
-        }
+        }*/
 
         public Task Add(ProveedorDTO proveedorDTO)
         {
@@ -24,7 +28,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
             proveedor.Nombre = proveedorDTO.Nombre;
             proveedor.Lugar = proveedorDTO.Lugar;
             _context.Proveedores.Add(proveedor);
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
             return Task.CompletedTask;
         }
 
@@ -68,7 +72,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
         {
             var ItemToRemove = _context.Proveedores.Find(Id_Proveedor);
             _context.Proveedores.Remove(ItemToRemove);
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
             return Task.CompletedTask;
         }
 
@@ -85,7 +89,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
                itemToUpdate.Lugar = proveedorDTO.Lugar;
 
             }
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
 
 
             return Task.CompletedTask;

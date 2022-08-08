@@ -6,17 +6,21 @@ using System.Threading.Tasks;
 using ProyectoDesarrolloSoftware.Entidades;
 using ProyectoDesarrolloSoftware.DataAccess.DataBase;
 using ProyectoDesarrolloSoftware.BussinesLogic.DTO.DTO;
+using ProyectoDesarrolloSoftware.Fabricas;
 
 namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
 {
     public class Cotizacion_TallerDAO : ICotizacion_TallerDAO
     {
-        public readonly DSDBContext _context;
+        private static DesignTimeDBContextFactory desing = new DesignTimeDBContextFactory(); // Cuando Inicie el DAO Pasa por la Fabrica y crea el objeto
+        private IDSDBContext _context = desing.CreateDbContext(null);
+
+        /*public readonly DSDBContext _context;
 
         public Cotizacion_TallerDAO(DSDBContext context)
         {
             _context = context;
-        }
+        }*/
 
         public List<Cotizacion_TallerDTO> GetListaCotizacionDeTallerById(int Id_Cotizacion)
         {
@@ -77,7 +81,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
             cotizacion_taller.estatus = cotizacion_TallerDTO.estatus;
 
             _context.Cotizacion_Taller.Add(cotizacion_taller);
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
             return Task.CompletedTask;
         }
 
@@ -87,7 +91,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
             itemToUpdate.tiempo_reparacion = cotizacion_TallerDTO.tiempo_reparacion;
             itemToUpdate.costo_reparacion = cotizacion_TallerDTO.costo_reparacion;
             itemToUpdate.cantidad_piezas_reparar = cotizacion_TallerDTO.cantidad_piezas_reparar;
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
 
             return Task.CompletedTask;
         }
@@ -97,7 +101,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
         {
             var ItemToRemove = _context.Cotizacion_Taller.Find(Id_Cotizacion);
             _context.Cotizacion_Taller.Remove(ItemToRemove);
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
             return Task.CompletedTask;
         }
 

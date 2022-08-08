@@ -7,17 +7,22 @@ using ProyectoDesarrolloSoftware.Entidades;
 using ProyectoDesarrolloSoftware.DataAccess.DataBase;
 using ProyectoDesarrolloSoftware.BussinesLogic.DTO.DTO;
 using ProyectoDesarrolloSoftware.DataAccess.DAOs;
+using ProyectoDesarrolloSoftware.Fabricas;
 
 namespace ProyectoDesarrolloSoftware.AccesoDatos.DAOs
 {
     public class Proveedor_MarcaDAO : IProveedor_MarcaDAO
     {
-        public readonly DSDBContext _context;
+
+        private static DesignTimeDBContextFactory desing = new DesignTimeDBContextFactory(); // Cuando Inicie el DAO Pasa por la Fabrica y crea el objeto
+        private IDSDBContext _context = desing.CreateDbContext(null);
+
+        /*public readonly DSDBContext _context;
 
         public Proveedor_MarcaDAO(DSDBContext context)
         {
             _context = context;
-        }
+        }*/
 
         public Task Add(Proveedor_MarcaDTO proveedor_marcaDTO)
         {
@@ -25,7 +30,7 @@ namespace ProyectoDesarrolloSoftware.AccesoDatos.DAOs
             proveedor_marca.IDMarca = proveedor_marcaDTO.IDMarca;
             proveedor_marca.Id_proveedor = proveedor_marcaDTO.Id_proveedor;
             _context.ProvMarcas.Add(proveedor_marca);
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
             return Task.CompletedTask;
         }
         
@@ -33,7 +38,7 @@ namespace ProyectoDesarrolloSoftware.AccesoDatos.DAOs
         {
             var ItemToRemove = _context.ProvMarcas.Find(Id_Marca, Id_Proveedor);
             _context.ProvMarcas.Remove(ItemToRemove);
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
             return Task.CompletedTask;
         }
 

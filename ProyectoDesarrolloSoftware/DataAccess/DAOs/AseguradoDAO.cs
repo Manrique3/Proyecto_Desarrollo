@@ -7,17 +7,22 @@ using ProyectoDesarrolloSoftware.Entidades;
 using ProyectoDesarrolloSoftware.DataAccess.DataBase;
 using ProyectoDesarrolloSoftware.BussinesLogic.DTO.DTO;
 using ProyectoDesarrolloSoftware.AccesoDatos.DAOs;
+using ProyectoDesarrolloSoftware.Fabricas;
 
 namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
 {
     public class AseguradoDAO : IAseguradoDAO
     {
-        public readonly DSDBContext _context;
+
+        private static DesignTimeDBContextFactory desing = new DesignTimeDBContextFactory(); // Cuando Inicie el DAO Pasa por la Fabrica y crea el objeto
+        private IDSDBContext _context = desing.CreateDbContext(null);
+
+        /*public readonly DSDBContext _context;
 
         public AseguradoDAO(DSDBContext context)
         {
             _context = context;
-        }
+        }*/
 
         public List<AseguradoDTO> VerRegistrosAsegurado(string asegurado)
         {
@@ -48,7 +53,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
             asegurado.Nombre = aseguradoDTO.Nombre;
             asegurado.Apellido = aseguradoDTO.Apellido;
             _context.Asegurados.Add(asegurado);
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
             return Task.CompletedTask;
         }
 
@@ -56,7 +61,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
         {
             var itemToUpdate = _context.Asegurados.Find(Cedula);
             itemToUpdate.Nombre = aseguradoDTO.Nombre;
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
 
             return Task.CompletedTask;
         }
@@ -65,7 +70,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
         {
             var ItemToRemove = _context.Asegurados.Find(Cedula);
             _context.Asegurados.Remove(ItemToRemove);
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
             return Task.CompletedTask;
         }
 

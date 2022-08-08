@@ -5,18 +5,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ProyectoDesarrolloSoftware.BussinesLogic.DTO.DTO;
+using ProyectoDesarrolloSoftware.Fabricas;
 
 namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
 {
     public class Cotizacion_ProveedorDAO : ICotizacion_ProveedorDAO
     {
-        public DSDBContext _context;
+        private static DesignTimeDBContextFactory desing = new DesignTimeDBContextFactory(); // Cuando Inicie el DAO Pasa por la Fabrica y crea el objeto
+        private IDSDBContext _context = desing.CreateDbContext(null);
+
+        /*public DSDBContext _context;
 
         public Cotizacion_ProveedorDAO(DSDBContext context)
         {
             _context = context;
 
-        }
+        }*/
         public Task AddCotizacion_Proveedor(Cotizacion_proveedorDTO cotizacion_proveedorDTO, int Id_Cotizacion)
         {
             int id_del_proveedor;
@@ -56,7 +60,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
             cotizacion_pro.Id_Pieza_Pieza_Proveedor = cotizacion_proveedorDTO.Id_Pieza;
             
             _context.Cotizacion_Proveedor.Add(cotizacion_pro);
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
             return Task.CompletedTask;
         }
 
@@ -67,7 +71,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
             
                 var ItemToRemove = _context.Cotizacion_Proveedor.Find(Id_Cotizacion, Id_Proveedor);
                 _context.Cotizacion_Proveedor.Remove(ItemToRemove);
-                _context.SaveChanges();
+                _context.DbContext.SaveChanges();
                 return Task.CompletedTask;
             
         }
@@ -76,7 +80,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
         {
             var itemToUpdate = _context.Cotizacion_Proveedor.Find(Id_Cotizacion, Id_Proveedor);
             itemToUpdate.estatus = cotizacion_proveedorDTO.estatus;
-             _context.SaveChanges();
+             _context.DbContext.SaveChanges();
             return Task.CompletedTask;
         }
 

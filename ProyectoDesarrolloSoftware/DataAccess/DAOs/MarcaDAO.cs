@@ -2,6 +2,7 @@
 using ProyectoDesarrolloSoftware.BussinesLogic.DTO.DTO;
 using ProyectoDesarrolloSoftware.DataAccess.DataBase;
 using ProyectoDesarrolloSoftware.Entidades;
+using ProyectoDesarrolloSoftware.Fabricas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,12 +12,18 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
 {
     public class MarcaDAO : IMarcaDAO
     {
-        private DSDBContext _context;
+        private static DesignTimeDBContextFactory desing = new DesignTimeDBContextFactory();
+        private IDSDBContext _context = desing.CreateDbContext(null);
+
+
+        /*private DSDBContext _context;
+       
+
         public MarcaDAO(DSDBContext context)
         {
             _context = context;
 
-        }
+        }*/
         public Task AddMarca(MarcaDTO marca)
         {
             try
@@ -27,7 +34,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
                 //_marca.IDMarca = marca.IDMarca;
                 _marca.Name = marca.Nombre;
                 _context.Marcas.Add(_marca);
-                _context.SaveChanges();
+                _context.DbContext.SaveChanges();
                 return Task.CompletedTask;
 
                 
@@ -42,7 +49,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
         {
             var data = _context.Marcas.Find(Id_marca); // Se Debe eliminar por ID, no por objeto.
             _context.Marcas.Remove(data);
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
             return Task.CompletedTask;
 
       
@@ -52,7 +59,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
         {
             var data = _context.Marcas.Find(id_marca);
             data.Name = marca.Nombre;
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
 
             return Task.CompletedTask;
         }

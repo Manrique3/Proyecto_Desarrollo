@@ -3,17 +3,20 @@ using System.Threading.Tasks;
 using ProyectoDesarrolloSoftware.Entidades;
 using ProyectoDesarrolloSoftware.DataAccess.DataBase;
 using ProyectoDesarrolloSoftware.BussinesLogic.DTO.DTO;
+using ProyectoDesarrolloSoftware.Fabricas;
 
 namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
 {
     public class PolizaDAO : IPolizaDAO
     {
-        public readonly DSDBContext _context;
+        private static DesignTimeDBContextFactory desing = new DesignTimeDBContextFactory(); // Cuando Inicie el DAO Pasa por la Fabrica y crea el objeto
+        private IDSDBContext _context = desing.CreateDbContext(null);
+        /*public readonly DSDBContext _context;
 
         public PolizaDAO(DSDBContext context)
         {
             _context = context;
-        }
+        }*/
 
         public PolizaDTO GetPoliza(int Id_Poliza)
         {
@@ -40,7 +43,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
             vehiculo.SerialMotor = vehiculoDTO.SerialMotor;
             vehiculo.fk_marca = vehiculoDTO.fk_marca;
             _context.Vehiculos.Add(vehiculo);
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
             return Task.CompletedTask;
         }
 
@@ -52,7 +55,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
             poliza.fk_vehiculo = polizaDTO.fk_vehiculo;
             poliza.fk_asegurado = polizaDTO.fk_asegurado;
             _context.Polizas.Add(poliza);
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
             return Task.CompletedTask;
         }
 
@@ -60,7 +63,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
         {
             var itemToUpdate = _context.Polizas.Find(Id_Poliza);
             itemToUpdate.Tipo = polizaDTO.Tipo;
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
 
             return Task.CompletedTask;
         }
@@ -68,7 +71,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
         {
             var ItemToRemove = _context.Polizas.Find(Id_Poliza);
             _context.Polizas.Remove(ItemToRemove);
-            _context.SaveChanges();
+            _context.DbContext.SaveChanges();
             return Task.CompletedTask;
         }
 

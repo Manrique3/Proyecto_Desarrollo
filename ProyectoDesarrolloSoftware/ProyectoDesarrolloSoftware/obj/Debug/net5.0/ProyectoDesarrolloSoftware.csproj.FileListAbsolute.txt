@@ -2167,3 +2167,4 @@ C:\Users\User\Desktop\Proyecto_Desarrollo\ProyectoDesarrolloSoftware\ProyectoDes
 C:\Users\User\Desktop\Proyecto_Desarrollo\ProyectoDesarrolloSoftware\ProyectoDesarrolloSoftware\bin\Debug\net5.0\ProyectoDesarrolloSoftware.BussinessLogic.Command.pdb
 C:\Users\User\Desktop\Proyecto_Desarrollo\ProyectoDesarrolloSoftware\ProyectoDesarrolloSoftware\bin\Debug\net5.0\ProyectoDesarrolloSoftware.Mappers.pdb
 C:\Users\User\Desktop\Proyecto_Desarrollo\ProyectoDesarrolloSoftware\ProyectoDesarrolloSoftware\bin\Debug\net5.0\ProyectoDesarrolloSoftware.DataAccess.pdb
+C:\Users\User\Desktop\Proyecto_Desarrollo\ProyectoDesarrolloSoftware\ProyectoDesarrolloSoftware\obj\Debug\net5.0\ProyectoDesarrolloSoftware.MvcApplicationPartsAssemblyInfo.cs
