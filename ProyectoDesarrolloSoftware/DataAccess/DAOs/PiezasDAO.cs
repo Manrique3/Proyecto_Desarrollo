@@ -32,19 +32,19 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
         }
 
 
-        public List<PiezaDTO> GetListaPiezasByName(string Nombre)
+        public PiezaDTO VerRegistrosPieza(string Nombre)
         {
             try
             {
-                var query = _context.Piezas
+                var data = _context.Piezas
                    .Where(b => b.Nombre == Nombre)
                    .Select(b => new PiezaDTO
                    {
                        Id_Pieza = b.Id_Pieza,
                        Nombre = b.Nombre
-                   }).ToList();               
+                   }).ToList();
 
-                return query;
+                return data.Single();
             }
             catch (Excepciones)
             {

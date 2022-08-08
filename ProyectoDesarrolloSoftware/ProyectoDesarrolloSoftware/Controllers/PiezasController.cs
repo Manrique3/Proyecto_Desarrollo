@@ -3,6 +3,8 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ProyectoDesarrolloSoftware.BussinesLogic.DTO.DTO;
+using ProyectoDesarrolloSoftware.BussinessLogic.Command;
+using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Piezas;
 using ProyectoDesarrolloSoftware.DataAccess.DAOs;
 using ProyectoDesarrolloSoftware.Exceptions;
 using ProyectoDesarrolloSoftware.Responses;
@@ -23,20 +25,24 @@ namespace ProyectoDesarrolloSoftware.Controllers
         
 
         [HttpGet("Listapiezas/{Nombre}")]
-        public ApplicationResponse<List<PiezaDTO>> GetPiezasByName([Required][FromRoute] string Nombre)
+        public PiezaDTO VerRegistrosPieza([Required][FromRoute] string Nombre)
         {
-            var response = new ApplicationResponse<List<PiezaDTO>>();
+            //var response = new ApplicationResponse<List<PiezaDTO>>();
             try
             {
-                response.Data = _piezasDAO.GetListaPiezasByName(Nombre);
+                VerRegistrosPiezasCommand command =
+                    CommandFactory.createVerRegistrosPiezasCommand(Nombre);
+                command.Execute();
+                return command.GetResult();
             }
             catch (Excepciones ex)
             {
-                response.Success = false;
-                response.Message = ex.Message;
-                response.Exception = ex.Excepcion.ToString();
+                throw;
+                //response.Success = false;
+                //response.Message = ex.Message;
+                //response.Exception = ex.Excepcion.ToString();
             }
-            return response;
+            //return response;
         }
 
         [HttpGet("ObtenerPieza/{Id_Pieza}")]

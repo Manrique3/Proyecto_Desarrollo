@@ -8,19 +8,24 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Hernani\\.nuget\\packages\\": {}
+    "C:\\Users\\Sergi\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj",
+      "projectUniqueName": "C:\\Users\\Sergi\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj",
       "projectName": "ProyectoDesarrolloSoftware.BussinesLogic.DTO",
-      "projectPath": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj",
-      "packagesPath": "C:\\Users\\Hernani\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hernani\\Desktop\\Proyecto_Desarrollo-Crud_Perito\\ProyectoDesarrolloSoftware\\BussinesLogic\\obj\\",
+      "projectPath": "C:\\Users\\Sergi\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinesLogic\\ProyectoDesarrolloSoftware.BussinesLogic.DTO.csproj",
+      "packagesPath": "C:\\Users\\Sergi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Sergi\\Documents\\GitHub\\Proyecto_Desarrollo\\ProyectoDesarrolloSoftware\\BussinesLogic\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Hernani\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Sergi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

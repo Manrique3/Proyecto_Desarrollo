@@ -6,7 +6,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.DAOs
 {
     public interface IPiezasDAO
     {
-        public List<PiezaDTO> GetListaPiezasByName(string Nombre);
+        public PiezaDTO VerRegistrosPieza(string Nombre);
         public Task Add(PiezaDTO piezaDTO);
         public Task update(PiezaDTO piezaDTO, int Id_Pieza);
         public Task delete(int Id_Pieza);

@@ -9,7 +9,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.Fabricas
 {
     public class PiezaFactory
     {
-        public static PiezasDAO CreateProviderDB()
+        public static PiezasDAO CreatePiezaDB()
         {
             return new PiezasDAO();
         }

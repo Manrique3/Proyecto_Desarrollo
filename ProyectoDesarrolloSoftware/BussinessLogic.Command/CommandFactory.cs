@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Asegurado;
+using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Piezas;
 
 namespace ProyectoDesarrolloSoftware.BussinessLogic.Command
 {
@@ -12,6 +13,11 @@ namespace ProyectoDesarrolloSoftware.BussinessLogic.Command
         public static VerRegistrosAseguradoCommand createVerRegistrosAseguradoCommand(string asegurado)
         {
             return new VerRegistrosAseguradoCommand(asegurado);
+        }
+
+        public static VerRegistrosPiezasCommand createVerRegistrosPiezasCommand(string Nombre)
+        {
+            return new VerRegistrosPiezasCommand(Nombre);
         }
 
     }
