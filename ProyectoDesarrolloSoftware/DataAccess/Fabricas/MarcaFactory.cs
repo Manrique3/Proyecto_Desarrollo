@@ -9,7 +9,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.Fabricas
 {
     public class MarcaFactory
     {
-        public static MarcaDAO CreateProviderDB()
+        public static MarcaDAO CreateMarcaDB()
         {
             return new MarcaDAO();
         }

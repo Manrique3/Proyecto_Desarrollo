@@ -3,7 +3,10 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ProyectoDesarrolloSoftware.BussinesLogic.DTO.DTO;
+using ProyectoDesarrolloSoftware.BussinessLogic.Command;
+using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Pieza_Proveedores;
 using ProyectoDesarrolloSoftware.DataAccess.DAOs;
+using ProyectoDesarrolloSoftware.Exceptions;
 
 namespace ProyectoDesarrolloSoftware.Controllers
 {
@@ -22,17 +25,26 @@ namespace ProyectoDesarrolloSoftware.Controllers
 
 
         [HttpGet("ListaPieza_Proveedor/{Id_Proveedor}")]
-        public Responses.ApplicationResponse<List<Pieza_ProveedorDTO>> GetPiezasDeProveedorById([Required][FromRoute] int Id_Proveedor)
+        public Pieza_ProveedorDTO VerRegistrosPieza_Proveedor([Required][FromRoute] int Id_Proveedor)
         {
-            var response = new Responses.ApplicationResponse<List<Pieza_ProveedorDTO>>();
+            //var response = new Responses.ApplicationResponse<List<Pieza_ProveedorDTO>>();
 
-
-            response.Data = _pieza_proveedorDAO.GetListaPiezasDeProveedoresById(Id_Proveedor);
-
+            try
             {
-                response.Success = false;
+                VerRegistrosPieza_ProveedoresCommand command =
+                    CommandFactory.createVerRegistrosPieza_ProveedoresCommand(Id_Proveedor);
+                command.Execute();
+                return command.GetResult();
             }
-            return response;
+            catch (Excepciones ex)
+            {
+                throw;
+               // response.Data = _pieza_proveedorDAO.GetListaPiezasDeProveedoresById(Id_Proveedor);
+
+            
+             //   response.Success = false;
+            }
+            //return response;
         }
 
         [HttpGet("ObtenerPieza/{Id_Pieza}/{Id_Proveedor})")]
