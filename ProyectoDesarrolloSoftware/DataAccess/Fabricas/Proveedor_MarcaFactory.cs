@@ -9,7 +9,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.Fabricas
 {
     public class Proveedor_MarcaFactory
     {        
-        public static Proveedor_MarcaDAO CreateProviderDB()
+        public static Proveedor_MarcaDAO CreateProveedor_MarcaDB()
         {
             return new Proveedor_MarcaDAO();
         }

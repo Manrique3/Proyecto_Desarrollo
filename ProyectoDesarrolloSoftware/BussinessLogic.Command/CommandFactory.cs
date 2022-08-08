@@ -5,12 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Asegurados;
 using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Cotizacion;
+using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Cotizacion_Proveedor;
 using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.MarcasC;
-
+using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Pedido;
 using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Pieza_Proveedores;
 
 using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Piezas;
+using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Poliza;
+using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Proveedor_Marca;
 using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Proveedores;
+using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Taller_Marca;
 using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Talleres;
 using ProyectoDesarrolloSoftware.Entidades;
 
@@ -59,6 +63,34 @@ namespace ProyectoDesarrolloSoftware.BussinessLogic.Command
             return new VerRegistrosProveedoresCommand(id);
 
         }
+
+        public static VerRegitrosPolizaCommand createVerRegistrosPolizaCommand(int id)
+        {
+            return new VerRegitrosPolizaCommand(id);
+
+        }
+
+        public static VerRegistrosPedidoCommand createVerRegistrosPedidoCommand(int id)
+        {
+            return new VerRegistrosPedidoCommand(id);
+
+        }
+
+        public static VerRegistroCotizacion_ProveedorCommand createVerRegistrosCotizacion_ProveedorCommand(int id) //Devuelve una lista Cotizacion_Proveedor No funciona bien
+        {
+            return new VerRegistroCotizacion_ProveedorCommand(id);
+        }
+
+        public static VerRegistrosTallerMarcaCommand createVerRegistrosTallerMarcaCommand(int id) //Devuelve una lista TallerMarca No funciona bien
+        {
+            return new VerRegistrosTallerMarcaCommand(id);
+        }
+
+        public static VerRegistroProveedorMarcaCommand createVerRegistrosProveedorMarcaCommand(int id) //Devuelve una lista ProveedorMarcaDTO No funciona bien
+        {
+            return new VerRegistroProveedorMarcaCommand(id);
+        }
+
 
     }
 }

@@ -9,7 +9,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.Fabricas
 {
     public class PolizaFactory
     {
-        public static PolizaDAO CreateProviderDB()
+        public static PolizaDAO CreatePolizaDB()
         {
             return new PolizaDAO();
         }

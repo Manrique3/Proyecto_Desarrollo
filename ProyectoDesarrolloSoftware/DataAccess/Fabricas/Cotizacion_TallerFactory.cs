@@ -9,7 +9,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.Fabricas
 {
     public class Cotizacion_TallerFactory
     {
-        public static Cotizacion_TallerDAO CreateProviderDB()
+        public static Cotizacion_TallerDAO CreateCotizacion_TallerDB()
         {
             return new Cotizacion_TallerDAO();
         }

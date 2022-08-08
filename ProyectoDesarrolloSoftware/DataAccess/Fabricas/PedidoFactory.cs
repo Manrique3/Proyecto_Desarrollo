@@ -9,7 +9,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.Fabricas
 {
     public class PedidoFactory
     {
-        public static PedidoDAO CreateProviderDB()
+        public static PedidoDAO CreatePedidoDB()
         {
             return new PedidoDAO();
         }

@@ -9,7 +9,7 @@ namespace ProyectoDesarrolloSoftware.DataAccess.Fabricas
 {
     public class Taller_MarcaFactory
     {
-        public static Taller_MarcaDAO CreateProviderDB()
+        public static Taller_MarcaDAO CreateTallerMarcaDB()
         {
             return new Taller_MarcaDAO();
         }
