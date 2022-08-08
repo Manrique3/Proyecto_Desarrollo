@@ -10,6 +10,7 @@ using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.MarcasC;
 using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Pieza_Proveedores;
 
 using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Piezas;
+using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Proveedores;
 using ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Talleres;
 using ProyectoDesarrolloSoftware.Entidades;
 
@@ -51,6 +52,11 @@ namespace ProyectoDesarrolloSoftware.BussinessLogic.Command
         public static VerRegistrosCotizacionCommand createVerRegistrosCotizacionCommand(int id)
         {
             return new VerRegistrosCotizacionCommand(id);
+
+        }
+        public static VerRegistrosProveedoresCommand createVerRegistrosProveedoresCommand(int id)
+        {
+            return new VerRegistrosProveedoresCommand(id);
 
         }
 
