@@ -12,7 +12,7 @@ namespace ProyectoDesarrolloSoftware.Fabricas
 #pragma warning restore CS8632 // La anotación para tipos de referencia que aceptan valores NULL solo debe usarse en el código dentro de un contexto de anotaciones "#nullable".
         {
             var builder = new DbContextOptionsBuilder<DSDBContext>();
-            var connectionString = "Server=localhost;Database=Desarrollo_Software;Port=5432;User Id=postgres;Password=admin"; //Conexion a Base de datos
+            var connectionString = "Server=localhost;Database=Desarrollo_Software;Port=5432;User Id=postgres;Password=1234"; //Conexion a Base de datos
             builder.UseNpgsql(connectionString);
             return new DSDBContext(builder.Options);
         }
