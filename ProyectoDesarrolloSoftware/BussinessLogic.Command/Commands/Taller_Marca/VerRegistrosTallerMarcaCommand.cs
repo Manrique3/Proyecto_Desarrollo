@@ -20,7 +20,7 @@ namespace ProyectoDesarrolloSoftware.BussinessLogic.Command.Commands.Taller_Marc
         }
         public override void Execute()
         {
-            Taller_MarcaDAO T_MarcaDAO = Taller_MarcaFactory.CreateTallerMarcaDB();
+            Taller_MarcaDAO T_MarcaDAO = Taller_MarcaFactory.CreateTallerMarcasDB();
 
             //_result = T_MarcaDAO.GetMarcaDeTaller(_TallerMarca);
         }
